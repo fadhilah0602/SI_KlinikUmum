@@ -54,7 +54,7 @@ body {
 	position: fixed;
 	top: 0;
 	left: 0;
-	width: 280px;
+	width: 200px;
 	height: 100%;
 	background: var(--light);
 	z-index: 2000;

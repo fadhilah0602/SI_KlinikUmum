@@ -30,7 +30,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="/profile">
                     <i class='bx bxs-user-circle'></i>
                     <span class="text">Profile</span>
                 </a>
@@ -42,7 +42,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="/dokter">
                     <i class='bx bxs-user-plus'></i>
                     <span class="text">Dokter</span>
                 </a>
@@ -54,7 +54,7 @@
             <li>
             </li>
             <li>
-                <a href="#" class="logout">
+                <a href="/home" class="logout">
                     <i class='bx bxs-log-out-circle'></i>
                     <span class="text">Logout</span>
                 </a>
@@ -77,6 +77,7 @@
                 <div class="order">
                     <div class="head">
                         <h3>Pasien</h3>
+                        <button class="Button">Tambah Data</button>
                         <i class='bx bx-search'></i>
                         <i class='bx bx-filter'></i>
                     </div>
@@ -85,10 +86,10 @@
                             <tr>
                                 <th>No</th>
                                 <th>Nama</th>
-                                <th>Tpt Lahir</th>
-                                <th>Tgl Lahir</th>
-                                <th>Jenis Kelamin</th>
-                                <th>Alamat</th>
+                                <th>Dokter</th>
+                                <th>Ruangan</th>
+                                <th>Tanggal</th>
+                                <th>Waktu</th>
                                 <th>No Telp</th>
                                 <th>Aksi</th>
                             </tr>

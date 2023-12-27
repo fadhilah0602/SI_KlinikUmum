@@ -28,6 +28,14 @@ Route::get('/admin', function () {
     return view('frontend/admin/home');
 });
 
+Route::get('/profile', function () {
+    return view('frontend/admin/profile');
+});
+
 Route::get('/pasien', function () {
     return view('frontend/admin/pasien');
+});
+
+Route::get('/dokter', function () {
+    return view('frontend/admin/dokter');
 });

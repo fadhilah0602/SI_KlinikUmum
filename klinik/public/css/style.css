@@ -166,7 +166,7 @@ body {
 #content {
 	position: relative;
 	width: calc(100% - 280px);
-	left: 280px;
+	left: 200px;
 	transition: .3s ease;
 }
 #sidebar.hide ~ #content {
@@ -518,13 +518,70 @@ body {
 /* CONTENT */
 
 
+/* BUTTON */
+.bx-button {
+	/* Properti gaya yang diinginkan untuk tombol */
+	background-color: #3498db;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	border-radius: 4px;
+  }
+
+  .bx-button2 {
+	/* Properti gaya yang diinginkan untuk tombol */
+	background-color: #fff;
+	color: var(--grey);
+	border: none;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	border-radius: 4px;
+  }
+
+  /* OPTION  */
+  .custom-select {
+	width: 120px;
+	padding: 8px;
+	font-size: 14px;
+	border-radius: 10px;
+	/* border: 1px solid #ccc; */
+	background-color: #fff;
+	/* Other styling properties */
+  }
+  
+  /* Styling for the options */
+  .custom-select option {
+	background-color: #fff;
+	color: #000;
+  }
 
 
+/* SEARCHING */
+#searchBox {
+  width: 200px;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  /* Properti gaya lainnya */
+}
 
-
-
-
-
+/* Contoh style untuk tombol submit */
+input[type="submit"] {
+  padding: 8px 12px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
 @media screen and (max-width: 768px) {
 	#sidebar {
 		width: 200px;

@@ -77,9 +77,15 @@
                 <div class="order">
                     <div class="head">
                         <h3>Pasien</h3>
-                        <button class="Button">Tambah Data</button>
-                        <i class='bx bx-search'></i>
-                        <i class='bx bx-filter'></i>
+                        {{-- <button class="Button">Tambah Data</button> --}}
+                        <form>
+                            <input type="search" id="searchBox" name="search" placeholder="Search...">
+                            <input type="submit" value="Search">
+                          </form>
+                        <button class="bx bx-button">Tambah Data</button>
+                        
+                        {{-- <i class='bx bx-search'></i>
+                        <i class='bx bx-filter'></i> --}}
                     </div>
                     <table>
                         <thead>
@@ -103,9 +109,17 @@
                                 <td>Laki-Laki</td>
                                 <td>Padang Barat</td>
                                 <td>081212121221</td>
-                                <td><span class="status completed">Completed</span></td>
+                                {{-- <td><span class="status completed">Completed</span></td>
                                 <td><span class="status pending">Pending</span></td>
-                                <td><span class="status process">Process</span></td>
+                                <td><span class="status process">Process</span></td> --}}
+                                <td>
+                                    <select class="custom-select">
+                                        <option value="process">Process</option>
+                                        <option value="pending">Pending</option>
+                                        <option value="completed">Completed</option>
+                                       
+                                      </select>
+                                    </td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -115,9 +129,17 @@
                                 <td>Laki-Laki</td>
                                 <td>Padang Barat</td>
                                 <td>081212121221</td>
-                                <td><span class="status completed">Completed</span></td>
+                                {{-- <td><span class="status completed">Completed</span></td>
                                 <td><span class="status pending">Pending</span></td>
-                                <td><span class="status process">Process</span></td>
+                                <td><span class="status process">Process</span></td> --}}
+                                <td>
+                                    <select class="custom-select">
+                                        <option value="process">Process</option>
+                                        <option value="pending">Pending</option>
+                                        <option value="completed">Completed</option>
+                                       
+                                      </select>
+                                    </td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -127,9 +149,17 @@
                                 <td>Laki-Laki</td>
                                 <td>Padang Barat</td>
                                 <td>081212121221</td>
-                                <td><span class="status completed">Completed</span></td>
+                                {{-- <td><span class="status completed">Completed</span></td>
                                 <td><span class="status pending">Pending</span></td>
-                                <td><span class="status process">Process</span></td>
+                                <td><span class="status process">Process</span></td> --}}
+                                <td>
+                                    <select class="custom-select">
+                                        <option value="process">Process</option>
+                                        <option value="pending">Pending</option>
+                                        <option value="completed">Completed</option>
+                                       
+                                      </select>
+                                    </td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -139,9 +169,17 @@
                                 <td>Laki-Laki</td>
                                 <td>Padang Barat</td>
                                 <td>081212121221</td>
-                                <td><span class="status completed">Completed</span></td>
+                                {{-- <td><span class="status completed">Completed</span></td>
                                 <td><span class="status pending">Pending</span></td>
-                                <td><span class="status process">Process</span></td>
+                                <td><span class="status process">Process</span></td> --}}
+                                <td>
+                                    <select class="custom-select">
+                                        <option value="process">Process</option>
+                                        <option value="pending">Pending</option>
+                                        <option value="completed">Completed</option>
+                                       
+                                      </select>
+                                    </td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -151,9 +189,17 @@
                                 <td>Laki-Laki</td>
                                 <td>Padang Barat</td>
                                 <td>081212121221</td>
-                                <td><span class="status completed">Completed</span></td>
+                                {{-- <td><span class="status completed">Completed</span></td>
                                 <td><span class="status pending">Pending</span></td>
-                                <td><span class="status process">Process</span></td>
+                                <td><span class="status process">Process</span></td> --}}
+                                <td>
+                                    <select class="custom-select">
+                                        <option value="process">Process</option>
+                                        <option value="pending">Pending</option>
+                                        <option value="completed">Completed</option>
+                                       
+                                      </select>
+                                    </td>
                             </tr>
                         </tbody>
                     </table>

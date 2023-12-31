@@ -83,7 +83,12 @@
                 </li>
 
             </ul>
-            <button class="Button">Ubah Password</button>
+            
+            {{-- <button class="Button">Ubah Password</button> --}}
+            
+        </main>
+        <main>
+            <button class="bx bx-button2">Ubah Password</button>
         </main>
         <!-- MAIN -->
     </section>

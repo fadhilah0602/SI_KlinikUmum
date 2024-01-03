@@ -5,22 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class JadwalDokter extends Model
+class JadwalPemeriksaan extends Model
 {
     use HasFactory;
-    protected $table = 'jadwal_dokters';
+    protected $table = 'jadwal_pemeriksaans';
 
-    protected $primarykey = 'jadwal_dokter_id';
+    protected $primarykey = 'jadwal_pemeriksaan_id';
 
     protected $fillable = [
         'dokter_id',
+        'pasien_id',
         'hari',
         'waktu',
+        'status',
         
     ];
-
-    public function dokter()
-    {
-        return $this->belongsTo(Dokter::class, 'dokter_id', 'dokter_id');
-    }
 }

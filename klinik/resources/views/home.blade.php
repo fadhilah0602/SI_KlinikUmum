@@ -6,7 +6,7 @@
             <tbody>
                 <tr>
                     <th>
-                        <img src="img/icon.ico" alt="Deskripsi Gambar">
+                        <img src="img/home.png" alt="Deskripsi Gambar">
                     </th>
                     <th>
                         <div class="btn-text" onclick="openForm()">SIK Dr.Zul</div>

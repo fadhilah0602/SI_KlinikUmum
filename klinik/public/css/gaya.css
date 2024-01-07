@@ -58,6 +58,7 @@ body {
 		display: block;
 		padding: 10px 20px;
 		position: relative;
+        color: white;
 
 		&:hover {
 			cursor: pointer;

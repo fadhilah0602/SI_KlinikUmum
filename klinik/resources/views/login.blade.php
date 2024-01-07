@@ -15,7 +15,7 @@
             </div>
             <div style="width: 110px; left: 34px; top: 16px; position: absolute; color: #23538F; font-size: 32px; font-family: Inter; font-weight: 700; word-wrap: break-word"class="button"
                 onclick="closeForm()">
-                Sign In</div>
+                Login</div>
         </div>
         <div
             style="width: 400px; height: 64px; left: 0px; top: 0px; position: absolute; background: white; border-radius: 30px">

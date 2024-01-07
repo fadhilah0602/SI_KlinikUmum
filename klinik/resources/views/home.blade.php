@@ -9,7 +9,9 @@
                         <img src="img/home.png" alt="Deskripsi Gambar">
                     </th>
                     <th>
-                        <div class="btn-text" onclick="openForm()">SIK Dr.Zul</div>
+                        <a href="/login">
+                            <div class="btn-text" onclick="openForm()">SIK Dr.Zul</div>
+                        </a>
                     </th>
                 </tr>
 

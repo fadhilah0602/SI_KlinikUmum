@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PasienController;
+use App\Http\Controllers\DokterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,3 +43,10 @@ Route::get('/pasien', function () {
 Route::get('/dokter', function () {
     return view('frontend/admin/dokter');
 });
+
+// backend
+
+Route::resource('users', UserController::class);
+Route::resource('admins', AdminController::class);
+Route::resource('pasiens', PasienController::class);
+Route::resource('dokters', DokterController::class);

@@ -3,42 +3,61 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 
 class UserController extends Controller
 {
     public function index()
     {
-        $users = User::all();
-        return view('user.index', compact('users'));
+        $user = User::all();
+        return view('user.index')->with('users',$user);
     }
 
     public function create()
     {
-        return view('users.create');
+        $user = User::select('name')->get();
+        return view('user.create');
     }
 
     public function store(Request $request)
     {
-        User::create($request->all());
-        return redirect()->route('users.index')->with('success', 'User created successfully.');
+        // Admin::create($request->all());
+
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'email_verified_at' => $request->email_veridied_at,
+            'password' => Hash::make($request->password),
+            'role' => $request->role
+            
+        ]);
+        return redirect('/user')->with('success', 'User created successfully.');
     }
 
-    public function edit(User $user)
+    public function edit($id)
     {
-        return view('users.edit', compact('user'));
+        $user = User::where('id',$id)->first();
+        return view("user.edit")
+            ->with('users',$user);
     }
 
-    public function update(Request $request, User $user)
+    public function update(Request $request, $id)
     {
+        $user = User::where('id',$id)->update([
+            'email' => $request->email,
+            'name' => $request->name,
+        ]);
+
         $user->update($request->all());
-        return redirect()->route('users.index')->with('success', 'User updated successfully.');
+        return redirect('/user')->with('success', 'User updated successfully.');
     }
 
-    public function destroy(User $user)
+    public function destroy($id)
     {
-        $user->delete();
-        return redirect()->route('users.index')->with('success', 'User deleted successfully.');
+        $user = User::find($id);
+        $id->delete();
+        return redirect('/user')->with('success', 'User deleted successfully.');
     }
     
 }

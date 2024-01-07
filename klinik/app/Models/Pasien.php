@@ -19,7 +19,7 @@ class Pasien extends Model
         'tgl_lahir',
         'gender',
         'alamat',
-        'no_telp',
+        'no_telp'
         
     ];
 

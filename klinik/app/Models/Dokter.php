@@ -21,7 +21,7 @@ class Dokter extends Model
         'gender',
         'alamat',
         'no_telp',
-        'spesialis',
+        'spesialis'
         
     ];
 

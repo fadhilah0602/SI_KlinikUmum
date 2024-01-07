@@ -87,85 +87,57 @@
                 <div class="table-data">
                     <div class="container">
                         <div class="header">NOMOR ANTREAN</div>
-                        <link rel="stylesheet" href="css/homeadmin.css">
                         <div class="content">
                             <table>
                                 <div>
-                                    <div class="label">Nomor Antrean</div>
-                                    <div>001</div>
+                                    <div class="label1">001</div>
                                 </div>
                             </table>
                             <table>
                                 <div>
-                                    <div class="label">Atas Nama</div>
-                                    <div>Fitri</div>
+                                    <div class="label2">Atas Nama : Fitri</div>
                                 </div>
                             </table>
                             <table>
                                 <div>
-                                    <div class="label">Dokter</div>
+                                    <div class="label3">Dokter</div>
                                     <div>dr. Zulkarnain Nasution</div>
                                 </div>
                             </table>
                             <table>
                                 <div>
-                                    <div class="label">Poli Tujuan</div>
+                                    <div class="label4">Poli Tujuan</div>
                                     <div>Poli Umum 2</div>
                                 </div>
                                 <div>
-                                    <div class="label">No Rekam Media</div>
+                                    <div class="label5">No Rekam Media</div>
                                     <div>K-0001</div>
                                 </div>
                             </table>
                             <table>
                                 <div>
-                                    <div class="label">Waktu Daftar</div>
+                                    <div class="label6">Waktu Daftar</div>
                                     <div class="date">001</div>
                                 </div>
                                 <div>
-                                    <div class="label">Waktu Panggil</div>
+                                    <div class="label7">Waktu Panggil</div>
                                     <div class="date">002</div>
                                 </div>
                             </table>
                         </div>
                     </div>
-                    <div class="modal">
-                        <div class="input-group">
-                            <input type="text" id="name" onblur="checkInput(this)" />
-                            <label for="name">Username</label>
-                        </div>
-                        <div class="input-group">
-                            <input type="password" id="password" onblur="checkInput(this)" />
-                            <label for="password">Password</label>
-                        </div>
-                    </div>
-                    <div class="todo">
-                        <table>
-                            <div>
-                                <div class="label">Poli Tujuan</div>
-                                <div>Poli Umum 2</div>
+                    <table>
+                        <div>
+                            <div class="table">
+                                <label for="poli"> Poli</label>
+                                <input type="list" id="poli" />
                             </div>
-                            <div>
-                                <div class="label">No Rekam Media</div>
-                                <div>K-0001</div>
+                            <div class="table">
+                                <label for="dokter"> Dokter</label>
+                                <input type="list" id="dokter" />
                             </div>
-                        </table>
-                        <div class="head">
-                            <h3>Todos</h3>
-                            <i class='bx bx-plus'></i>
-                            <i class='bx bx-filter'></i>
                         </div>
-                        <ul class="todo-list">
-                            <li class="completed">
-                                <p>Todo List</p>
-                                <i class='bx bx-dots-vertical-rounded'></i>
-                            </li>
-                            <li class="completed">
-                                <p>Todo List</p>
-                                <i class='bx bx-dots-vertical-rounded'></i>
-                            </li>
-                        </ul>
-                    </div>
+                    </table>
                 </div>
             </div>
         </main>

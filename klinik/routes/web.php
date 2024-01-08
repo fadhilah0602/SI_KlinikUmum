@@ -17,6 +17,12 @@ use App\Http\Controllers\DokterController;
 |
 */
 
+
+
+// ========================================
+// Route admin
+// ========================================
+
 Route::get('/', function () {
     return view('home');
 });
@@ -43,6 +49,29 @@ Route::get('/pasien', function () {
 Route::get('/dokter', function () {
     return view('frontend/admin/dokter');
 });
+
+
+
+
+// ====================================================
+// route dokter
+// ====================================================
+
+Route::get('/dokterhome', function () {
+    return view('frontend/dokter/home');
+});
+
+Route::get('/dokterprofile', function () {
+    return view('frontend/dokter/profile');
+});
+
+Route::get('/dokumen', function () {
+    return view('frontend/dokter/dokumen');
+});
+
+
+
+
 
 // backend
 // user

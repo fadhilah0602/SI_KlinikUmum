@@ -72,6 +72,26 @@ Route::get('/dokumen', function () {
 
 
 
+// ====================================================
+// route pasien
+// ====================================================
+
+Route::get('/pasienhome', function () {
+    return view('frontend/pasien/home');
+});
+
+Route::get('/pasienprofile', function () {
+    return view('frontend/pasien/profile');
+});
+
+Route::get('/pasienriwayat', function () {
+    return view('frontend/pasien/riwayat');
+});
+
+Route::get('/submitform', function () {
+    return view('frontend/pasien/submitform');
+});
+
 
 // backend
 // user

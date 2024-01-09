@@ -29,13 +29,13 @@
                     <span class="text">Home</span>
                 </a>
             </li>
-            <li class="active">
+            <li>
                 <a href="/pasienprofile">
                     <i class='bx bxs-user-circle'></i>
                     <span class="text">Profile</span>
                 </a>
             </li>
-            <li>
+            <li class="active">
                 <a href="/pasienriwayat">
                     <i class='bx bxs-file file-icon'></i>
                     <span class="text">Riwayat</span>
@@ -63,6 +63,11 @@
         <!-- NAVBAR -->
 
         <!-- MAIN -->
+      
+        <main>
+            <button class="bx bx-button3">Ubah Password</button>
+        </main>
+
         <main>
             <ul class="box-info">
                 <li>
@@ -74,12 +79,8 @@
                 </li>
 
             </ul>
+        
             
-            {{-- <button class="Button">Ubah Password</button> --}}
-            
-        </main>
-        <main>
-            <button class="bx bx-button2">Ubah Password</button>
         </main>
         <!-- MAIN -->
     </section>

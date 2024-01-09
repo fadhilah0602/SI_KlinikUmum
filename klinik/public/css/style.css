@@ -545,6 +545,18 @@ body {
 	border-radius: 4px;
   }
 
+  .bx-button3 {
+	/* Properti gaya yang diinginkan untuk tombol */
+	background-color: #fff;
+	color: var(--grey);
+	border: none;
+	padding: 40px 40px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	border-radius: 4px;
+  }
   /* OPTION  */
   .custom-select {
 	width: 120px;
@@ -645,4 +657,56 @@ input[type="submit"] {
 	#content main .table-data .todo .todo-list {
 		min-width: 420px;
 	}
+}
+
+
+
+
+/* ============================================================================ */
+/* styles.css */
+
+.container {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: regular;
+}
+
+input[type="text"],
+input[type="date"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* ========================================================================== */
+
+
+
+.header {
+	text-align: center;
+	margin-bottom: 20px;
 }

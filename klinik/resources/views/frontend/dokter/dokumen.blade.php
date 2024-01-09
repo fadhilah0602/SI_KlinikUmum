@@ -37,7 +37,7 @@
             </li>
             <li class="active">
                 <a href="/dokumen">
-                    <i class='bx bxs-group user-icon'></i>
+                    <i class='bx bxs-file file-icon'></i>
                     <span class="text">Dokumen</span>
                 </a>
             </li>

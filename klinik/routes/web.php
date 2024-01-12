@@ -17,12 +17,9 @@ use App\Http\Controllers\DokterController;
 |
 */
 
-
-
-// ========================================
-// Route admin
-// ========================================
-
+Route::get('/coba', function () {
+    return view('coba');
+});
 Route::get('/', function () {
     return view('home');
 });
@@ -34,20 +31,30 @@ Route::get('/login', function () {
     return view('login');
 });
 
+Route::get('/signup', function () {
+    return view('signup');
+});
+
+// ========================================
+// Route admin
+// ========================================
+
+
+
 Route::get('/admin', function () {
-    return view('frontend/admin/home');
+    return view('/admin/home');
 });
 
 Route::get('/profile', function () {
-    return view('frontend/admin/profile');
+    return view('/admin/profile');
 });
 
 Route::get('/pasien', function () {
-    return view('frontend/admin/pasien');
+    return view('admin/pasien');
 });
 
 Route::get('/dokter', function () {
-    return view('frontend/admin/dokter');
+    return view('/admin/dokter');
 });
 
 
@@ -58,15 +65,15 @@ Route::get('/dokter', function () {
 // ====================================================
 
 Route::get('/dokterhome', function () {
-    return view('frontend/dokter/home');
+    return view('/dokter/home');
 });
 
 Route::get('/dokterprofile', function () {
-    return view('frontend/dokter/profile');
+    return view('/dokter/profile');
 });
 
 Route::get('/dokumen', function () {
-    return view('frontend/dokter/dokumen');
+    return view('/dokter/dokumen');
 });
 
 
@@ -77,20 +84,20 @@ Route::get('/dokumen', function () {
 // ====================================================
 
 Route::get('/pasienhome', function () {
-    return view('frontend/pasien/home');
+    return view('/pasien/home');
 });
 
 Route::get('/pasienprofile', function () {
-    return view('frontend/pasien/profile');
+    return view('/pasien/profile');
 });
 
 Route::get('/pasienriwayat', function () {
-    return view('frontend/pasien/riwayat');
+    return view('/pasien/riwayat');
 });
 
-Route::get('/submitform', function () {
-    return view('frontend/pasien/submitform');
-});
+// Route::get('/submitform', function () {
+//     return view('frontend/pasien/');
+// });
 
 
 // backend

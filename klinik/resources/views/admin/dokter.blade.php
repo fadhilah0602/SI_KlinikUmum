@@ -24,25 +24,25 @@
         </a>
         <ul class="side-menu top">
             <li>
-                <a href="/admin">
+                <a href="/adminhome">
                     <i class='bx bxs-dashboard'></i>
                     <span class="text">Home</span>
                 </a>
             </li>
             <li>
-                <a href="/profile">
+                <a href="/adminprofile">
                     <i class='bx bxs-user-circle'></i>
                     <span class="text">Profile</span>
                 </a>
             </li>
             <li>
-                <a href="/pasien">
+                <a href="/adminpasien">
                     <i class='bx bxs-group user-icon'></i>
                     <span class="text">Pasien</span>
                 </a>
             </li>
             <li class="active">
-                <a href="/dokter">
+                <a href="/admindokter">
                     <i class='bx bxs-user-plus'></i>
                     <span class="text">Dokter</span>
                 </a>
@@ -67,7 +67,7 @@
         <!-- MAIN -->
         <main>
             <button class="bx bx-button2">Tambah Dokter</button>
-             <ul class="box-info">
+            <ul class="box-info">
                 <li>
                     <i class='bx bxs-group'></i>
                     <span class="text">
@@ -91,15 +91,15 @@
                 </li>
 
             </ul>
-            
+
             {{-- <button class="Button">Tambah Dokter</button> --}}
-           
+
         </main>
         <!-- MAIN -->
-        
+
     </section>
     <!-- CONTENT -->
-    
+
 
 
     <!-- CONTENT -->
@@ -135,12 +135,12 @@
                                 <td><span class="status pending">Pending</span></td>
                                 <td><span class="status process">Process</span></td> --}}
                                 <td>
-                                <select class="custom-select">
-                                    <option value="process">Process</option>
-                                    <option value="pending">Pending</option>
-                                    <option value="completed">Completed</option>
-                                   
-                                  </select>
+                                    <select class="custom-select">
+                                        <option value="process">Process</option>
+                                        <option value="pending">Pending</option>
+                                        <option value="completed">Completed</option>
+
+                                    </select>
                                 </td>
                             </tr>
                             <tr>
@@ -152,12 +152,12 @@
                                 <td><span class="status pending">Pending</span></td>
                                 <td><span class="status process">Process</span></td> --}}
                                 <td>
-                                <select class="custom-select">
-                                    <option value="process">Process</option>
-                                    <option value="pending">Pending</option>
-                                    <option value="completed">Completed</option>
-                                   
-                                  </select>
+                                    <select class="custom-select">
+                                        <option value="process">Process</option>
+                                        <option value="pending">Pending</option>
+                                        <option value="completed">Completed</option>
+
+                                    </select>
                                 </td>
                             </tr>
                             <tr>
@@ -169,12 +169,12 @@
                                 <td><span class="status pending">Pending</span></td>
                                 <td><span class="status process">Process</span></td> --}}
                                 <td>
-                                <select class="custom-select">
-                                    <option value="process">Process</option>
-                                    <option value="pending">Pending</option>
-                                    <option value="completed">Completed</option>
-                                   
-                                  </select>
+                                    <select class="custom-select">
+                                        <option value="process">Process</option>
+                                        <option value="pending">Pending</option>
+                                        <option value="completed">Completed</option>
+
+                                    </select>
                                 </td>
                             </tr>
                             <tr>
@@ -186,12 +186,12 @@
                                 <td><span class="status pending">Pending</span></td>
                                 <td><span class="status process">Process</span></td> --}}
                                 <td>
-                                <select class="custom-select">
-                                    <option value="process">Process</option>
-                                    <option value="pending">Pending</option>
-                                    <option value="completed">Completed</option>
-                                   
-                                  </select>
+                                    <select class="custom-select">
+                                        <option value="process">Process</option>
+                                        <option value="pending">Pending</option>
+                                        <option value="completed">Completed</option>
+
+                                    </select>
                                 </td>
                             </tr>
                             <tr>
@@ -203,12 +203,12 @@
                                 <td><span class="status pending">Pending</span></td>
                                 <td><span class="status process">Process</span></td> --}}
                                 <td>
-                                <select class="custom-select">
-                                    <option value="process">Process</option>
-                                    <option value="pending">Pending</option>
-                                    <option value="completed">Completed</option>
-                                   
-                                  </select>
+                                    <select class="custom-select">
+                                        <option value="process">Process</option>
+                                        <option value="pending">Pending</option>
+                                        <option value="completed">Completed</option>
+
+                                    </select>
                                 </td>
                             </tr>
                         </tbody>

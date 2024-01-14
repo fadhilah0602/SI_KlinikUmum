@@ -25,25 +25,25 @@
         </a>
         <ul class="side-menu top">
             <li class="active">
-                <a href="/admin">
+                <a href="/adminhome">
                     <i class='bx bxs-dashboard'></i>
                     <span class="text">Home</span>
                 </a>
             </li>
             <li>
-                <a href="/profile">
+                <a href="/adminprofile">
                     <i class='bx bxs-user-circle'></i>
                     <span class="text">Profile</span>
                 </a>
             </li>
             <li>
-                <a href="/pasien">
+                <a href="/adminpasien">
                     <i class='bx bxs-group user-icon'></i>
                     <span class="text">Pasien</span>
                 </a>
             </li>
             <li>
-                <a href="/dokter">
+                <a href="/admindokter">
                     <i class='bx bxs-user-plus'></i>
                     <span class="text">Dokter</span>
                 </a>

@@ -24,25 +24,25 @@
         </a>
         <ul class="side-menu top">
             <li>
-                <a href="/admin">
+                <a href="/adminhome">
                     <i class='bx bxs-dashboard'></i>
                     <span class="text">Home</span>
                 </a>
             </li>
             <li>
-                <a href="/profile">
+                <a href="/adminprofile">
                     <i class='bx bxs-user-circle'></i>
                     <span class="text">Profile</span>
                 </a>
             </li>
             <li class="active">
-                <a href="/pasien">
+                <a href="/adminpasien">
                     <i class='bx bxs-group user-icon'></i>
                     <span class="text">Pasien</span>
                 </a>
             </li>
             <li>
-                <a href="/dokter">
+                <a href="/admindokter">
                     <i class='bx bxs-user-plus'></i>
                     <span class="text">Dokter</span>
                 </a>
@@ -81,9 +81,13 @@
                         <form>
                             <input type="search" id="searchBox" name="search" placeholder="Search...">
                             <input type="submit" value="Search">
-                          </form>
-                        <button class="bx bx-button">Tambah Data</button>
-                        
+                        </form>
+                        <button class="bx bx-button">
+                            <a href="{{ route('admin.create') }}" class="btn btn-sm btn-primary" style="float: right">
+                                Tambah Data
+                            </a>
+                        </button>
+
                         {{-- <i class='bx bx-search'></i>
                         <i class='bx bx-filter'></i> --}}
                     </div>
@@ -117,9 +121,9 @@
                                         <option value="process">Process</option>
                                         <option value="pending">Pending</option>
                                         <option value="completed">Completed</option>
-                                       
-                                      </select>
-                                    </td>
+
+                                    </select>
+                                </td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -137,9 +141,9 @@
                                         <option value="process">Process</option>
                                         <option value="pending">Pending</option>
                                         <option value="completed">Completed</option>
-                                       
-                                      </select>
-                                    </td>
+
+                                    </select>
+                                </td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -157,9 +161,9 @@
                                         <option value="process">Process</option>
                                         <option value="pending">Pending</option>
                                         <option value="completed">Completed</option>
-                                       
-                                      </select>
-                                    </td>
+
+                                    </select>
+                                </td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -177,9 +181,9 @@
                                         <option value="process">Process</option>
                                         <option value="pending">Pending</option>
                                         <option value="completed">Completed</option>
-                                       
-                                      </select>
-                                    </td>
+
+                                    </select>
+                                </td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -197,9 +201,9 @@
                                         <option value="process">Process</option>
                                         <option value="pending">Pending</option>
                                         <option value="completed">Completed</option>
-                                       
-                                      </select>
-                                    </td>
+
+                                    </select>
+                                </td>
                             </tr>
                         </tbody>
                     </table>

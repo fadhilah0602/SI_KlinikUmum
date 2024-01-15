@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,13 +36,13 @@
                     <span class="text">Profile</span>
                 </a>
             </li>
-            <li>
+            <li class="active">
                 <a href="/adminpasien">
                     <i class='bx bxs-group user-icon'></i>
                     <span class="text">Pasien</span>
                 </a>
             </li>
-            <li class="active">
+            <li>
                 <a href="/admindokter">
                     <i class='bx bxs-user-plus'></i>
                     <span class="text">Dokter</span>
@@ -61,56 +62,53 @@
             </li>
         </ul>
     </section>
-    <!-- SIDEBAR -->
-    <!-- CONTENT -->
+   
     <section id="content">
-        <!-- MAIN -->
         <main>
-            <!-- <button href="/createdokter"class="bx bx-button2">Tambah Dokter</button> -->
-            <!-- <button type="button" onclick="goToAnotherPage(/createdokter)">Tambah Dokter</button> -->
-            <button type="button" onclick="goToNextPage()">Tambah Dokter</button>
+            <ul class="box-info">
+                <li>
+                    <!-- <i class='bx bx-face'></i> -->
+                    <span class="text">
+                        <!-- <h3>Hi, Admin 1</h3>
+                        <p>Admin 1 Klinik Dr.Zul</p>
+                    </span> -->
+                    <div class="header">
+                    <h4> Tambah Data Pasien</h4>           
+                    </div>
+                    <div class="form-group">
+                <label for="name">Nama:</label>
+                <input type="text" id="name" name="name">
+            </div>
+            <div class="form-group">
+                <label for="nip">Nip:</label>
+                <input type="number" id="nip" name="nip">
+            </div>
+            <div class="form-group">
+                <label for="spesialis">Spesialis:</label>
+                <input type="text" id="spesialis" name="spesialis"></input>
+            </div>
+            <div class="form-group">
+                <label for="nohp">No Hp:</label>
+                <input type="text" id="nohp" name="nohp"></input>
+            </div>
+            
+            <button type="button" onclick="goToNextPage()">Submit</button>
 
             <script>
               function goToNextPage() {
                     // Gantilah URL atau path sesuai kebutuhan
-                     window.location.href = "createdokter";
+                     window.location.href = "adminpasien";
                       }
             </script>
-            <ul class="box-info">
-                <li>
-                    <i class='bx bxs-group'></i>
-                    <span class="text">
-                        <h3>Dr. Cindy</h3>
-                        <p>Dokter Umum</p>
-                    </span>
-                </li>
-                <li>
-                    <i class='bx bxs-group'></i>
-                    <span class="text">
-                        <h3>Dr. Zul</h3>
-                        <p>Dokter Umum</p>
-                    </span>
-                </li>
-                <li>
-                    <i class='bx bxs-group'></i>
-                    <span class="text">
-                        <h3>Dr. Zee</h3>
-                        <p>Dokter Umum</p>
-                    </span>
-                </li>
-
-            </ul>
-
-            {{-- <button class="Button">Tambah Dokter</button> --}}
-
-        </main>
-        <!-- MAIN -->
-
+        </form>
+        </div>
+        </li>
+        </ul>   
+        </body>
+        </li>
+       </ul>   
     </section>
     <!-- CONTENT -->
-
-
-
 
     <script src="script.js"></script>
 </body>

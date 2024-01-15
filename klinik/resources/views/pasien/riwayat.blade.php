@@ -65,9 +65,11 @@
         <!-- MAIN -->
       
         <main>
-            <button class="bx bx-button3">Date</button>
+            <button class="bx bx-buttonRiwayat">Date</button>
+            <button class="bx bx-buttonRiwayat">Date 2</button>
         </main>
 
+        
         
         <!-- MAIN -->
     </section>

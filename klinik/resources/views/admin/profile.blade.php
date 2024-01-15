@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,7 +30,7 @@
                     <span class="text">Home</span>
                 </a>
             </li>
-            <li class="active">
+            <li  class="active">
                 <a href="/adminprofile">
                     <i class='bx bxs-user-circle'></i>
                     <span class="text">Profile</span>
@@ -61,17 +62,9 @@
             </li>
         </ul>
     </section>
-    <!-- SIDEBAR -->
-
-
-
-    <!-- CONTENT -->
+    
     <section id="content">
-        <!-- NAVBAR -->
-
-        <!-- NAVBAR -->
-
-        <!-- MAIN -->
+    
         <main>
             <ul class="box-info">
                 <li>
@@ -90,11 +83,8 @@
         <main>
             <button class="bx bx-button2">Ubah Password</button>
         </main>
-        <!-- MAIN -->
+       
     </section>
-    <!-- CONTENT -->
-
-
     <script src="script.js"></script>
 </body>
 

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,11 +62,6 @@
             </li>
         </ul>
     </section>
-    <!-- SIDEBAR -->
-
-
-
-    <!-- CONTENT -->
     <section id="content">
         <!-- NAVBAR -->
 
@@ -82,11 +78,19 @@
                             <input type="search" id="searchBox" name="search" placeholder="Search...">
                             <input type="submit" value="Search">
                         </form>
-                        <button class="bx bx-button">
+                        <!-- <button class="bx bx-button">
                             <a href="{{ route('admin.create') }}" class="btn btn-sm btn-primary" style="float: right">
                                 Tambah Data
-                            </a>
-                        </button>
+                            </a> -->
+                            <button type="button" onclick="goToNextPage()">Tambah Pasien</button>
+
+                            <script>
+                                function goToNextPage() {
+                                // Gantilah URL atau path sesuai kebutuhan
+                                window.location.href = "createpasien";
+                                }
+                             </script>
+                        <!-- </button> -->
 
                         {{-- <i class='bx bx-search'></i>
                         <i class='bx bx-filter'></i> --}}
@@ -101,6 +105,7 @@
                                 <th>Tanggal</th>
                                 <th>Waktu</th>
                                 <th>No Telp</th>
+                                <th>Keterangan</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -112,10 +117,7 @@
                                 <td>01-10-2021</td>
                                 <td>Laki-Laki</td>
                                 <td>Padang Barat</td>
-                                <td>081212121221</td>
-                                {{-- <td><span class="status completed">Completed</span></td>
-                                <td><span class="status pending">Pending</span></td>
-                                <td><span class="status process">Process</span></td> --}}
+                                <td>081212121221</td>                                
                                 <td>
                                     <select class="custom-select">
                                         <option value="process">Process</option>
@@ -124,87 +126,27 @@
 
                                     </select>
                                 </td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>John Doe</td>
-                                <td>Padang</td>
-                                <td>01-10-2021</td>
-                                <td>Laki-Laki</td>
-                                <td>Padang Barat</td>
-                                <td>081212121221</td>
-                                {{-- <td><span class="status completed">Completed</span></td>
-                                <td><span class="status pending">Pending</span></td>
-                                <td><span class="status process">Process</span></td> --}}
-                                <td>
-                                    <select class="custom-select">
-                                        <option value="process">Process</option>
-                                        <option value="pending">Pending</option>
-                                        <option value="completed">Completed</option>
+                               
+                                <td class="action-buttons">
+                                <!-- <button type="button" onclick="editUser(1)">
+                                    <i class="fas fa-edit"></i> Edit
+                                </button> -->
 
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>John Doe</td>
-                                <td>Padang</td>
-                                <td>01-10-2021</td>
-                                <td>Laki-Laki</td>
-                                <td>Padang Barat</td>
-                                <td>081212121221</td>
-                                {{-- <td><span class="status completed">Completed</span></td>
-                                <td><span class="status pending">Pending</span></td>
-                                <td><span class="status process">Process</span></td> --}}
-                                <td>
-                                    <select class="custom-select">
-                                        <option value="process">Process</option>
-                                        <option value="pending">Pending</option>
-                                        <option value="completed">Completed</option>
+                                <button type="button" onclick="goToNextPage()">Edit Pasien</button>
 
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>John Doe</td>
-                                <td>Padang</td>
-                                <td>01-10-2021</td>
-                                <td>Laki-Laki</td>
-                                <td>Padang Barat</td>
-                                <td>081212121221</td>
-                                {{-- <td><span class="status completed">Completed</span></td>
-                                <td><span class="status pending">Pending</span></td>
-                                <td><span class="status process">Process</span></td> --}}
-                                <td>
-                                    <select class="custom-select">
-                                        <option value="process">Process</option>
-                                        <option value="pending">Pending</option>
-                                        <option value="completed">Completed</option>
+                                <script>
+                                function goToNextPage() {
+                                // Gantilah URL atau path sesuai kebutuhan
+                                window.location.href = "editpasien";
+                                }
+                                </script>
 
-                                    </select>
-                                </td>
+                                <button type="button" onclick="deleteUser(1)">
+                                    <i class="fas fa-trash-alt"></i> Hapus
+                                </button>
+                            </td>
                             </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>John Doe</td>
-                                <td>Padang</td>
-                                <td>01-10-2021</td>
-                                <td>Laki-Laki</td>
-                                <td>Padang Barat</td>
-                                <td>081212121221</td>
-                                {{-- <td><span class="status completed">Completed</span></td>
-                                <td><span class="status pending">Pending</span></td>
-                                <td><span class="status process">Process</span></td> --}}
-                                <td>
-                                    <select class="custom-select">
-                                        <option value="process">Process</option>
-                                        <option value="pending">Pending</option>
-                                        <option value="completed">Completed</option>
-
-                                    </select>
-                                </td>
-                            </tr>
+                           
                         </tbody>
                     </table>
                 </div>

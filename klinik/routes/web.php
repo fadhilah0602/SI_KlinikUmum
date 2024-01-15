@@ -57,9 +57,17 @@ Route::get('/admindokter', function () {
     return view('/admin/dokter');
 });
 
+Route::get('/createdokter', function () {
+    return view('/admin/createdokter');
+});
 
+Route::get('/createpasien', function () {
+    return view('/admin/createpasien');
+});
 
-
+Route::get('/editpasien', function () {
+    return view('/admin/editpasien');
+});
 // ====================================================
 // route dokter
 // ====================================================

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -79,17 +78,17 @@
                             <input type="submit" value="Search">
                         </form>
                         <!-- <button class="bx bx-button">
-                            <a href="{{ route('admin.create') }}" class="btn btn-sm btn-primary" style="float: right">
+                            <a href="" class="btn btn-sm btn-primary" style="float: right">
                                 Tambah Data
                             </a> -->
-                            <button type="button" onclick="goToNextPage()">Tambah Pasien</button>
+                        <button type="button" onclick="goToNextPage()">Tambah Pasien</button>
 
-                            <script>
-                                function goToNextPage() {
+                        <script>
+                            function goToNextPage() {
                                 // Gantilah URL atau path sesuai kebutuhan
                                 window.location.href = "createpasien";
-                                }
-                             </script>
+                            }
+                        </script>
                         <!-- </button> -->
 
                         {{-- <i class='bx bx-search'></i>
@@ -100,53 +99,55 @@
                             <tr>
                                 <th>No</th>
                                 <th>Nama</th>
-                                <th>Dokter</th>
-                                <th>Ruangan</th>
-                                <th>Tanggal</th>
-                                <th>Waktu</th>
+                                <th>Tempat Lahir</th>
+                                <th>Tanggal Lahir</th>
+                                <th>Jenis Kelamin</th>
+                                <th>Alamat</th>
                                 <th>No Telp</th>
-                                <th>Keterangan</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>John Doe</td>
-                                <td>Padang</td>
-                                <td>01-10-2021</td>
-                                <td>Laki-Laki</td>
-                                <td>Padang Barat</td>
-                                <td>081212121221</td>                                
-                                <td>
-                                    <select class="custom-select">
-                                        <option value="process">Process</option>
-                                        <option value="pending">Pending</option>
-                                        <option value="completed">Completed</option>
+                            @php
+                                $no = 1;
+                            @endphp
 
-                                    </select>
-                                </td>
-                               
-                                <td class="action-buttons">
-                                <!-- <button type="button" onclick="editUser(1)">
-                                    <i class="fas fa-edit"></i> Edit
-                                </button> -->
+                            @foreach ($pasiens as $pasiens)
+                                <tr>
+                                    <td>{{ $no++ }}</td>
+                                    <td>{{ $pasiens->name }}</td>
+                                    <td>{{ $pasiens->tempat_lahir }}</td>
+                                    <td>{{ $pasiens->tgl_lahir }}</td>
+                                    <td>{{ $pasiens->gender }}</td>
+                                    <td>{{ $pasiens->alamat }}</td>
+                                    <td>{{ $pasiens->no_telp }}</td>
+                                    <td class="action-buttons">
+                                        <button type="button" onclick="goToPageEdit()">Edit</button>
 
-                                <button type="button" onclick="goToNextPage()">Edit Pasien</button>
+                                        <script>
+                                            function goToPageEdit() {
+                                                // Gantilah URL atau path sesuai kebutuhan
+                                                window.location.href = "editpasien";
+                                            }
+                                        </script>
 
-                                <script>
-                                function goToNextPage() {
-                                // Gantilah URL atau path sesuai kebutuhan
-                                window.location.href = "editpasien";
-                                }
-                                </script>
-
-                                <button type="button" onclick="deleteUser(1)">
-                                    <i class="fas fa-trash-alt"></i> Hapus
-                                </button>
-                            </td>
-                            </tr>
-                           
+                                        <button onclick="deleteUser()">
+                                            <i class="fas fa-trash-alt"></i> Hapus
+                                        </button>
+                                        {{-- <script>
+                                            // Fungsi untuk menghapus elemen
+                                            function deleteUser() {
+                                                var element = document.getElementById("elementToBeDeleted");
+                                                if (element) {
+                                                    element.parentNode.removeChild(element);
+                                                } else {
+                                                    console.error("Element not found.");
+                                                }
+                                            }
+                                        </script> --}}
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

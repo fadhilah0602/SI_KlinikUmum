@@ -61,51 +61,59 @@
             </li>
         </ul>
     </section>
-   
+
     <section id="content">
         <main>
             <ul class="box-info">
                 <li>
                     <span class="text">
-                    <div class="header">
-                    <h4> Edit Pasien</h4>           
-                    </div>
-                    <div class="form-group">
-                <label for="name">Nama:</label>
-                <input type="text" id="name" name="name">
-            </div>
-            <div class="form-group">
-                <label for="nip">Nip:</label>
-                <input type="number" id="nip" name="nip">
-            </div>
-            <div class="form-group">
-                <label for="spesialis">Spesialis:</label>
-                <input type="text" id="spesialis" name="spesialis"></input>
-            </div>
-            <div class="form-group">
-                <label for="nohp">No Hp:</label>
-                <input type="text" id="nohp" name="nohp"></input>
-            </div>
-            
-            <button type="button" onclick="goToNextPage()">Submit</button>
+                        <div class="header">
+                            <h4> Edit Pasien</h4>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Nama:</label>
+                            <input type="text" id="name" name="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="tempat_lahir">Tempat Lahir:</label>
+                            <input type="number" id="tempat_lahir" name="tempat_lahir">
+                        </div>
+                        <div class="form-group">
+                            <label for="tgl_lahir">Tanggal Lahir:</label>
+                            <input type="date" id="tgl_lahir" name="tgl_lahir"></input>
+                        </div>
+                        <div class="form-group">
+                            <label for="gender">Jenis Kelamin:</label>
+                            <input type="text" id="gender" name="gender"></input>
+                        </div>
+                        <div class="form-group">
+                            <label for="alamat">Alamat:</label>
+                            <input type="text" id="alamat" name="alamat"></input>
+                        </div>
+                        <div class="form-group">
+                            <label for="nohp">No Hp:</label>
+                            <input type="text" id="nohp" name="nohp"></input>
+                        </div>
 
-            <script>
-              function goToNextPage() {
-                    // Gantilah URL atau path sesuai kebutuhan
-                     window.location.href = "adminpasien";
-                      }
-            </script>
-        </form>
-        </div>
-        </li>
-        </ul>   
-        </body>
-        </li>
-       </ul>   
-    </section>
-    <!-- CONTENT -->
+                        <button type="submit">Submit</button>
 
-    <script src="script.js"></script>
+                        {{-- <script>
+                            function goToNextPage() {
+                                // Gantilah URL atau path sesuai kebutuhan
+                                window.location.href = "adminpasien";
+                            }
+                        </script> --}}
+                        </form>
+                        </div>
+                </li>
+            </ul>
+</body>
+</li>
+</ul>
+</section>
+<!-- CONTENT -->
+
+<script src="script.js"></script>
 </body>
 
 </html>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -62,7 +61,7 @@
             </li>
         </ul>
     </section>
-   
+
     <section id="content">
         <main>
             <ul class="box-info">
@@ -72,52 +71,52 @@
                         <!-- <h3>Hi, Admin 1</h3>
                         <p>Admin 1 Klinik Dr.Zul</p>
                     </span> -->
-                    <div class="header">
-                    <h4> Tambah Data Dokter</h4>           
-                    </div>
-                    <div class="form-group">
-                <label for="name">Nama:</label>
-                <input type="text" id="name" name="name">
-            </div>
-            <div class="form-group">
-                <label for="nip">Nip:</label>
-                <input type="number" id="nip" name="nip">
-            </div>
-            <div class="form-group">
-                <label for="spesialis">Spesialis:</label>
-                <input type="text" id="spesialis" name="spesialis"></input>
-            </div>
-            <div class="form-group">
-                <label for="nohp">No Hp:</label>
-                <input type="text" id="nohp" name="nohp"></input>
-            </div>
-            
-            <button type="button" onclick="goToNextPage()">Submit</button>
+                        <div class="header">
+                            <h4> Tambah Data Dokter</h4>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Nama:</label>
+                            <input type="text" id="name" name="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="nip">Nip:</label>
+                            <input type="number" id="nip" name="nip">
+                        </div>
+                        <div class="form-group">
+                            <label for="spesialis">Spesialis:</label>
+                            <input type="text" id="spesialis" name="spesialis"></input>
+                        </div>
+                        <div class="form-group">
+                            <label for="nohp">No Hp:</label>
+                            <input type="text" id="nohp" name="nohp"></input>
+                        </div>
 
-            <script>
-              function goToNextPage() {
-                    // Gantilah URL atau path sesuai kebutuhan
-                     window.location.href = "admindokter";
-                      }
-            </script>
-        </form>
-    </div>
-                </li>
-            </ul>   
-      
-           
-</body>
-                </li>
+                        <button type="submit">Submit</button>
 
+                        {{-- <script>
+                            function goToNextPage() {
+                                // Gantilah URL atau path sesuai kebutuhan
+                                window.location.href = "admindokter";
+                            }
+                        </script> --}}
+                        </form>
+                        </div>
+                </li>
             </ul>
-            
-         
-    </section>
-    <!-- CONTENT -->
 
-    
 
-    <script src="script.js"></script>
+</body>
+</li>
+
+</ul>
+
+
+</section>
+<!-- CONTENT -->
+
+
+
+<script src="script.js"></script>
 </body>
 
 </html>

@@ -40,6 +40,11 @@ Route::get('/signup', function () {
 // ========================================
 
 
+Route::get('/adminpasien', [PasienController::class, 'home']);
+Route::get('/add-pasien', [PasienController::class, 'create']);
+Route::post('/add-pasien', [PasienController::class, 'store']);
+Route::delete('users/{id}', function ($id) {
+});
 
 Route::get('/adminhome', function () {
     return view('/admin/home');
@@ -49,21 +54,22 @@ Route::get('/adminprofile', function () {
     return view('/admin/profile');
 });
 
-Route::get('/adminpasien', function () {
-    return view('admin/pasien');
-});
+// Route::get('/adminpasien', function () {
+//     return view('admin/pasien');
+// });
 
 Route::get('/admindokter', function () {
     return view('/admin/dokter');
 });
 
-Route::get('/createdokter', function () {
-    return view('/admin/createdokter');
-});
+// Route::get('/createdokter', function () {
+//     return view('/admin/createdokter');
+// });
+Route::get('/createpasien', [PasienController::class, 'create']);
 
-Route::get('/createpasien', function () {
-    return view('/admin/createpasien');
-});
+// Route::get('/createpasien', function () {
+//     return view('/admin/createpasien');
+// });
 
 Route::get('/editpasien', function () {
     return view('/admin/editpasien');
@@ -118,20 +124,20 @@ Route::post('/user', 'App\Http\Controllers\UserController@update')->name('user.u
 Route::any('/user/delete/{id}', 'App\Http\Controllers\UserController@destroy');
 
 // admin
-Route::get('/admin', 'App\Http\Controllers\AdminController@index')->name('admin.index');
-Route::get('/admin/create', 'App\Http\Controllers\AdminController@create')->name('admin.create');
-Route::post('/admin/store', 'App\Http\Controllers\AdminController@store')->name('admin.store');
-Route::get('/admin/edit/{id}', 'App\Http\Controllers\AdminController@edit')->name('admin.edit');
-Route::post('/admin', 'App\Http\Controllers\AdminController@update')->name('admin.update');
-Route::any('/admin/delete/{id}', 'App\Http\Controllers\AdminController@destroy');
+// Route::get('/admin', 'App\Http\Controllers\AdminController@home')->name('admin.home');
+// Route::get('/admin/create', 'App\Http\Controllers\AdminController@create')->name('admin.createpasien');
+// Route::post('/admin/store', 'App\Http\Controllers\AdminController@store')->name('admin.store');
+// Route::get('/admin/edit/{id}', 'App\Http\Controllers\AdminController@edit')->name('admin.edit');
+// Route::post('/admin', 'App\Http\Controllers\AdminController@update')->name('admin.update');
+// Route::any('/admin/delete/{id}', 'App\Http\Controllers\AdminController@destroy');
 
 // pasien
-Route::get('/pasien', 'App\Http\Controllers\PasienController@index')->name('pasien.index');
-Route::get('/pasien/create', 'App\Http\Controllers\PasienController@create')->name('pasien.create');
-Route::post('/pasien', 'App\Http\Controllers\PasienController@store')->name('pasien.store');
-Route::get('/pasien/edit/{id}', 'App\Http\Controllers\PasienController@edit')->name('pasien.edit');
-Route::post('/pasien', 'App\Http\Controllers\PasienController@update')->name('pasien.update');
-Route::any('/pasien/delete/{id}', 'App\Http\Controllers\PasienController@destroy');
+// Route::get('/pasien', 'App\Http\Controllers\PasienController@home')->name('pasien.home');
+// Route::get('/pasien/create', 'App\Http\Controllers\PasienController@create')->name('pasien.createpasien');
+// Route::post('/pasien', 'App\Http\Controllers\PasienController@store')->name('pasien.store');
+// Route::get('/pasien/edit/{id}', 'App\Http\Controllers\PasienController@edit')->name('pasien.edit');
+// Route::post('/pasien', 'App\Http\Controllers\PasienController@update')->name('pasien.update');
+// Route::any('/pasien/delete/{id}', 'App\Http\Controllers\PasienController@destroy');
 
 // dokter
 Route::get('/dokter', 'App\Http\Controllers\DokterController@index')->name('dokter.index');

@@ -9,18 +9,19 @@ use App\Models\User;
 
 class PasienController extends Controller
 {
-    public function index()
+    public function home()
     {
-        $pasien = Pasien::all();
-        return view('pasien.index')->with('pasiens',$pasien);
+        $pasiens = Pasien::all();
+        return view('admin.pasien', compact('pasiens'));
     }
 
     public function create()
     {
-        $pasien = Pasien::select('user_id','name','tempat_lahir','tgl_lahir','gender','alamat','no_telp')
-                        ->join('users','pasiens.user_id','users.id')
-                        ->get();
-        return view('pasien.create');
+        // $pasiens = Pasien::select('user_id', 'name', 'tempat_lahir', 'tgl_lahir', 'gender', 'alamat', 'no_telp')
+        //     // ->join('users', 'pasiens.user_id', 'users.id')
+        //     ->get();
+        $pasiens = Pasien::all();
+        return view('admin.createpasien', compact('pasiens'));
     }
 
     public function store(Request $request)
@@ -31,10 +32,10 @@ class PasienController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            
+
         ]);
 
-        $pasien = Pasien::create([
+        $pasiens = Pasien::create([
             'user_id' =>  $user->id,
             'name' => $request->name,
             'tempat_lahir' => $request->tempat_lahir,
@@ -43,26 +44,26 @@ class PasienController extends Controller
             'alamat' => $request->alamat,
             'no_telp' => $request->no_telp
         ]);
-        return redirect('/pasien')->with('success', 'Pasien created successfully.');
+        return redirect('/adminpasien')->with('success', 'Pasien created successfully.');
     }
 
     public function edit($id)
     {
-        $user = User::where('id',$id)->first();
-        $pasien = Pasien::where('user_id',$id)->first();
+        $user = User::where('id', $id)->first();
+        $pasien = Pasien::where('user_id', $id)->first();
         return view("pasien.edit")
-            ->with('users',$user)
-            ->with('pasiens',$pasien);
+            ->with('users', $user)
+            ->with('pasiens', $pasien);
     }
 
     public function update(Request $request, $id)
     {
-        $user = User::where('id',$id)->update([
+        $user = User::where('id', $id)->update([
             'email' => $request->email,
             'name' => $request->name,
         ]);
 
-        $pasien = Pasien::where('user_id',$id)->update([
+        $pasien = Pasien::where('user_id', $id)->update([
             'user_id' =>  $user->id,
             'name' => $request->name,
             'tempat_lahir' => $request->tempat_lahir,
@@ -70,16 +71,16 @@ class PasienController extends Controller
             'gender' => $request->gender,
             'alamat' => $request->alamat,
             'no_telp' => $request->no_telp
-            ]);
+        ]);
 
         $pasien->update($request->all());
-        return redirect('/pasien')->with('success', 'Pasien updated successfully.');
+        return redirect('/adminpasien')->with('success', 'Pasien updated successfully.');
     }
 
     public function destroy($id)
     {
         $pasien = Pasien::find($id);
         $id->delete();
-        return redirect('/pasien')->with('success', 'Pasien deleted successfully.');
+        return redirect('/adminpasien')->with('success', 'Pasien deleted successfully.');
     }
 }

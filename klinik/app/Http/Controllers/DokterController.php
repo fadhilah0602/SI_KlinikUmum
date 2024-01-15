@@ -9,18 +9,18 @@ use App\Models\User;
 
 class DokterController extends Controller
 {
-    public function index()
+    public function home()
     {
         $dokter = Dokter::all();
-        return view('dokter.index')->with('dokters',$dokter);
+        return view('admindokter.home')->with('dokters', $dokter);
     }
 
     public function create()
     {
-        $dokter = Dokter::select('user_id','nip','name','tempat_lahir','tgl_lahir','gender','alamat','no_telp','spesialis')
-                        ->join('users','dokters.user_id','users.id')
-                        ->get();
-        return view('dokter.create');
+        $dokter = Dokter::select('user_id', 'nip', 'name', 'tempat_lahir', 'tgl_lahir', 'gender', 'alamat', 'no_telp', 'spesialis')
+            ->join('users', 'dokters.user_id', 'users.id')
+            ->get();
+        return view('dokter.createdokter');
     }
 
     public function store(Request $request)
@@ -31,7 +31,7 @@ class DokterController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            
+
         ]);
 
         $dokter = Dokter::create([
@@ -45,26 +45,26 @@ class DokterController extends Controller
             'no_telp' => $request->no_telp,
             'spesialis' => $request->spesialis
         ]);
-        return redirect('/dokter')->with('success', 'Dokter created successfully.');
+        return redirect('/admindokter')->with('success', 'Dokter created successfully.');
     }
 
     public function edit($id)
     {
-        $user = User::where('id',$id)->first();
-        $dokter = Dokter::where('user_id',$id)->first();
+        $user = User::where('id', $id)->first();
+        $dokter = Dokter::where('user_id', $id)->first();
         return view("dokter.edit")
-            ->with('users',$user)
-            ->with('dokters',$dokter);
+            ->with('users', $user)
+            ->with('dokters', $dokter);
     }
 
     public function update(Request $request, $id)
     {
-        $user = User::where('id',$id)->update([
+        $user = User::where('id', $id)->update([
             'email' => $request->email,
             'name' => $request->name,
         ]);
 
-        $dokter = Dokter::where('user_id',$id)->update([
+        $dokter = Dokter::where('user_id', $id)->update([
             'user_id' =>  $user->id,
             'nip' => $request->nip,
             'name' => $request->name,
@@ -74,7 +74,7 @@ class DokterController extends Controller
             'alamat' => $request->alamat,
             'no_telp' => $request->no_telp,
             'spesialis' => $request->spesialis
-            ]);
+        ]);
 
         $dokter->update($request->all());
         return redirect('/dokter')->with('success', 'Dokter updated successfully.');

@@ -112,7 +112,7 @@ Route::any('/user/delete/{id}', 'App\Http\Controllers\UserController@destroy');
 // admin
 Route::get('/admin', 'App\Http\Controllers\AdminController@index')->name('admin.index');
 Route::get('/admin/create', 'App\Http\Controllers\AdminController@create')->name('admin.create');
-Route::post('/admin', 'App\Http\Controllers\AdminController@store')->name('admin.store');
+Route::post('/admin/store', 'App\Http\Controllers\AdminController@store')->name('admin.store');
 Route::get('/admin/edit/{id}', 'App\Http\Controllers\AdminController@edit')->name('admin.edit');
 Route::post('/admin', 'App\Http\Controllers\AdminController@update')->name('admin.update');
 Route::any('/admin/delete/{id}', 'App\Http\Controllers\AdminController@destroy');

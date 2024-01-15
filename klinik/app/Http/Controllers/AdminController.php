@@ -17,9 +17,9 @@ class AdminController extends Controller
 
     public function create()
     {
-        $admin = Admin::select('name')
-                        ->join('users','admins.user_id','users.id')
-                        ->get();
+        $admin = Admin::select('name');
+                        // ->join('users','admins.user_id','users.id')
+                        // ->get();
         return view('admin.create');
     }
 
@@ -27,15 +27,15 @@ class AdminController extends Controller
     {
         // Admin::create($request->all());
 
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
+        // $user = User::create([
+        //     'name' => $request->name,
+        //     'email' => $request->email,
+        //     'password' => Hash::make($request->password),
             
-        ]);
+        // ]);
 
         $admin = Admin::create([
-            'user_id' =>  $user->id,
+            // 'user_id' =>  $user->id,
             'name' => $request->name
         ]);
         return redirect('/admin')->with('success', 'Admin created successfully.');

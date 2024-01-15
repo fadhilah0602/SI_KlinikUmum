@@ -16,14 +16,14 @@
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label for="nama_pasien">Nama </label>
-                                        <input type="text" class="form-control" id="name" name="user"
+                                        <input type="text" class="form-control" id="name" name="name"
                                             placeholder="Input Nama Pasien">
                                     </div>
-                                    <div class="form-group">
+                                    {{-- <div class="form-group">
                                         <label for="dokter">Dokter </label>
                                         <input type="select" class="form-control" id="dokter" name="dokter"
                                             placeholder="Pilih Dokter">
-                                    </div>
+                                    </div> --}}
                                 </div>
                                 <!-- /.card-body -->
 

@@ -11,18 +11,18 @@ class DokterController extends Controller
 {
     public function home()
     {
-        $dokter = Dokter::all();
-        return view('admindokter.home')->with('dokters', $dokter);
+        $dokters = Dokter::all();
+        return view('admin.dokter', compact('dokters'));
     }
 
     public function create()
     {
-        $dokter = Dokter::select('user_id', 'nip', 'name', 'tempat_lahir', 'tgl_lahir', 'gender', 'alamat', 'no_telp', 'spesialis')
-            ->join('users', 'dokters.user_id', 'users.id')
-            ->get();
-        return view('dokter.createdokter');
+        // $pasiens = Pasien::select('user_id', 'name', 'tempat_lahir', 'tgl_lahir', 'gender', 'alamat', 'no_telp')
+        //     // ->join('users', 'pasiens.user_id', 'users.id')
+        //     ->get();
+        $dokters = Dokter::all();
+        return view('admin.createdokter', compact('dokters'));
     }
-
     public function store(Request $request)
     {
         // Pasien::create($request->all());

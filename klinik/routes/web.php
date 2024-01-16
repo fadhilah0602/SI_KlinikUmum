@@ -46,6 +46,12 @@ Route::post('/add-pasien', [PasienController::class, 'store']);
 Route::delete('users/{id}', function ($id) {
 });
 
+Route::get('/admindokter', [DokterController::class, 'home']);
+Route::get('/add-dokter', [DokterController::class, 'create']);
+Route::post('/add-dokter', [DokterController::class, 'store']);
+Route::delete('users/{id}', function ($id) {
+});
+
 Route::get('/adminhome', function () {
     return view('/admin/home');
 });
@@ -58,15 +64,15 @@ Route::get('/adminprofile', function () {
 //     return view('admin/pasien');
 // });
 
-Route::get('/admindokter', function () {
-    return view('/admin/dokter');
-});
+// Route::get('/admindokter', function () {
+//     return view('/admin/dokter');
+// });
 
 // Route::get('/createdokter', function () {
 //     return view('/admin/createdokter');
 // });
 Route::get('/createpasien', [PasienController::class, 'create']);
-
+Route::get('/createdokter', [PasienController::class, 'create']);
 // Route::get('/createpasien', function () {
 //     return view('/admin/createpasien');
 // });
@@ -74,6 +80,19 @@ Route::get('/createpasien', [PasienController::class, 'create']);
 Route::get('/editpasien', function () {
     return view('/admin/editpasien');
 });
+
+Route::get('/poli', function () {
+    return view('/admin/poli');
+});
+
+Route::get('/jadwaldokter', function () {
+    return view('/admin/jadwaldokter');
+});
+
+Route::get('/user', function () {
+    return view('/admin/user');
+});
+
 // ====================================================
 // route dokter
 // ====================================================

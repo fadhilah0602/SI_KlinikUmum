@@ -48,6 +48,26 @@
                 </a>
             </li>
             <li>
+                <a href="/poli">
+                <i class='bx bxs-layout'></i>
+                    <span class="text">Poli</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="/jadwaldokter">
+                <i class='bx bx-edit'></i>
+                    <span class="text">Jadwal Dokter</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="/user">
+                <i class='bx bxs-user-detail'></i>
+                    <span class="text">User</span>
+                </a>
+            </li>
+            <li>
             </li>
         </ul>
         <ul class="side-menu">
@@ -66,57 +86,60 @@
         <main>
             <ul class="box-info">
                 <li>
-                    <!-- <i class='bx bx-face'></i> -->
-                    <span class="text">
-                        <!-- <h3>Hi, Admin 1</h3>
-                        <p>Admin 1 Klinik Dr.Zul</p>
-                    </span> -->
+                    <form method="POST" action="{{ url('add-dokter') }}">
+                        @csrf
                         <div class="header">
                             <h4> Tambah Data Dokter</h4>
+                        </div>
+                        <div class="form-group">
+                            <label for="nip">Nip:</label>
+                            <input type="text" id="nip" name="nip">
                         </div>
                         <div class="form-group">
                             <label for="name">Nama:</label>
                             <input type="text" id="name" name="name">
                         </div>
                         <div class="form-group">
-                            <label for="nip">Nip:</label>
-                            <input type="number" id="nip" name="nip">
+                            <label for="tempat_lahir">Tempat Lahir:</label>
+                            <input type="text" id="tempat_lahir" name="tempat_lahir">
+                        </div>
+                        <div class="form-group">
+                            <label for="tgl_lahir">Tanggal Lahir:</label>
+                            <input type="date" id="tgl_lahir" name="tgl_lahir"></input>
+                        </div>
+                        <div class="form-group">
+                            <label for="gender">Jenis Kelamin:</label>
+                            <input type="text" id="gender" name="gender"></input>
+                        </div>
+                        <div class="form-group">
+                            <label for="alamat">Alamat:</label>
+                            <input type="text" id="alamat" name="alamat"></input>
+                        </div>
+                        <div class="form-group">
+                            <label for="no_telp">No Hp:</label>
+                            <input type="text" id="no_telp" name="no_telp"></input>
                         </div>
                         <div class="form-group">
                             <label for="spesialis">Spesialis:</label>
                             <input type="text" id="spesialis" name="spesialis"></input>
                         </div>
-                        <div class="form-group">
-                            <label for="nohp">No Hp:</label>
-                            <input type="text" id="nohp" name="nohp"></input>
-                        </div>
 
                         <button type="submit">Submit</button>
 
                         {{-- <script>
-                            function goToNextPage() {
-                                // Gantilah URL atau path sesuai kebutuhan
-                                window.location.href = "admindokter";
-                            }
-                        </script> --}}
-                        </form>
-                        </div>
+                                function goToNextPage() {
+                                    // Gantilah URL atau path sesuai kebutuhan
+                                    window.location.href = "admindokter";
+                                }
+                            </script> --}}
+                    </form>
                 </li>
             </ul>
 
-
-</body>
-</li>
-
-</ul>
+    </section>
 
 
-</section>
-<!-- CONTENT -->
-
-
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

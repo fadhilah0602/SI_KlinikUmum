@@ -41,7 +41,7 @@
                     <span class="text">Pasien</span>
                 </a>
             </li>
-            <li class="active">
+            <li>
                 <a href="/admindokter">
                     <i class='bx bxs-user-plus'></i>
                     <span class="text">Dokter</span>
@@ -54,7 +54,7 @@
                 </a>
             </li>
 
-            <li>
+            <li class="active">
                 <a href="/jadwaldokter">
                 <i class='bx bx-edit'></i>
                     <span class="text">Jadwal Dokter</span>
@@ -91,19 +91,22 @@
             <div class="table-data">
                 <div class="order">
                     <div class="head">
-                        <h3>Dokter</h3>
-                       
-                        <form>
+                        <h3>Jadwal Dokter</h3>
+                        {{-- <button class="Button">Jadwal Dokter</button> --}}
+                        <!-- <form>
                             <input type="search" id="searchBox" name="search" placeholder="Search...">
                             <input type="submit" value="Search">
-                        </form>
-                       
-                        <button type="button" onclick="goToNextPage()">Tambah Dokter</button>
+                        </form> -->
+                        <!-- <button class="bx bx-button">
+                            <a href="" class="btn btn-sm btn-primary" style="float: right">
+                                Tambah Data
+                            </a> -->
+                        <button type="button" onclick="goToNextPage()">Tambah Jadwal Dokter</button>
 
                         <script>
                             function goToNextPage() {
                                 // Gantilah URL atau path sesuai kebutuhan
-                                window.location.href = "createdokter";
+                                window.location.href = "createruang";
                             }
                         </script>
                         <!-- </button> -->
@@ -115,15 +118,9 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Nip</th>
-                                <th>Nama</th>
-                                <th>Tempat Lahir</th>
-                                <th>Tanggal Lahir</th>
-                                <th>Jenis Kelamin</th>
-                                <th>Alamat</th>
-                                <th>No Telp</th>
-                                <th>Spesialis</th>
-                                <th>Aksi</th>
+                                <th>Nama Dokter</th>
+                                <th>Hari</th>
+                                <th>Waktu</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -131,23 +128,17 @@
                                 $no = 1;
                             @endphp
 
-                            @foreach ($dokters as $dokters)
+                           
                                 <tr>
-                                    <td>{{ $no++ }}</td>
-                                    <td>{{ $dokters->nip }}</td>
-                                    <td>{{ $dokters->name }}</td>
-                                    <td>{{ $dokters->tempat_lahir }}</td>
-                                    <td>{{ $dokters->tgl_lahir }}</td>
-                                    <td>{{ $dokters->gender }}</td>
-                                    <td>{{ $dokters->alamat }}</td>
-                                    <td>{{ $dokters->no_telp }}</td>
+                                    
+                                    
                                     <td class="action-buttons">
                                         <button type="button" onclick="goToPageEdit()">Edit</button>
 
                                         <script>
                                             function goToPageEdit() {
                                                 // Gantilah URL atau path sesuai kebutuhan
-                                                window.location.href = "editdokter";
+                                                window.location.href = "editjadwaldokter";
                                             }
                                         </script>
 
@@ -167,7 +158,7 @@
                                         </script> --}}
                                     </td>
                                 </tr>
-                            @endforeach
+                          
                         </tbody>
                     </table>
                 </div>

@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PasienController;
 use App\Http\Controllers\DokterController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\SignUpController;
 
 /*
 |--------------------------------------------------------------------------
@@ -142,6 +143,9 @@ Route::get('/pasienriwayat', function () {
 //login multi user
 Route::get('/', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'login']);
+
+//sign up
+Route::post('/signup', [SignUpController::class, 'signup']);
 
 // Route::get('/submitform', function () {
 //     return view('frontend/pasien/');

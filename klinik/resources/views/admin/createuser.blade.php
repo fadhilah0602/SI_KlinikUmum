@@ -105,7 +105,12 @@
                         </div>
                         <div class="form-group">
                             <label for="role">Role:</label>
-                            <input type="text" id="role" name="role"></input>
+                            {{-- <input type="text" id="role" name="role"></input> --}}
+                            <select class="custom-select" id="role" name="role">
+                                <option value="Admin">Admin</option>
+                                <option value="Pasien">Pasien</option>
+                                <option value="Dokter">Dokter</option>
+                            </select>
                         </div>
                         
 

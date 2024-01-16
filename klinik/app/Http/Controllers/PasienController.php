@@ -34,6 +34,9 @@ class PasienController extends Controller
             'password' => Hash::make($request->password),
 
         ]);
+        // $user = User::create([
+        //     'id' => $request->id
+        // ]);
 
         $pasiens = Pasien::create([
             'user_id' =>  $user->id,
@@ -49,21 +52,21 @@ class PasienController extends Controller
 
     public function edit($id)
     {
-        $user = User::where('id', $id)->first();
+        // $user = User::where('id', $id)->first();
         $pasien = Pasien::where('user_id', $id)->first();
         return view("pasien.edit")
-            ->with('users', $user)
+            // ->with('users', $user)
             ->with('pasiens', $pasien);
     }
 
     public function update(Request $request, $id)
     {
         $user = User::where('id', $id)->update([
-            'email' => $request->email,
-            'name' => $request->name,
+            // 'email' => $request->email,
+            // 'name' => $request->name,
         ]);
 
-        $pasien = Pasien::where('user_id', $id)->update([
+        $pasien = Pasien::where('pasien_id', $id)->update([
             'user_id' =>  $user->id,
             'name' => $request->name,
             'tempat_lahir' => $request->tempat_lahir,

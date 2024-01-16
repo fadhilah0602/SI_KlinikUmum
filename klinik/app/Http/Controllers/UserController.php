@@ -8,10 +8,15 @@ use App\Models\User;
 
 class UserController extends Controller
 {
-    public function index()
+    // public function index()
+    // {
+    //     $user = User::all();
+    //     return view('admin.user')->with('users',$user);
+    // }
+    public function home()
     {
-        $user = User::all();
-        return view('admin.user')->with('users',$user);
+        $users = User::all();
+        return view('admin.user', compact('users'));
     }
 
     public function create()
@@ -28,7 +33,7 @@ class UserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'email_verified_at' => $request->email_veridied_at,
-            'password' => Hash::make($request->password),
+            'password' => bcrypt($request->password),
             'role' => $request->role
             
         ]);

@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PasienController;
 use App\Http\Controllers\DokterController;
+use App\Http\Controllers\Auth\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -138,6 +139,10 @@ Route::get('/pasienriwayat', function () {
     return view('/pasien/riwayat');
 });
 
+//login multi user
+Route::get('/', [LoginController::class, 'index']);
+Route::post('/login', [LoginController::class, 'login']);
+
 // Route::get('/submitform', function () {
 //     return view('frontend/pasien/');
 // });
@@ -145,12 +150,12 @@ Route::get('/pasienriwayat', function () {
 
 // backend
 // user
-Route::get('/user', 'App\Http\Controllers\UserController@index')->name('user.index');
-Route::get('/user/create', 'App\Http\Controllers\UserController@create')->name('user.create');
-Route::post('/user', 'App\Http\Controllers\UserController@store')->name('user.store');
-Route::get('/user/edit/{id}', 'App\Http\Controllers\UserController@edit')->name('user.edit');
-Route::post('/user', 'App\Http\Controllers\UserController@update')->name('user.update');
-Route::any('/user/delete/{id}', 'App\Http\Controllers\UserController@destroy');
+// Route::get('/user', 'App\Http\Controllers\UserController@index')->name('user.index');
+// Route::get('/user/create', 'App\Http\Controllers\UserController@create')->name('user.create');
+// Route::post('/user', 'App\Http\Controllers\UserController@store')->name('user.store');
+// Route::get('/user/edit/{id}', 'App\Http\Controllers\UserController@edit')->name('user.edit');
+// Route::post('/user', 'App\Http\Controllers\UserController@update')->name('user.update');
+// Route::any('/user/delete/{id}', 'App\Http\Controllers\UserController@destroy');
 
 // admin
 // Route::get('/admin', 'App\Http\Controllers\AdminController@home')->name('admin.home');
@@ -169,9 +174,9 @@ Route::any('/user/delete/{id}', 'App\Http\Controllers\UserController@destroy');
 // Route::any('/pasien/delete/{id}', 'App\Http\Controllers\PasienController@destroy');
 
 // dokter
-Route::get('/dokter', 'App\Http\Controllers\DokterController@index')->name('dokter.index');
-Route::get('/dokter/create', 'App\Http\Controllers\DokterController@create')->name('dokter.create');
-Route::post('/dokter', 'App\Http\Controllers\DokterController@store')->name('dokter.store');
-Route::get('/dokter/edit/{id}', 'App\Http\Controllers\DokterController@edit')->name('dokter.edit');
-Route::post('/dokter', 'App\Http\Controllers\DokterController@update')->name('dokter.update');
-Route::any('/dokter/delete/{id}', 'App\Http\Controllers\DokterController@destroy');
+// Route::get('/dokter', 'App\Http\Controllers\DokterController@index')->name('dokter.index');
+// Route::get('/dokter/create', 'App\Http\Controllers\DokterController@create')->name('dokter.create');
+// Route::post('/dokter', 'App\Http\Controllers\DokterController@store')->name('dokter.store');
+// Route::get('/dokter/edit/{id}', 'App\Http\Controllers\DokterController@edit')->name('dokter.edit');
+// Route::post('/dokter', 'App\Http\Controllers\DokterController@update')->name('dokter.update');
+// Route::any('/dokter/delete/{id}', 'App\Http\Controllers\DokterController@destroy');

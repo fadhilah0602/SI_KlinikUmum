@@ -16,10 +16,11 @@
   <h2>Sign In</h2>
 
   <div class="login-form">
-    <form>
+    <form method="POST" action="{{ url('login') }}">
+      @csrf
       <div class="form-group">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
+        <label for="username">Email:</label>
+        <input type="text" id="email" name="email" required>
       </div>
 
       <div class="form-group">

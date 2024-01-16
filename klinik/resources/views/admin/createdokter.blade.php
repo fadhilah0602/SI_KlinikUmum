@@ -99,7 +99,10 @@
                             <label for="name">Nama:</label>
                             <input type="text" id="name" name="name">
                         </div>
-                        
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email">
+                        </div>
                         <div class="form-group">
                             <label for="tempat_lahir">Tempat Lahir:</label>
                             <input type="text" id="tempat_lahir" name="tempat_lahir">

@@ -61,7 +61,7 @@
                 </a>
             </li>
 
-            <li  class="active">
+            <li class="active">
                 <a href="/user">
                 <i class='bx bxs-user-detail'></i>
                     <span class="text">User</span>
@@ -91,8 +91,16 @@
             <div class="table-data">
                 <div class="order">
                     <div class="head">
-                        <h3>User Klinik</h3>
-                       
+                        <h3>User</h3>
+                        {{-- <button class="Button">Tambah User</button> --}}
+                        <form>
+                            <input type="search" id="searchBox" name="search" placeholder="Search...">
+                            <input type="submit" value="Search">
+                        </form>
+                        <!-- <button class="bx bx-button">
+                            <a href="" class="btn btn-sm btn-primary" style="float: right">
+                                Tambah Data
+                            </a> -->
                         <button type="button" onclick="goToNextPage()">Tambah User</button>
 
                         <script>
@@ -110,10 +118,11 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>User</th>
+                                <th>Nama</th>
                                 <th>Email</th>
-                                <th>Password</th>
+                                <!-- <th>Password</th> -->
                                 <th>Role</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -121,10 +130,13 @@
                                 $no = 1;
                             @endphp
 
-                           
+                            @foreach ($users as $users)
                                 <tr>
-                                    
-                                    
+                                    <td>{{ $no++ }}</td>
+                                    <td>{{ $users->name }}</td>
+                                    <td>{{ $users->email }}</td>
+                                    <!-- <td>{{ $users->password }}</td> -->
+                                    <td>{{ $users->role }}</td>
                                     <td class="action-buttons">
                                         <button type="button" onclick="goToPageEdit()">Edit</button>
 
@@ -151,7 +163,7 @@
                                         </script> --}}
                                     </td>
                                 </tr>
-                          
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

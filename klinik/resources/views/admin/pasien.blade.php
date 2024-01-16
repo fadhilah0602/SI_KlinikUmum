@@ -151,7 +151,7 @@
                                             }
                                         </script>
 
-                                        <button onclick="deleteUser()">
+                                        <!-- <button onclick="deleteUser()">
                                             <i class="fas fa-trash-alt"></i> Hapus
                                         </button>
                                         {{-- <script>
@@ -164,7 +164,17 @@
                                                     console.error("Element not found.");
                                                 }
                                             }
-                                        </script> --}}
+                                        </script> --}} -->
+                                        <button type="button" class="delete-button" onclick="confirmDelete()">Delete</button>
+   
+                                        <script>
+                                            function confirmDelete() {
+                                            if (confirm("Are you sure you want to delete this data?")) {
+                                                    // Perform deletion logic here or redirect to a deletion script
+                                                    alert("Data deleted!"); // Replace this with your deletion logic
+                                                }
+                                            }
+                                        </script>
                                     </td>
                                 </tr>
                             @endforeach

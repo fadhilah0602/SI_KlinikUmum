@@ -90,10 +90,12 @@
                         <div class="header">
                             <h4> Edit Dokter</h4>
                         </div>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label for="nip">Nip:</label>
                             <input type="text" id="nip" name="nip">
-                        </div>
+                        </div> -->
+                        <label for="nip">Nip:</label>
+                        <input type="text" id="nip" name="nip" value="nip">
                         <div class="form-group">
                             <label for="name">Nama:</label>
                             <input type="text" id="name" name="name">

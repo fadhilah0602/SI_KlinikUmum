@@ -28,7 +28,7 @@
     <header>
         <!-- <h1>Check Kesehatanmu Hari Ini</h1>
         <h2>Di Klinik Dr. Zul</h2> -->
-        <img src="gambar.jpg" alt="Deskripsi Gambar">
+        <img src="img/a.jpeg" alt="Deskripsi Gambar">
     </header>
 
     <nav>

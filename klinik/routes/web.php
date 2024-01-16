@@ -88,7 +88,9 @@ Route::get('/createuser', [UserController::class, 'create']);
 Route::get('/editpasien', function () {
     return view('/admin/editpasien');
 });
-
+Route::get('/editdokter', function () {
+    return view('/admin/editdokter');
+});
 Route::get('/poli', function () {
     return view('/admin/poli');
 });

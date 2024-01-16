@@ -17,15 +17,13 @@ class DokterController extends Controller
 
     public function create()
     {
-        // $pasiens = Pasien::select('user_id', 'name', 'tempat_lahir', 'tgl_lahir', 'gender', 'alamat', 'no_telp')
-        //     // ->join('users', 'pasiens.user_id', 'users.id')
-        //     ->get();
+        
         $dokters = Dokter::all();
         return view('admin.createdokter', compact('dokters'));
     }
     public function store(Request $request)
     {
-        // Pasien::create($request->all());
+        
 
         $user = User::create([
             'name' => $request->name,

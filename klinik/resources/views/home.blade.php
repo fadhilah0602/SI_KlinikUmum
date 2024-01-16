@@ -41,7 +41,15 @@
     <section id="home">
         <h2>Medical Service That You Can Trust</h2>
         <p>Ayo, check kesehatanmu dengan dokter kami</p>
-        <button>Get Started</button>
+        <!-- <button>Get Started</button> -->
+        <button type="button" onclick="goToNextPage()">Get Started</button>
+
+                        <script>
+                            function goToNextPage() {
+                                // Gantilah URL atau path sesuai kebutuhan
+                                window.location.href = "login";
+                            }
+                            </script>
         
     </section>
 

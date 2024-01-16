@@ -91,7 +91,7 @@
             <div class="table-data">
                 <div class="order">
                     <div class="head">
-                        <h3>Poli Klinik</h3>
+                        <h3>User Klinik</h3>
                        
                         <button type="button" onclick="goToNextPage()">Tambah User</button>
 

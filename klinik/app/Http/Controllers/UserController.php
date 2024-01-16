@@ -11,13 +11,13 @@ class UserController extends Controller
     public function index()
     {
         $user = User::all();
-        return view('user.index')->with('users',$user);
+        return view('admin.user')->with('users',$user);
     }
 
     public function create()
     {
         $user = User::select('name')->get();
-        return view('user.create');
+        return view('admin.createuser');
     }
 
     public function store(Request $request)

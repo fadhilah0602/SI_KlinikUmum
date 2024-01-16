@@ -86,10 +86,9 @@
         <main>
             <ul class="box-info">
                 <li>
-                    <form method="POST" action="{{ url('add-dokter') }}">
-                        @csrf
+                    <span class="text">
                         <div class="header">
-                            <h4> Tambah Data Dokter</h4>
+                            <h4> Edit Dokter</h4>
                         </div>
                         <div class="form-group">
                             <label for="nip">Nip:</label>
@@ -99,10 +98,9 @@
                             <label for="name">Nama:</label>
                             <input type="text" id="name" name="name">
                         </div>
-                        
                         <div class="form-group">
                             <label for="tempat_lahir">Tempat Lahir:</label>
-                            <input type="text" id="tempat_lahir" name="tempat_lahir">
+                            <input type="number" id="tempat_lahir" name="tempat_lahir">
                         </div>
                         <div class="form-group">
                             <label for="tgl_lahir">Tanggal Lahir:</label>
@@ -117,29 +115,33 @@
                             <input type="text" id="alamat" name="alamat"></input>
                         </div>
                         <div class="form-group">
-                            <label for="no_telp">No Hp:</label>
-                            <input type="text" id="no_telp" name="no_telp"></input>
+                            <label for="nohp">No Hp:</label>
+                            <input type="text" id="nohp" name="nohp"></input>
                         </div>
                         <div class="form-group">
                             <label for="spesialis">Spesialis:</label>
                             <input type="text" id="spesialis" name="spesialis"></input>
                         </div>
+
                         <button type="submit">Submit</button>
 
                         {{-- <script>
-                                function goToNextPage() {
-                                    // Gantilah URL atau path sesuai kebutuhan
-                                    window.location.href = "admindokter";
-                                }
-                            </script> --}}
-                    </form>
+                            function goToNextPage() {
+                                // Gantilah URL atau path sesuai kebutuhan
+                                window.location.href = "admindokter";
+                            }
+                        </script> --}}
+                        </form>
+                        </div>
                 </li>
             </ul>
+</body>
+</li>
+</ul>
+</section>
+<!-- CONTENT -->
 
-    </section>
-
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 
 </html>

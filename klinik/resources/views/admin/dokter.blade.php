@@ -92,12 +92,15 @@
                 <div class="order">
                     <div class="head">
                         <h3>Dokter</h3>
-                       
+                        {{-- <button class="Button">Tambah Data</button> --}}
                         <form>
                             <input type="search" id="searchBox" name="search" placeholder="Search...">
                             <input type="submit" value="Search">
                         </form>
-                       
+                        <!-- <button class="bx bx-button">
+                            <a href="" class="btn btn-sm btn-primary" style="float: right">
+                                Tambah Data
+                            </a> -->
                         <button type="button" onclick="goToNextPage()">Tambah Dokter</button>
 
                         <script>
@@ -141,6 +144,7 @@
                                     <td>{{ $dokters->gender }}</td>
                                     <td>{{ $dokters->alamat }}</td>
                                     <td>{{ $dokters->no_telp }}</td>
+                                    <td>{{ $dokters->spesialis }}</td>
                                     <td class="action-buttons">
                                         <button type="button" onclick="goToPageEdit()">Edit</button>
 

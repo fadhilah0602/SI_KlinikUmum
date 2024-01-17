@@ -96,6 +96,7 @@
                             <input type="text" id="name" name="name"> --}}
                             <label for="dokter_id">Pilih Dokter (Dokter):</label>
                                 <select name="dokter_id" id="dokter_id" class="custom-select">
+                                    <option value="">---Pilih Dokter---</option>
                                     @foreach($dokters as $dokter)   
                                         <option value="{{ $dokter->dokter_id }}">{{ $dokter->name }}</option>
                                     @endforeach

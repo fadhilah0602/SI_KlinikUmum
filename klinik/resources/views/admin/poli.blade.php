@@ -93,15 +93,6 @@
                 <div class="order">
                     <div class="head">
                         <h3>Poli Klinik</h3>
-                        {{-- <button class="Button">Tambah Poli</button> --}}
-                        <!-- <form>
-                            <input type="search" id="searchBox" name="search" placeholder="Search...">
-                            <input type="submit" value="Search">
-                        </form> -->
-                        <!-- <button class="bx bx-button">
-                            <a href="" class="btn btn-sm btn-primary" style="float: right">
-                                Tambah Data
-                            </a> -->
                         <button type="button" onclick="goToNextPage()">Tambah Poli</button>
 
                         <script>
@@ -110,10 +101,6 @@
                                 window.location.href = "createpoli";
                             }
                         </script>
-                        <!-- </button> -->
-
-                        {{-- <i class='bx bx-search'></i>
-                        <i class='bx bx-filter'></i> --}}
                     </div>
                     <table>
                         <thead>
@@ -125,17 +112,17 @@
                                 <th>Aksi</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        {{-- <tbody>
                             @php
                                 $no = 1;
                             @endphp
 
-                            @foreach ($ruangs as $ruang)
+                            @foreach ($ruangs as $ruangs)
                             <tr>
                                 <td>{{ $no++ }}</td>
-                                <td>{{ $ruang->dokter_id }}</td>
-                                <td>{{ $ruang->nama_ruangan }}</td>
-                                <td>{{ $ruang->jenis_ruangan }}</td>
+                                <td>{{ $ruangs->dokters->name }}</td>
+                                <td>{{ $ruangs->nama_ruangan }}</td>
+                                <td>{{ $ruangs->jenis_ruangan }}</td>
                                 <td class="action-buttons">
                                     <button type="button" onclick="goToPageEdit()">Edit</button>
 
@@ -145,21 +132,6 @@
                                             window.location.href = "editpasien";
                                         }
                                     </script>
-
-                                    <!-- <button onclick="deleteUser()">
-                                        <i class="fas fa-trash-alt"></i> Hapus
-                                    </button>
-                                    {{-- <script>
-                                        // Fungsi untuk menghapus elemen
-                                        function deleteUser() {
-                                            var element = document.getElementById("elementToBeDeleted");
-                                            if (element) {
-                                                element.parentNode.removeChild(element);
-                                            } else {
-                                                console.error("Element not found.");
-                                            }
-                                        }
-                                    </script> --}} -->
                                     <button type="button" class="delete-button" onclick="confirmDelete()">Delete</button>
 
                                     <script>
@@ -173,39 +145,8 @@
                                 </td>
                             </tr>
                             @endforeach
-
-                           
-                                {{-- <tr>
-                                    
-                                    
-                                    <td class="action-buttons">
-                                        <button type="button" onclick="goToPageEdit()">Edit</button>
-
-                                        <script>
-                                            function goToPageEdit() {
-                                                // Gantilah URL atau path sesuai kebutuhan
-                                                window.location.href = "editruang";
-                                            }
-                                        </script>
-
-                                        <button onclick="deleteUser()">
-                                            <i class="fas fa-trash-alt"></i> Hapus
-                                        </button>
-                                        <script>
-                                            // Fungsi untuk menghapus elemen
-                                            function deleteUser() {
-                                                var element = document.getElementById("elementToBeDeleted");
-                                                if (element) {
-                                                    element.parentNode.removeChild(element);
-                                                } else {
-                                                    console.error("Element not found.");
-                                                }
-                                            }
-                                        </script>
-                                    </td>
-                                </tr> --}}
                           
-                        </tbody>
+                        </tbody> --}}
                     </table>
                 </div>
             </div>

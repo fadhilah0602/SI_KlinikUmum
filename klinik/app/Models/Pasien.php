@@ -10,7 +10,7 @@ class Pasien extends Model
     use HasFactory;
     protected $table = 'pasiens';
 
-    protected $primarykey = 'pasien_id';
+    protected $primaryKey = 'pasien_id';
 
     protected $fillable = [
         'user_id',
@@ -20,7 +20,7 @@ class Pasien extends Model
         'gender',
         'alamat',
         'no_telp'
-        
+
     ];
 
     public function user()

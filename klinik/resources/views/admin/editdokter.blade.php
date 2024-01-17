@@ -90,15 +90,14 @@
                         <div class="header">
                             <h4> Edit Dokter</h4>
                         </div>
-                        <!-- <div class="form-group">
-                            <label for="nip">Nip:</label>
-                            <input type="text" id="nip" name="nip">
-                        </div> -->
+                        <form method="post" action="{{ route('updatedokter.update', $dokter->dokter_id) }}">
+                            @csrf
+                            @method('PUT')
                         <label for="nip">Nip:</label>
-                        <input type="text" id="nip" name="nip" value="nip">
+                        <input type="text" id="nip" name="nip" value="{!! $dokter->nip !!}">
                         <div class="form-group">
                             <label for="name">Nama:</label>
-                            <input type="text" id="name" name="name">
+                            <input type="text" id="name" name="name" value="{!! $dokter->name !!}">
                         </div>
                         <div class="form-group">
                             <label for="tempat_lahir">Tempat Lahir:</label>
@@ -106,33 +105,32 @@
                         </div>
                         <div class="form-group">
                             <label for="tgl_lahir">Tanggal Lahir:</label>
-                            <input type="date" id="tgl_lahir" name="tgl_lahir"></input>
+                            <input type="date" id="tgl_lahir" name="tgl_lahir">
                         </div>
                         <div class="form-group">
                             <label for="gender">Jenis Kelamin:</label>
-                            <input type="text" id="gender" name="gender"></input>
+                            <select id="gender" name="gender">
+                                <option value="">===Pilih===</option>
+                                <option value="Laki-laki" {!! $dokter->gender == 'Laki-laki' ? 'selected' : '' !!}>Laki-laki</option>
+                                <option value="Perempuan" {!! $dokter->gender == 'Perempuan' ? 'selected' : '' !!}>Perempuan</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="alamat">Alamat:</label>
-                            <input type="text" id="alamat" name="alamat"></input>
+                            <input type="text" id="alamat" name="alamat">
                         </div>
                         <div class="form-group">
-                            <label for="nohp">No Hp:</label>
-                            <input type="text" id="nohp" name="nohp"></input>
+                            <label for="no_telp">No Hp:</label>
+                            <input type="text" id="no_telp" name="no_telp">
                         </div>
                         <div class="form-group">
                             <label for="spesialis">Spesialis:</label>
-                            <input type="text" id="spesialis" name="spesialis"></input>
+                            <input type="text" id="spesialis" name="spesialis">
                         </div>
 
-                        <button type="submit">Submit</button>
-
-                        {{-- <script>
-                            function goToNextPage() {
-                                // Gantilah URL atau path sesuai kebutuhan
-                                window.location.href = "admindokter";
-                            }
-                        </script> --}}
+                        <button onclick="return confirm('Yakin update ?')" type="submit"
+                                class="btn btn-danger btn-sm ml-2"><i class="fas fa-trash fa-fw"></i>
+                                Submit</button>
                         </form>
                         </div>
                 </li>
@@ -143,7 +141,7 @@
 </section>
 <!-- CONTENT -->
 
-<script src="script.js"></script>
+<script src="{!! asset('js/script.js') !!}"></script>
 </body>
 
 </html>

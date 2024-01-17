@@ -8,6 +8,7 @@ use App\Http\Controllers\DokterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\SignUpController;
 use App\Http\Controllers\RuangController;
+use App\Models\Dokter;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,14 +47,16 @@ Route::get('/signup', function () {
 Route::get('/adminpasien', [PasienController::class, 'home']);
 Route::get('/add-pasien', [PasienController::class, 'create']);
 Route::post('/add-pasien', [PasienController::class, 'store']);
-Route::delete('users/{id}', function ($id) {
-});
+Route::get('editpasien/{pasien_id}', [PasienController::class, 'edit'])->name('editpasien.edit');
+Route::put('update-pasien/{pasien_id}', [PasienController::class, 'update'])->name('updatepasien.update');
+Route::delete('delete-pasien/{pasien_id}', [PasienController::class, 'destroy'])->name('deletepasien.destroy');
 
 Route::get('/admindokter', [DokterController::class, 'home']);
 Route::get('/add-dokter', [DokterController::class, 'create']);
 Route::post('/add-dokter', [DokterController::class, 'store']);
-Route::delete('users/{id}', function ($id) {
-});
+Route::get('editdokter/{dokter_id}', [DokterController::class, 'edit'])->name('editdokter.edit');
+Route::put('update-dokter/{dokter_id}', [DokterController::class, 'update'])->name('updatedokter.update');
+Route::delete('delete-dokter/{dokter_id}', [DokterController::class, 'destroy'])->name('deletedokter.destroy');
 
 Route::get('/user', [UserController::class, 'home']);
 Route::get('/add-user', [UserController::class, 'create']);
@@ -85,21 +88,21 @@ Route::get('/adminprofile', function () {
 // Route::get('/createdokter', function () {
 //     return view('/admin/createdokter');
 // });
-Route::get('/createpasien', [PasienController::class, 'create']);
-Route::get('/createdokter', [DokterController::class, 'create']);
+// Route::get('/createpasien', [PasienController::class, 'create']);
+// Route::get('/createdokter', [DokterController::class, 'create']);
 Route::get('/createuser', [UserController::class, 'create']);
 Route::get('/createpoli', [RuangController::class, 'create']);
 // Route::get('/createpasien', function () {
 //     return view('/admin/createpasien');
 // });
 
-Route::get('/editpasien', function () {
-    return view('/admin/editpasien');
-});
+// Route::get('/editpasien', function () {
+//     return view('/admin/editpasien');
+// });
 
-Route::get('/editdokter', function () {
-    return view('/admin/editdokter');
-});
+// Route::get('/editdokter', function () {
+//     return view('/admin/editdokter');
+// });
 
 Route::get('/poli', function () {
     return view('/admin/poli');

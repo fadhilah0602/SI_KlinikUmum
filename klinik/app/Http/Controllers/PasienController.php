@@ -50,24 +50,21 @@ class PasienController extends Controller
         return redirect('/adminpasien')->with('success', 'Pasien created successfully.');
     }
 
-    public function edit($id)
+    public function edit($pasien_id)
     {
         // $user = User::where('id', $id)->first();
-        $pasien = Pasien::where('user_id', $id)->first();
-        return view("pasien.edit")
-            // ->with('users', $user)
-            ->with('pasiens', $pasien);
+        // $pasien = Pasien::where('user_id', $id)->first();
+        // return view("pasien.edit")
+        //     // ->with('users', $user)
+        //     ->with('pasiens', $pasien);
+        $pasien = Pasien::findOrFail($pasien_id);
+        return view('admin.editpasien', compact('pasien'));
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, $pasien_id)
     {
-        $user = User::where('id', $id)->update([
-            // 'email' => $request->email,
-            // 'name' => $request->name,
-        ]);
-
-        $pasien = Pasien::where('pasien_id', $id)->update([
-            'user_id' =>  $user->id,
+        $pasien = Pasien::where('pasien_id', $pasien_id)->update([
+            // 'user_id' =>  $user->id,
             'name' => $request->name,
             'tempat_lahir' => $request->tempat_lahir,
             'tgl_lahir' => $request->tgl_lahir,
@@ -75,15 +72,13 @@ class PasienController extends Controller
             'alamat' => $request->alamat,
             'no_telp' => $request->no_telp
         ]);
-
-        $pasien->update($request->all());
         return redirect('/adminpasien')->with('success', 'Pasien updated successfully.');
     }
 
-    public function destroy($id)
+    public function destroy($pasien_id)
     {
-        $pasien = Pasien::find($id);
-        $id->delete();
+        $pasien = Pasien::where('pasien_id', $pasien_id)->first();
+        $pasien->delete();
         return redirect('/adminpasien')->with('success', 'Pasien deleted successfully.');
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Dokter;
+use App\Models\Pasien;
 use App\Models\User;
 
 class DokterController extends Controller
@@ -17,13 +18,13 @@ class DokterController extends Controller
 
     public function create()
     {
-        
+
         $dokters = Dokter::all();
         return view('admin.createdokter', compact('dokters'));
     }
     public function store(Request $request)
     {
-        
+
 
         $user = User::create([
             'name' => $request->name,
@@ -46,24 +47,26 @@ class DokterController extends Controller
         return redirect('/admindokter')->with('success', 'Dokter created successfully.');
     }
 
-    public function edit($id)
+    public function edit($dokter_id)
     {
-        $user = User::where('id', $id)->first();
-        $dokter = Dokter::where('user_id', $id)->first();
-        return view("dokter.edit")
-            ->with('users', $user)
-            ->with('dokters', $dokter);
+        // $user = User::where('id', $id)->first();
+        // $dokter = Dokter::where('user_id', $id)->first();
+        // return view("dokter.edit")
+        //     ->with('users', $user)
+        //     ->with('dokters', $dokter);
+        $dokter = Pasien::findOrFail($dokter_id);
+        return view('admin.editdokter', compact('dokter'));
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, $dokter_id)
     {
-        $user = User::where('id', $id)->update([
-            'email' => $request->email,
-            'name' => $request->name,
-        ]);
+        // $user = User::where('id', $id)->update([
+        //     'email' => $request->email,
+        //     'name' => $request->name,
+        // ]);
 
-        $dokter = Dokter::where('user_id', $id)->update([
-            'user_id' =>  $user->id,
+        $dokter = Dokter::where('dokter_id', $dokter_id)->update([
+            // 'user_id' =>  $user->id,
             'nip' => $request->nip,
             'name' => $request->name,
             'tempat_lahir' => $request->tempat_lahir,
@@ -74,14 +77,14 @@ class DokterController extends Controller
             'spesialis' => $request->spesialis
         ]);
 
-        $dokter->update($request->all());
-        return redirect('/dokter')->with('success', 'Dokter updated successfully.');
+        // $dokter->update($request->all());
+        return redirect('/admindokter')->with('success', 'Dokter updated successfully.');
     }
 
-    public function destroy($id)
+    public function destroy($dokter_id)
     {
-        $dokter = Dokter::find($id);
-        $id->delete();
-        return redirect('/dokter')->with('success', 'Dokter deleted successfully.');
+        $dokter = Dokter::where('dokter_id', $dokter_id)->first();
+        $dokter->delete();
+        return redirect('/admindokter')->with('success', 'Dokter deleted successfully.');
     }
 }

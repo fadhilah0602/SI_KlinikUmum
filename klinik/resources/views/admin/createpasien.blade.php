@@ -49,21 +49,21 @@
             </li>
             <li>
                 <a href="/poli">
-                <i class='bx bxs-layout'></i>
+                    <i class='bx bxs-layout'></i>
                     <span class="text">Poli</span>
                 </a>
             </li>
 
             <li>
                 <a href="/jadwaldokter">
-                <i class='bx bx-edit'></i>
+                    <i class='bx bx-edit'></i>
                     <span class="text">Jadwal Dokter</span>
                 </a>
             </li>
 
             <li>
                 <a href="/user">
-                <i class='bx bxs-user-detail'></i>
+                    <i class='bx bxs-user-detail'></i>
                     <span class="text">User</span>
                 </a>
             </li>
@@ -105,19 +105,23 @@
                         </div>
                         <div class="form-group">
                             <label for="tgl_lahir">Tanggal Lahir:</label>
-                            <input type="date" id="tgl_lahir" name="tgl_lahir"></input>
+                            <input type="date" id="tgl_lahir" name="tgl_lahir">
                         </div>
                         <div class="form-group">
                             <label for="gender">Jenis Kelamin:</label>
-                            <input type="text" id="gender" name="gender"></input>
+                            <select id="gender" name="gender">
+                                <option value="">===Pilih===</option>
+                                <option values="Laki-Laki">Laki-Laki</option>
+                                <option values="Perempuan">Perempuan</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="alamat">Alamat:</label>
-                            <input type="text" id="alamat" name="alamat"></input>
+                            <input type="text" id="alamat" name="alamat">
                         </div>
                         <div class="form-group">
                             <label for="no_telp">No Hp:</label>
-                            <input type="text" id="no_telp" name="no_telp"></input>
+                            <input type="text" id="no_telp" name="no_telp">
                         </div>
 
                         <button type="submit">Submit</button>

@@ -49,21 +49,21 @@
             </li>
             <li>
                 <a href="/poli">
-                <i class='bx bxs-layout'></i>
+                    <i class='bx bxs-layout'></i>
                     <span class="text">Poli</span>
                 </a>
             </li>
 
             <li>
                 <a href="/jadwaldokter">
-                <i class='bx bx-edit'></i>
+                    <i class='bx bx-edit'></i>
                     <span class="text">Jadwal Dokter</span>
                 </a>
             </li>
 
             <li>
                 <a href="/user">
-                <i class='bx bxs-user-detail'></i>
+                    <i class='bx bxs-user-detail'></i>
                     <span class="text">User</span>
                 </a>
             </li>
@@ -132,49 +132,34 @@
                                 $no = 1;
                             @endphp
 
-                            @foreach ($pasiens as $pasiens)
+                            @foreach ($pasiens as $pasien)
                                 <tr>
                                     <td>{{ $no++ }}</td>
-                                    <td>{{ $pasiens->name }}</td>
-                                    <td>{{ $pasiens->tempat_lahir }}</td>
-                                    <td>{{ $pasiens->tgl_lahir }}</td>
-                                    <td>{{ $pasiens->gender }}</td>
-                                    <td>{{ $pasiens->alamat }}</td>
-                                    <td>{{ $pasiens->no_telp }}</td>
+                                    <td>{{ $pasien->name }}</td>
+                                    <td>{{ $pasien->tempat_lahir }}</td>
+                                    <td>{{ $pasien->tgl_lahir }}</td>
+                                    <td>{{ $pasien->gender }}</td>
+                                    <td>{{ $pasien->alamat }}</td>
+                                    <td>{{ $pasien->no_telp }}</td>
                                     <td class="action-buttons">
-                                        <button type="button" onclick="goToPageEdit()">Edit</button>
+                                        {{-- <button type="button" onclick="goToPageEdit()">Edit</button>
 
                                         <script>
                                             function goToPageEdit() {
                                                 // Gantilah URL atau path sesuai kebutuhan
-                                                window.location.href = "editpasien";
+                                                window.location.href = "editpasien/" + {{ $pasien->pasien_id }};
                                             }
-                                        </script>
+                                        </script> --}}
+                                        <a href="{!! route('editpasien.edit', $pasien->pasien_id) !!}" type="button">Edit</a>
 
-                                        <!-- <button onclick="deleteUser()">
-                                            <i class="fas fa-trash-alt"></i> Hapus
-                                        </button>
-                                        {{-- <script>
-                                            // Fungsi untuk menghapus elemen
-                                            function deleteUser() {
-                                                var element = document.getElementById("elementToBeDeleted");
-                                                if (element) {
-                                                    element.parentNode.removeChild(element);
-                                                } else {
-                                                    console.error("Element not found.");
-                                                }
-                                            }
-                                        </script> --}} -->
-                                        <button type="button" class="delete-button" onclick="confirmDelete()">Delete</button>
-   
-                                        <script>
-                                            function confirmDelete() {
-                                            if (confirm("Are you sure you want to delete this data?")) {
-                                                    // Perform deletion logic here or redirect to a deletion script
-                                                    alert("Data deleted!"); // Replace this with your deletion logic
-                                                }
-                                            }
-                                        </script>
+                                        <form method="post"
+                                            action="{{ route('deletepasien.destroy', $pasien->pasien_id) }}">
+                                            @csrf
+                                            @method('delete')
+                                            <button onclick="return confirm('Yakin hapus ?')" type="submit"
+                                                class="btn btn-danger btn-sm ml-2"><i class="fas fa-trash fa-fw"></i>
+                                                Delete</button>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach

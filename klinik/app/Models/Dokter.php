@@ -10,7 +10,7 @@ class Dokter extends Model
     use HasFactory;
     protected $table = 'dokters';
 
-    protected $primarykey = 'dokter_id';
+    protected $primaryKey = 'dokter_id';
 
     protected $fillable = [
         'user_id',
@@ -22,7 +22,7 @@ class Dokter extends Model
         'alamat',
         'no_telp',
         'spesialis'
-        
+
     ];
 
     public function user()

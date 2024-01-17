@@ -8,7 +8,7 @@
     <!-- Boxicons -->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <!-- My CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{!! asset('css/style.css') !!}">
 
     <title>SIK Dr.Zul</title>
 </head>
@@ -49,21 +49,21 @@
             </li>
             <li>
                 <a href="/poli">
-                <i class='bx bxs-layout'></i>
+                    <i class='bx bxs-layout'></i>
                     <span class="text">Poli</span>
                 </a>
             </li>
 
             <li>
                 <a href="/jadwaldokter">
-                <i class='bx bx-edit'></i>
+                    <i class='bx bx-edit'></i>
                     <span class="text">Jadwal Dokter</span>
                 </a>
             </li>
 
             <li>
                 <a href="/user">
-                <i class='bx bxs-user-detail'></i>
+                    <i class='bx bxs-user-detail'></i>
                     <span class="text">User</span>
                 </a>
             </li>
@@ -90,39 +90,43 @@
                         <div class="header">
                             <h4> Edit Pasien</h4>
                         </div>
-                        <div class="form-group">
-                            <label for="name">Nama:</label>
-                            <input type="text" id="name" name="name">
-                        </div>
-                        <div class="form-group">
-                            <label for="tempat_lahir">Tempat Lahir:</label>
-                            <input type="number" id="tempat_lahir" name="tempat_lahir">
-                        </div>
-                        <div class="form-group">
-                            <label for="tgl_lahir">Tanggal Lahir:</label>
-                            <input type="date" id="tgl_lahir" name="tgl_lahir"></input>
-                        </div>
-                        <div class="form-group">
-                            <label for="gender">Jenis Kelamin:</label>
-                            <input type="text" id="gender" name="gender"></input>
-                        </div>
-                        <div class="form-group">
-                            <label for="alamat">Alamat:</label>
-                            <input type="text" id="alamat" name="alamat"></input>
-                        </div>
-                        <div class="form-group">
-                            <label for="nohp">No Hp:</label>
-                            <input type="text" id="nohp" name="nohp"></input>
-                        </div>
-
-                        <button type="submit">Submit</button>
-
-                        {{-- <script>
-                            function goToNextPage() {
-                                // Gantilah URL atau path sesuai kebutuhan
-                                window.location.href = "adminpasien";
-                            }
-                        </script> --}}
+                        <form method="post" action="{{ route('updatepasien.update', $pasien->pasien_id) }}">
+                            @csrf
+                            @method('PUT')
+                            {{-- <input type="hidden" name="pasien_id" value="{!! $pasien->pasien_id !!}"> --}}
+                            <div class="form-group">
+                                <label for="name">Nama:</label>
+                                <input type="text" id="name" name="name" value="{!! $pasien->name !!}">
+                            </div>
+                            <div class="form-group">
+                                <label for="tempat_lahir">Tempat Lahir:</label>
+                                <input type="text" id="tempat_lahir" name="tempat_lahir"
+                                    value="{!! $pasien->tempat_lahir !!}">
+                            </div>
+                            <div class="form-group">
+                                <label for="tgl_lahir">Tanggal Lahir:</label>
+                                <input type="date" id="tgl_lahir" name="tgl_lahir" value="{!! $pasien->tgl_lahir !!}">
+                            </div>
+                            <div class="form-group">
+                                <label for="gender">Jenis Kelamin:</label>
+                                {{-- <input type="text" id="gender" name="gender" value="{!! $pasien->gender !!}"> --}}
+                                <select id="gender" name="gender">
+                                    <option value="">===Pilih===</option>
+                                    <option value="Laki-laki" {!! $pasien->gender == 'Laki-laki' ? 'selected' : '' !!}>Laki-laki</option>
+                                    <option value="Perempuan" {!! $pasien->gender == 'Perempuan' ? 'selected' : '' !!}>Perempuan</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="alamat">Alamat:</label>
+                                <input type="text" id="alamat" name="alamat" value="{!! $pasien->alamat !!}">
+                            </div>
+                            <div class="form-group">
+                                <label for="no_telp">No Hp:</label>
+                                <input type="text" id="no_telp" name="no_telp" value="{!! $pasien->no_telp !!}">
+                            </div>
+                            <button onclick="return confirm('Yakin update ?')" type="submit"
+                                class="btn btn-danger btn-sm ml-2"><i class="fas fa-trash fa-fw"></i>
+                                Submit</button>
                         </form>
                         </div>
                 </li>
@@ -133,7 +137,7 @@
 </section>
 <!-- CONTENT -->
 
-<script src="script.js"></script>
+<script src="{!! asset('js/script.js') !!}"></script>
 </body>
 
 </html>

@@ -49,21 +49,21 @@
             </li>
             <li>
                 <a href="/poli">
-                <i class='bx bxs-layout'></i>
+                    <i class='bx bxs-layout'></i>
                     <span class="text">Poli</span>
                 </a>
             </li>
 
             <li>
                 <a href="/jadwaldokter">
-                <i class='bx bx-edit'></i>
+                    <i class='bx bx-edit'></i>
                     <span class="text">Jadwal Dokter</span>
                 </a>
             </li>
 
             <li>
                 <a href="/user">
-                <i class='bx bxs-user-detail'></i>
+                    <i class='bx bxs-user-detail'></i>
                     <span class="text">User</span>
                 </a>
             </li>
@@ -134,52 +134,37 @@
                                 $no = 1;
                             @endphp
 
-                            @foreach ($dokters as $dokters)
+                            @foreach ($dokters as $dokter)
                                 <tr>
                                     <td>{{ $no++ }}</td>
-                                    <td>{{ $dokters->nip }}</td>
-                                    <td>{{ $dokters->name }}</td>
-                                    <td>{{ $dokters->tempat_lahir }}</td>
-                                    <td>{{ $dokters->tgl_lahir }}</td>
-                                    <td>{{ $dokters->gender }}</td>
-                                    <td>{{ $dokters->alamat }}</td>
-                                    <td>{{ $dokters->no_telp }}</td>
-                                    <td>{{ $dokters->spesialis }}</td>
+                                    <td>{{ $dokter->nip }}</td>
+                                    <td>{{ $dokter->name }}</td>
+                                    <td>{{ $dokter->tempat_lahir }}</td>
+                                    <td>{{ $dokter->tgl_lahir }}</td>
+                                    <td>{{ $dokter->gender }}</td>
+                                    <td>{{ $dokter->alamat }}</td>
+                                    <td>{{ $dokter->no_telp }}</td>
+                                    <td>{{ $dokter->spesialis }}</td>
                                     <td class="action-buttons">
-                                        <button type="button" onclick="goToPageEdit()">Edit</button>
+                                        {{-- <button type="button" onclick="goToPageEdit()">Edit</button>
 
                                         <script>
                                             function goToPageEdit() {
                                                 // Gantilah URL atau path sesuai kebutuhan
                                                 window.location.href = "editdokter";
                                             }
-                                        </script>
+                                        </script> --}}
+                                        <a href="{!! route('editdokter.edit', $dokter->dokter_id) !!}" type="button">Edit</a>
 
-                                        <!-- <button onclick="deleteUser()">
-                                            <i class="fas fa-trash-alt"></i> Hapus
-                                        </button>
-                                        {{-- <script>
-                                            // Fungsi untuk menghapus elemen
-                                            function deleteUser() {
-                                                var element = document.getElementById("elementToBeDeleted");
-                                                if (element) {
-                                                    element.parentNode.removeChild(element);
-                                                } else {
-                                                    console.error("Element not found.");
-                                                }
-                                            }
-                                        </script> --}} -->
-                                           <!-- Delete button -->
-                                            <button type="button" class="delete-button" onclick="confirmDelete()">Delete</button>
-                                           <script>
-                                            function confirmDelete() {
-                                                if (confirm("Are you sure you want to delete this data?")) {
-                                                    // Perform deletion logic here or redirect to a deletion script
-                                                    alert("Data deleted!"); // Replace this with your deletion logic
-                                                }
-                                            }
-                                        </script>
-                                        
+                                        <form method="post"
+                                            action="{{ route('deletedokter.destroy', $dokter->dokter_id) }}">
+                                            @csrf
+                                            @method('delete')
+                                            <button onclick="return confirm('Yakin hapus ?')" type="submit"
+                                                class="btn btn-danger btn-sm ml-2"><i class="fas fa-trash fa-fw"></i>
+                                                Delete</button>
+                                        </form>
+
                                         <!-- <button type="button" onclick="if(confirmDelete()) document.forms[0].submit();">Delete</button> -->
                                     </td>
                                 </tr>
@@ -194,7 +179,7 @@
     <!-- CONTENT -->
 
 
-    <script src="script.js"></script>
+    <script src="{!! asset('js/script.js') !!}"></script>
 </body>
 
 </html>

@@ -107,7 +107,7 @@
                         <script>
                             function goToNextPage() {
                                 // Gantilah URL atau path sesuai kebutuhan
-                                window.location.href = "createruang";
+                                window.location.href = "createpoli";
                             }
                         </script>
                         <!-- </button> -->
@@ -119,6 +119,7 @@
                         <thead>
                             <tr>
                                 <th>No</th>
+                                <th>Nama Dokter</th>
                                 <th>Nama Ruangan</th>
                                 <th>Jenis Ruangan</th>
                                 <th>Aksi</th>
@@ -129,8 +130,52 @@
                                 $no = 1;
                             @endphp
 
+                            @foreach ($ruangs as $ruang)
+                            <tr>
+                                <td>{{ $no++ }}</td>
+                                <td>{{ $ruang->dokter_id }}</td>
+                                <td>{{ $ruang->nama_ruangan }}</td>
+                                <td>{{ $ruang->jenis_ruangan }}</td>
+                                <td class="action-buttons">
+                                    <button type="button" onclick="goToPageEdit()">Edit</button>
+
+                                    <script>
+                                        function goToPageEdit() {
+                                            // Gantilah URL atau path sesuai kebutuhan
+                                            window.location.href = "editpasien";
+                                        }
+                                    </script>
+
+                                    <!-- <button onclick="deleteUser()">
+                                        <i class="fas fa-trash-alt"></i> Hapus
+                                    </button>
+                                    {{-- <script>
+                                        // Fungsi untuk menghapus elemen
+                                        function deleteUser() {
+                                            var element = document.getElementById("elementToBeDeleted");
+                                            if (element) {
+                                                element.parentNode.removeChild(element);
+                                            } else {
+                                                console.error("Element not found.");
+                                            }
+                                        }
+                                    </script> --}} -->
+                                    <button type="button" class="delete-button" onclick="confirmDelete()">Delete</button>
+
+                                    <script>
+                                        function confirmDelete() {
+                                        if (confirm("Are you sure you want to delete this data?")) {
+                                                // Perform deletion logic here or redirect to a deletion script
+                                                alert("Data deleted!"); // Replace this with your deletion logic
+                                            }
+                                        }
+                                    </script>
+                                </td>
+                            </tr>
+                            @endforeach
+
                            
-                                <tr>
+                                {{-- <tr>
                                     
                                     
                                     <td class="action-buttons">
@@ -146,7 +191,7 @@
                                         <button onclick="deleteUser()">
                                             <i class="fas fa-trash-alt"></i> Hapus
                                         </button>
-                                        {{-- <script>
+                                        <script>
                                             // Fungsi untuk menghapus elemen
                                             function deleteUser() {
                                                 var element = document.getElementById("elementToBeDeleted");
@@ -156,9 +201,9 @@
                                                     console.error("Element not found.");
                                                 }
                                             }
-                                        </script> --}}
+                                        </script>
                                     </td>
-                                </tr>
+                                </tr> --}}
                           
                         </tbody>
                     </table>

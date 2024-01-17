@@ -21,6 +21,6 @@ class Ruang extends Model
 
     public function dokter()
     {
-        return $this->belongsTo(Dokter::class, 'dokter_id', 'dokter_id');
+        return $this->belongsTo(Dokter::class);
     }
 }

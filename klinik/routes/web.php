@@ -7,6 +7,7 @@ use App\Http\Controllers\PasienController;
 use App\Http\Controllers\DokterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\SignUpController;
+use App\Http\Controllers\RuangController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,6 +61,10 @@ Route::post('/add-user', [UserController::class, 'store']);
 Route::delete('users/{id}', function ($id) {
 });
 
+Route::get('/poli', [RuangController::class, 'home']);
+Route::get('/add-poli', [RuangController::class, 'create']);
+Route::post('/add-poli', [RuangController::class, 'store']);
+
 
 Route::get('/adminhome', function () {
     return view('/admin/home');
@@ -83,6 +88,7 @@ Route::get('/adminprofile', function () {
 Route::get('/createpasien', [PasienController::class, 'create']);
 Route::get('/createdokter', [DokterController::class, 'create']);
 Route::get('/createuser', [UserController::class, 'create']);
+Route::get('/createpoli', [RuangController::class, 'create']);
 // Route::get('/createpasien', function () {
 //     return view('/admin/createpasien');
 // });
@@ -90,9 +96,11 @@ Route::get('/createuser', [UserController::class, 'create']);
 Route::get('/editpasien', function () {
     return view('/admin/editpasien');
 });
+
 Route::get('/editdokter', function () {
     return view('/admin/editdokter');
 });
+
 Route::get('/poli', function () {
     return view('/admin/poli');
 });

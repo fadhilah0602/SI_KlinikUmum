@@ -29,4 +29,9 @@ class Dokter extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function ruang()
+    {
+        return $this->hasOne(Ruang::class);
+    }
 }

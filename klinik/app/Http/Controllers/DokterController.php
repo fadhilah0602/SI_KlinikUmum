@@ -54,7 +54,7 @@ class DokterController extends Controller
         // return view("dokter.edit")
         //     ->with('users', $user)
         //     ->with('dokters', $dokter);
-        $dokter = Pasien::findOrFail($dokter_id);
+        $dokter = Dokter::findOrFail($dokter_id);
         return view('admin.editdokter', compact('dokter'));
     }
 

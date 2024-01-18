@@ -146,14 +146,7 @@
                                     <td>{{ $dokter->no_telp }}</td>
                                     <td>{{ $dokter->spesialis }}</td>
                                     <td class="action-buttons">
-                                        {{-- <button type="button" onclick="goToPageEdit()">Edit</button>
-
-                                        <script>
-                                            function goToPageEdit() {
-                                                // Gantilah URL atau path sesuai kebutuhan
-                                                window.location.href = "editdokter";
-                                            }
-                                        </script> --}}
+                                     
                                         <a href="{!! route('editdokter.edit', $dokter->dokter_id) !!}" type="button">Edit</a>
 
                                         <form method="post"

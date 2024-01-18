@@ -61,6 +61,12 @@
                 </a>
             </li>
             <li>
+                <a href="/jadwalpemeriksaan">
+                <i class='bx bx-edit'></i>
+                    <span class="text">Jadwal Pemeriksaan</span>
+                </a>
+            </li>
+            <li>
                 <a href="/hasilpemeriksaan">
                 <i class='bx bx-edit'></i>
                     <span class="text">Hasil Pemeriksaan</span>

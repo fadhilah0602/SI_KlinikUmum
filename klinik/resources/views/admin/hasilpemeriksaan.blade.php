@@ -57,6 +57,12 @@
                     <span class="text">Jadwal Dokter</span>
                 </a>
             </li>
+            <li>
+                <a href="/jadwalpemeriksaan">
+                <i class='bx bx-edit'></i>
+                    <span class="text">Jadwal Pemeriksaan</span>
+                </a>
+            </li>
             <li class="active">
                 <a href="/hasilpemeriksaan">
                 <i class='bx bx-edit'></i>

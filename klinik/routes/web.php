@@ -119,6 +119,10 @@ Route::get('/jadwaldokter', function () {
     return view('/admin/jadwaldokter');
 });
 
+Route::get('/jadwalpemeriksaan', function () {
+    return view('/admin/jadwalpemeriksaan');
+});
+
 Route::get('/hasilpemeriksaan', function () {
     return view('/admin/hasilpemeriksaan');
 });

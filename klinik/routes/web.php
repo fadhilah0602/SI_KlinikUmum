@@ -61,6 +61,9 @@ Route::delete('delete-dokter/{dokter_id}', [DokterController::class, 'destroy'])
 Route::get('/user', [UserController::class, 'home']);
 Route::get('/add-user', [UserController::class, 'create']);
 Route::post('/add-user', [UserController::class, 'store']);
+Route::get('edituser/{id}', [UserController::class, 'edit'])->name('edituser.edit');
+Route::put('update-user/{id}', [UserController::class, 'update'])->name('updateuser.update');
+Route::delete('delete-user/{user_id}', [UserController::class, 'destroy'])->name('deleteuser.destroy');
 Route::delete('users/{id}', function ($id) {
 });
 
@@ -89,7 +92,7 @@ Route::get('/adminprofile', function () {
 //     return view('/admin/createdokter');
 // });
 // Route::get('/createpasien', [PasienController::class, 'create']);
-// Route::get('/createdokter', [DokterController::class, 'create']);
+Route::get('/createdokter', [DokterController::class, 'create']);
 Route::get('/createuser', [UserController::class, 'create']);
 Route::get('/createpoli', [RuangController::class, 'create']);
 // Route::get('/createpasien', function () {

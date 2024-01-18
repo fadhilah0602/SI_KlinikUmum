@@ -130,37 +130,28 @@
                                 $no = 1;
                             @endphp
 
-                            @foreach ($users as $users)
+                            @foreach ($users as $user)
                                 <tr>
                                     <td>{{ $no++ }}</td>
-                                    <td>{{ $users->name }}</td>
-                                    <td>{{ $users->email }}</td>
-                                    <!-- <td>{{ $users->password }}</td> -->
-                                    <td>{{ $users->role }}</td>
+                                    <td>{{ $user->name }}</td>
+                                    <td>{{ $user->email }}</td>
+                                    
+                                    <td>{{ $user->role }}</td>
                                     <td class="action-buttons">
-                                        <button type="button" onclick="goToPageEdit()">Edit</button>
+                                 
 
-                                        <script>
-                                            function goToPageEdit() {
-                                                // Gantilah URL atau path sesuai kebutuhan
-                                                window.location.href = "edituser";
-                                            }
-                                        </script>
+                                 
+                                    <a href="{!! route('edituser.edit', $user->id) !!}" type="button">Edit</a>
 
-                                        <button onclick="deleteUser()">
-                                            <i class="fas fa-trash-alt"></i> Hapus
-                                        </button>
-                                        {{-- <script>
-                                            // Fungsi untuk menghapus elemen
-                                            function deleteUser() {
-                                                var element = document.getElementById("elementToBeDeleted");
-                                                if (element) {
-                                                    element.parentNode.removeChild(element);
-                                                } else {
-                                                    console.error("Element not found.");
-                                                }
-                                            }
-                                        </script> --}}
+
+                                        <form method="post"
+                                            action="{{ route('deleteuser.destroy', $user->id) }}">
+                                            @csrf
+                                            @method('delete')
+                                            <button onclick="return confirm('Yakin hapus ?')" type="submit"
+                                                class="btn btn-danger btn-sm ml-2"><i class="fas fa-trash fa-fw"></i>
+                                                Delete</button>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach

@@ -43,26 +43,43 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::where('id',$id)->first();
-        return view("user.edit")
-            ->with('users',$user);
+        return view("admin.edituser")
+            ->with('user',$user);
     }
+
+    // public function update(Request $request, $id)
+    // {
+    //     $user = User::where('id',$id)->update([
+    //         'email' => $request->email,
+    //         'name' => $request->name,
+    //     ]);
+
+    //     $user->update($request->all());
+    //     return redirect('/user')->with('success', 'User updated successfully.');
+    // }
 
     public function update(Request $request, $id)
     {
-        $user = User::where('id',$id)->update([
-            'email' => $request->email,
+        $user = User::where('id', $id)->update([
+            // 'user_id' =>  $user->id,
             'name' => $request->name,
+            'email' => $request->email,
+            'password' => $request->password,
+            'role' => $request->role
         ]);
-
-        $user->update($request->all());
         return redirect('/user')->with('success', 'User updated successfully.');
     }
 
+    // public function destroy($id)
+    // {
+    //     $user = User::find($id);
+    //     $id->delete();
+    //     return redirect('/user')->with('success', 'User deleted successfully.');
+    // }
     public function destroy($id)
     {
-        $user = User::find($id);
-        $id->delete();
+        $user = User::where('id', $id)->first();
+        $user->delete();
         return redirect('/user')->with('success', 'User deleted successfully.');
     }
-    
 }

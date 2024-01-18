@@ -120,7 +120,7 @@
                             @foreach ($ruangs as $ruangs)
                             <tr>
                                 <td>{{ $no++ }}</td>
-                                <td>{{ $ruangs->dokters->name }}</td>
+                                <td>{{ $ruangs->dokter_id }}</td>
                                 <td>{{ $ruangs->nama_ruangan }}</td>
                                 <td>{{ $ruangs->jenis_ruangan }}</td>
                                 <td class="action-buttons">

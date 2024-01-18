@@ -9,9 +9,11 @@ use App\Models\Dokter;
 class RuangController extends Controller
 {
     public function home()
-    {
+    {  
         $ruangs = Ruang::all();
         return view('admin.poli', compact('ruangs'));
+        
+      
     }
 
     public function create()
@@ -19,6 +21,8 @@ class RuangController extends Controller
         
         $dokters = Dokter::all();
         return view('admin.createpoli', compact('dokters'));
+
+        
     }
 
     public function store(Request $request)
@@ -35,5 +39,12 @@ class RuangController extends Controller
         ]);
 
         return redirect('/poli')->with('success', 'Poli created successfully.');
+    }
+
+    public function destroy($ruang_id)
+    {
+        $ruang = Ruang::where('ruang_id', $ruang_id)->first();
+        $ruang->delete();
+        return redirect('/poli')->with('success', 'Ruang deleted successfully.');
     }
 }

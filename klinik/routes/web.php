@@ -70,6 +70,7 @@ Route::delete('users/{id}', function ($id) {
 Route::get('/poli', [RuangController::class, 'home']);
 Route::get('/add-poli', [RuangController::class, 'create']);
 Route::post('/add-poli', [RuangController::class, 'store']);
+Route::delete('delete-poli/{ruang_id}', [RuangController::class, 'destroy'])->name('deleteruang.destroy');
 
 
 Route::get('/adminhome', function () {
@@ -80,6 +81,9 @@ Route::get('/adminprofile', function () {
     return view('/admin/profile');
 });
 
+Route::get('/admin', function () {
+    return view('/admin/profile');
+});
 // Route::get('/adminpasien', function () {
 //     return view('admin/pasien');
 // });
@@ -107,12 +111,16 @@ Route::get('/createpoli', [RuangController::class, 'create']);
 //     return view('/admin/editdokter');
 // });
 
-Route::get('/poli', function () {
-    return view('/admin/poli');
-});
+// Route::get('/poli', function () {
+//     return view('/admin/poli');
+// });
 
 Route::get('/jadwaldokter', function () {
     return view('/admin/jadwaldokter');
+});
+
+Route::get('/hasilpemeriksaan', function () {
+    return view('/admin/hasilpemeriksaan');
 });
 
 // Route::get('/user', function () {

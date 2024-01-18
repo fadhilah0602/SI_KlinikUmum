@@ -61,19 +61,22 @@
                     <span class="text">Jadwal Dokter</span>
                 </a>
             </li>
-
+            <li>
+                <a href="/hasilpemeriksaan">
+                <i class='bx bx-edit'></i>
+                    <span class="text">Hasil Pemeriksaan</span>
+                </a>
+            </li>
             <li>
                 <a href="/user">
                 <i class='bx bxs-user-detail'></i>
                     <span class="text">User</span>
                 </a>
-            </li>
-            <li>
+           
             </li>
         </ul>
         <ul class="side-menu">
-            <li>
-            </li>
+          
             <li>
                 <a href="/home" class="logout">
                     <i class='bx bxs-log-out-circle'></i>
@@ -112,41 +115,34 @@
                                 <th>Aksi</th>
                             </tr>
                         </thead>
-                        {{-- <tbody>
+                         <tbody>
                             @php
                                 $no = 1;
                             @endphp
 
-                            @foreach ($ruangs as $ruangs)
+                            @foreach ($ruangs as $ruang)
+                           
                             <tr>
-                                <td>{{ $no++ }}</td>
-                                <td>{{ $ruangs->dokter_id }}</td>
-                                <td>{{ $ruangs->nama_ruangan }}</td>
-                                <td>{{ $ruangs->jenis_ruangan }}</td>
+                                <td>{{ $no++ }}</td>                              
+                               
+                                <td>{{ $ruang->name }}</td>
+                                <td>{{ $ruang->nama_ruangan }}</td>
+                                <td>{{ $ruang->jenis_ruangan }}</td>
                                 <td class="action-buttons">
-                                    <button type="button" onclick="goToPageEdit()">Edit</button>
-
-                                    <script>
-                                        function goToPageEdit() {
-                                            // Gantilah URL atau path sesuai kebutuhan
-                                            window.location.href = "editpasien";
-                                        }
-                                    </script>
-                                    <button type="button" class="delete-button" onclick="confirmDelete()">Delete</button>
-
-                                    <script>
-                                        function confirmDelete() {
-                                        if (confirm("Are you sure you want to delete this data?")) {
-                                                // Perform deletion logic here or redirect to a deletion script
-                                                alert("Data deleted!"); // Replace this with your deletion logic
-                                            }
-                                        }
-                                    </script>
-                                </td>
+                                <form method="post"
+                                            action="{{ route('deleteruang.destroy', $ruang->ruang_id) }}">
+                                            @csrf
+                                            @method('delete')
+                                            <button onclick="return confirm('Yakin hapus ?')" type="submit"
+                                                class="btn btn-danger btn-sm ml-2"><i class="fas fa-trash fa-fw"></i>
+                                                Delete</button>
+                                        </form>
+                                    </td>
                             </tr>
                             @endforeach
+                           
                           
-                        </tbody> --}}
+                        </tbody>
                     </table>
                 </div>
             </div>

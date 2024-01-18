@@ -50,21 +50,21 @@
             </li>
             <li>
                 <a href="/poli">
-                <i class='bx bxs-layout'></i>
+                    <i class='bx bxs-layout'></i>
                     <span class="text">Poli</span>
                 </a>
             </li>
 
             <li>
                 <a href="/jadwaldokter">
-                <i class='bx bx-edit'></i>
+                    <i class='bx bx-edit'></i>
                     <span class="text">Jadwal Dokter</span>
                 </a>
             </li>
 
             <li>
                 <a href="/user">
-                <i class='bx bxs-user-detail'></i>
+                    <i class='bx bxs-user-detail'></i>
                     <span class="text">User</span>
                 </a>
             </li>
@@ -106,55 +106,61 @@
             <div class="table-data">
                 <div class="table-data">
                     <div class="container">
-                        <div class="header">NOMOR ANTREAN</div>
+                        <div class="header">
+                            <p class="page-title">NOMOR ANTREAN</p>
+                        </div>
                         <div class="content">
-                            <table>
-                                <div>
-                                    <div class="label1">001</div>
-                                </div>
-                            </table>
-                            <table>
-                                <div>
-                                    <div class="label2">Atas Nama : Fitri</div>
-                                </div>
-                            </table>
-                            <table>
-                                <div>
-                                    <div class="label3">Dokter</div>
-                                    <div>dr. Zulkarnain Nasution</div>
-                                </div>
-                            </table>
-                            <table>
-                                <div>
-                                    <div class="label4">Poli Tujuan</div>
-                                    <div>Poli Umum 2</div>
-                                </div>
-                                <div>
-                                    <div class="label5">No Rekam Media</div>
-                                    <div>K-0001</div>
-                                </div>
-                            </table>
-                            <table>
-                                <div>
-                                    <div class="label6">Waktu Daftar</div>
-                                    <div class="date">001</div>
-                                </div>
-                                <div>
-                                    <div class="label7">Waktu Panggil</div>
-                                    <div class="date">002</div>
-                                </div>
-                            </table>
+                            {{-- @foreach ($pasiens as $pasien, $dokters as $dokter, $ruangs as $ruang, $jadwals as $jadwal) --}}
+                                <table>
+                                    <tr>
+                                        <div class="label1">001</div>
+                                        {{-- <input type="text" id="pasien_id" name="pasien_id" value="{!! $pasien->pasien_id !!}"> --}}
+                                    </tr>
+                                    <tr>
+                                        <div class="label2">Atas Nama : </div>
+                                        {{-- <input type="text" id="name" name="name" value="{!! $pasien->name !!}"> --}}
+                                    </tr>
+                                    <tr>
+                                        <div class="label3">Dokter</div>
+                                        <div class="label-name">dr. Zulkarnain Nasution</div>
+                                    </tr>
+                                    <div class="wrapper">
+                                        <div class="label4">Poli Tujuan</div>
+                                        <div class="label5">No Rekam Media</div>
+                                    </div>
+                                    <div class="wrapper-2">
+                                        <div class="label-poli">Poli Umum 2</div>
+                                        <div class="label-media">K-0001</div>
+                                    </div>
+                                    <div class="wrapper">
+                                        <div class="label6">Waktu Daftar</div>
+                                        <div class="label7">Waktu Panggil</div>
+                                    </div>
+                                    <div class="wrapper-2">
+                                        <div class="label-daftar">001</div>
+                                        <div class="label-panggil">002</div>
+                                    </div>
+                                </table>
+                            {{-- @endforeach --}}
                         </div>
                     </div>
                     <table>
                         <div>
-                            <div class="table">
-                                <label for="poli"> Poli</label>
-                                <input type="list" id="poli" />
+                            <div class="wrapper-3">
+                                <div class="label8">Poli</div>
+                                <div class="label9">Dokter</div>
                             </div>
-                            <div class="table">
-                                <label for="dokter"> Dokter</label>
-                                <input type="list" id="dokter" />
+                            <div class="wrapper-4">
+                                <div class="label-poli1">Umum</div>
+                                <div class="label-dokter">dr.Zainal</div>
+                            </div>
+                            <div class="wrapper-3">
+                                <div class="label10">Waktu</div>
+                                <div class="label11">Antrean</div>
+                            </div>
+                            <div class="wrapper-4">
+                                <div class="label-waktu">16.00 - 22.00</div>
+                                <div class="label-antrean">3/4 antrean</div>
                             </div>
                         </div>
                     </table>

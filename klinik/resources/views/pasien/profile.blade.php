@@ -38,7 +38,7 @@
             <li>
                 <a href="/pasienriwayat">
                     <i class='bx bxs-file file-icon'></i>
-                    <span class="text">Riwayat</span>
+                    <span class="text">Hasil Pemeriksaan</span>
                 </a>
             </li>
            

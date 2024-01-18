@@ -354,10 +354,13 @@ body {
 	grid-gap: 10px;
 	font-weight: 500;
 }
+.page-title {
+    font-size: 50px;
+    padding: 0 15px 0;
+}
+/* .label1 {
 
-
-
-
+} */
 #content main .box-info {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -428,12 +431,119 @@ body {
     font-size: 30px;
     background-color: #23538F;
     color: #F9F9F9;
+    border-radius: 10px;
 }
 #content main .table-data .label1 {
 	margin-right: auto;
-	font-size: 24px;
+    margin: 10px 0;
+    font-size: 80px;
 	font-weight: 600;
-    align-items: center;
+    text-align: center;
+    /* border: 50px;
+    border-color: black; */
+    border-radius: 10px;
+}
+#content main .table-data .label2 {
+    margin-top: -40px;
+    text-align: center;
+    font-weight: 600;
+}
+#content main .table-data .label3 {
+    margin-top: 40px;
+    text-align: center;
+    font-weight: 400;
+}
+#content main .table-data .label-name {
+    text-align: center;
+}
+#content main .table-data .wrapper {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+}
+#content main .table-data .label4 {
+    margin: 0 60px;
+}
+#content main .table-data .label5 {
+    margin: 0 0 0 50px;
+}
+
+#content main .table-data .wrapper-2 {
+    /* margin-top: 40px; */
+    display: flex;
+    flex-wrap: wrap;
+}
+#content main .table-data .label-poli {
+    margin: 0 55px;
+}
+#content main .table-data .label-media {
+    margin: 0 0 0 80px;
+}
+
+#content main .table-data .label6 {
+    margin: 0 50px;
+}
+#content main .table-data .label7 {
+    margin: 0 0 0 55px;
+}
+#content main .table-data .label-daftar {
+    margin: 0 90px;
+}
+#content main .table-data .label-panggil {
+    margin: 0 0 0 100px;
+}
+
+#content main .table-data .wrapper-3 {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #23538F;
+    font-size: 40px;
+	font-weight: 600;
+    text-align: center;
+    margin-top: 100px;
+
+}
+#content main .table-data .wrapper-4 {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #23538F;
+
+}
+#content main .table-data .label8 {
+    margin: 0 80px;
+    color: white;
+}
+#content main .table-data .label9 {
+    margin: 0 0 0 90px;
+    color: white;
+    margin-right: 50px;
+}
+#content main .table-data .label-poli1 {
+    margin: 0 90px;
+    color:white;
+    margin-bottom: 20px;
+}
+#content main .table-data .label-dokter {
+    margin: 0 0 0 120px;
+    color: white;
+}
+#content main .table-data .label10 {
+    margin: 0 80px;
+    color: white;
+}
+#content main .table-data .label11 {
+    margin: 0 0 0 40px;
+    color: white;
+    margin-right: 50px;
+}
+#content main .table-data .label-waktu {
+    margin: 0 90px;
+    color:white;
+    margin-bottom: 20px;
+}
+#content main .table-data .label-antrean {
+    margin: 0 0 0 90px;
+    color: white;
 }
 #content main .table-data .head .bx {
 	cursor: pointer;

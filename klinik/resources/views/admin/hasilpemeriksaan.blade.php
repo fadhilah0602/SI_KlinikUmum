@@ -14,9 +14,6 @@
 </head>
 
 <body>
-
-
-    <!-- SIDEBAR -->
     <section id="sidebar">
         <a href="#" class="brand">
             <i class='bx bxs-clinic'></i>
@@ -41,7 +38,7 @@
                     <span class="text">Pasien</span>
                 </a>
             </li>
-            <li class="active">
+            <li>
                 <a href="/admindokter">
                     <i class='bx bxs-user-plus'></i>
                     <span class="text">Dokter</span>
@@ -49,18 +46,18 @@
             </li>
             <li>
                 <a href="/poli">
-                    <i class='bx bxs-layout'></i>
+                <i class='bx bxs-layout'></i>
                     <span class="text">Poli</span>
                 </a>
             </li>
 
             <li>
                 <a href="/jadwaldokter">
-                    <i class='bx bx-edit'></i>
+                <i class='bx bx-edit'></i>
                     <span class="text">Jadwal Dokter</span>
                 </a>
             </li>
-            <li>
+            <li class="active">
                 <a href="/hasilpemeriksaan">
                 <i class='bx bx-edit'></i>
                     <span class="text">Hasil Pemeriksaan</span>
@@ -68,14 +65,15 @@
             </li>
             <li>
                 <a href="/user">
-                    <i class='bx bxs-user-detail'></i>
+                <i class='bx bxs-user-detail'></i>
                     <span class="text">User</span>
                 </a>
+            
             </li>
-          
         </ul>
+
         <ul class="side-menu">
-           
+          
             <li>
                 <a href="/home" class="logout">
                     <i class='bx bxs-log-out-circle'></i>
@@ -94,24 +92,24 @@
             <div class="table-data">
                 <div class="order">
                     <div class="head">
-                        <h3>Dokter</h3>
-                        {{-- <button class="Button">Tambah Data</button> --}}
-                        <form>
+                        <h3>Hasil Pemeriksaan</h3>
+                        
+                        <!-- <form>
                             <input type="search" id="searchBox" name="search" placeholder="Search...">
                             <input type="submit" value="Search">
-                        </form>
+                        </form> -->
                         <!-- <button class="bx bx-button">
                             <a href="" class="btn btn-sm btn-primary" style="float: right">
                                 Tambah Data
                             </a> -->
-                        <button type="button" onclick="goToNextPage()">Tambah Dokter</button>
+                        <!-- <button type="button" onclick="goToNextPage()">Tambah Jadwal Dokter</button>
 
                         <script>
                             function goToNextPage() {
                                 // Gantilah URL atau path sesuai kebutuhan
-                                window.location.href = "createdokter";
+                                window.location.href = "createruang";
                             }
-                        </script>
+                        </script> -->
                         <!-- </button> -->
 
                         {{-- <i class='bx bx-search'></i>
@@ -121,15 +119,11 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Nip</th>
-                                <th>Nama</th>
-                                <th>Tempat Lahir</th>
-                                <th>Tanggal Lahir</th>
-                                <th>Jenis Kelamin</th>
-                                <th>Alamat</th>
-                                <th>No Telp</th>
-                                <th>Spesialis</th>
-                                <th>Aksi</th>
+                                <th>Nama Dokter</th>
+                                <th>Nama Pasien</th>
+                                <th>Jenis Pemeriksaan</th>
+                                <th>Diagnosa</th>
+                                <th>Obat</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -137,34 +131,13 @@
                                 $no = 1;
                             @endphp
 
-                            @foreach ($dokters as $dokter)
+                           
                                 <tr>
-                                    <td>{{ $no++ }}</td>
-                                    <td>{{ $dokter->nip }}</td>
-                                    <td>{{ $dokter->name }}</td>
-                                    <td>{{ $dokter->tempat_lahir }}</td>
-                                    <td>{{ $dokter->tgl_lahir }}</td>
-                                    <td>{{ $dokter->gender }}</td>
-                                    <td>{{ $dokter->alamat }}</td>
-                                    <td>{{ $dokter->no_telp }}</td>
-                                    <td>{{ $dokter->spesialis }}</td>
-                                    <td class="action-buttons">
-                                     
-                                        <a href="{!! route('editdokter.edit', $dokter->dokter_id) !!}" type="button">Edit</a>
-
-                                        <form method="post"
-                                            action="{{ route('deletedokter.destroy', $dokter->dokter_id) }}">
-                                            @csrf
-                                            @method('delete')
-                                            <button onclick="return confirm('Yakin hapus ?')" type="submit"
-                                                class="btn btn-danger btn-sm ml-2"><i class="fas fa-trash fa-fw"></i>
-                                                Delete</button>
-                                        </form>
-
-                                        <!-- <button type="button" onclick="if(confirmDelete()) document.forms[0].submit();">Delete</button> -->
-                                    </td>
+                                    
+                                    
+                                   
                                 </tr>
-                            @endforeach
+                          
                         </tbody>
                     </table>
                 </div>
@@ -175,7 +148,7 @@
     <!-- CONTENT -->
 
 
-    <script src="{!! asset('js/script.js') !!}"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

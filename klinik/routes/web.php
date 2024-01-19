@@ -77,6 +77,7 @@ Route::get('/jadwaldokter', [JadwaldokterController::class, 'home']);
 Route::get('/add-jadwaldokter', [JadwaldokterController::class, 'create']);
 Route::post('/add-jadwaldokter', [JadwaldokterController::class, 'store']);
 
+
 Route::get('/adminhome', function () {
     return view('/admin/home');
 });

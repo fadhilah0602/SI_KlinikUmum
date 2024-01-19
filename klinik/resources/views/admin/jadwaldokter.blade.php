@@ -137,8 +137,9 @@
                                 $no = 1;
                             @endphp
 
+                        
                                 <tr>
-                                    
+                                
                                     <td class="action-buttons">
                                         <button type="button" onclick="goToPageEdit()">Edit</button>
 

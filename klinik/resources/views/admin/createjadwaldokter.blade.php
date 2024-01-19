@@ -102,7 +102,7 @@
                     <form method="POST" action="{{ url('add-jadwaldokter') }}">
                         @csrf
                         <div class="header">
-                            <h4> Tambah Jadwal Dokter</h4>
+                            <h4>Tambah Jadwal Dokter</h4>
                         </div>
                         <div class="form-group">
                             {{-- <label for="name">Nama Dokter :</label>

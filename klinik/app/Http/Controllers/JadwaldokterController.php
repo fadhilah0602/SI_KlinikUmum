@@ -30,5 +30,6 @@ class JadwaldokterController extends Controller
         ]);
 
         return redirect('/jadwaldokter')->with('success', 'Jadwal dokter created successfully.');
+        
     }
 }

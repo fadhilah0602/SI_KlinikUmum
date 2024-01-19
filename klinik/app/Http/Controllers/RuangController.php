@@ -41,7 +41,7 @@ class RuangController extends Controller
         return redirect('/poli')->with('success', 'Poli created successfully.');
     }
 
-    public function destroy($ruang_id)
+    public function destroy()
     {
         $ruang = Ruang::where('ruang_id', $ruang_id)->first();
         $ruang->delete();

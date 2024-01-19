@@ -115,7 +115,7 @@
                         <script>
                             function goToNextPage() {
                                 // Gantilah URL atau path sesuai kebutuhan
-                                window.location.href = "createruang";
+                                window.location.href = "add-jadwaldokter";
                             }
                         </script>
                         <!-- </button> -->

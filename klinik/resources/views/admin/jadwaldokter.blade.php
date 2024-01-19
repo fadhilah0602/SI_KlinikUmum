@@ -115,7 +115,7 @@
                         <script>
                             function goToNextPage() {
                                 // Gantilah URL atau path sesuai kebutuhan
-                                window.location.href = "createruang";
+                                window.location.href = "add-jadwaldokter";
                             }
                         </script>
                         <!-- </button> -->
@@ -137,9 +137,7 @@
                                 $no = 1;
                             @endphp
 
-                           
                                 <tr>
-                                    
                                     
                                     <td class="action-buttons">
                                         <button type="button" onclick="goToPageEdit()">Edit</button>
@@ -167,7 +165,7 @@
                                         </script> --}}
                                     </td>
                                 </tr>
-                          
+                            
                         </tbody>
                     </table>
                 </div>

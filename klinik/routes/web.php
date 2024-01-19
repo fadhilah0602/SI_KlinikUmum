@@ -8,6 +8,7 @@ use App\Http\Controllers\DokterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\SignUpController;
 use App\Http\Controllers\RuangController;
+use App\Http\Controllers\JadwaldokterController;
 use App\Models\Dokter;
 
 /*
@@ -72,6 +73,9 @@ Route::get('/add-poli', [RuangController::class, 'create']);
 Route::post('/add-poli', [RuangController::class, 'store']);
 Route::delete('delete-poli/{ruang_id}', [RuangController::class, 'destroy'])->name('deleteruang.destroy');
 
+Route::get('/jadwaldokter', [JadwaldokterController::class, 'home']);
+Route::get('/add-jadwaldokter', [JadwaldokterController::class, 'create']);
+Route::post('/add-jadwaldokter', [JadwaldokterController::class, 'store']);
 
 Route::get('/adminhome', function () {
     return view('/admin/home');

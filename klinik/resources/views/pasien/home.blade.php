@@ -16,8 +16,8 @@
 <body>
 
 
-  <!-- SIDEBAR -->
-  <section id="sidebar">
+    <!-- SIDEBAR -->
+    <section id="sidebar">
         <a href="#" class="brand">
             <i class='bx bxs-clinic'></i>
             <span class="text">SIK Dr.Zul</span>
@@ -41,7 +41,7 @@
                     <span class="text">Hasil Pemeriksaan</span>
                 </a>
             </li>
-           
+
         </ul>
         <ul class="side-menu">
             <li>
@@ -56,56 +56,69 @@
     </section>
     <!-- SIDEBAR -->
 
-   
+
     <section id="content">
         <main>
             <ul class="box-info">
                 <li>
-                    <!-- <i class='bx bx-face'></i> -->
+                    <i class='bx bxs-clinic'></i>
                     <span class="text">
-                        <!-- <h3>Hi, Admin 1</h3>
-                        <p>Admin 1 Klinik Dr.Zul</p>
-                    </span> -->
-                    <div class="header">
-                    <h4> DINAS KESEHATAN KABUPATEN LUBUK BEGALUNG</h4>
-                        <h4>PRAKTEK UMUM DR.ZUL</h4>
-                     <h5>   Daftar Pendaftaran Praktek Umum Dr. Zul</h5>
-                    </div>
-                    <div class="form-group">
-                <label for="name">Nama:</label>
-                <input type="text" id="name" name="name">
-            </div>
-            <div class="form-group">
-                <label for="date">Tanggal Pemeriksaan:</label>
-                <input type="date" id="date" name="date">
-            </div>
-            <div class="form-group">
-                <label for="alamat">Alamat:</label>
-                <input type="text" id="alamat" name="alamat"></input>
-            </div>
-            <div class="form-group">
-                <label for="nohp">No Hp:</label>
-                <input type="text" id="nohp" name="nohp"></input>
-            </div>
-            <button type="submit">Submit</button>
-        </form>
-    </div>
+                        <h3>Klinik Umum Dr.Zul</h3>
+                        <p>Form Pendaftaran Antrean</p>
+                    </span>
                 </li>
-            </ul>   
-      
-           
-</body>
-                </li>
-
             </ul>
-            
-         
+            <ul class="box-info">
+                <li>
+                    {{-- <form method="POST" action="{{ url('add-poli') }}"> --}}
+                    {{-- @csrf --}}
+                    <form>
+                        <div class="form-group">
+                            <label for="dokter">Dokter:</label>
+                            <select name="dokter_id" id="dokter_id" class="custom-select">
+                                <option value="">---Pilih Dokter---</option>
+                                <option value="dr.zainal">dr.Zainal</option>
+                                {{-- @foreach ($dokters as $dokter)
+                                    <option value="{{ $dokter->dokter_id }}">{{ $dokter->name }}</option>
+                                @endforeach --}}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="hari">Hari:</label>
+                            <select id="hari" name="hari">
+                                <option value="">===Pilih===</option>
+                                <option value="Senin">Senin</option>
+                                <option value="Selasa">Selasa</option>
+                                <option value="Rabu">Rabu</option>
+                                <option value="Kamis">Kamis</option>
+                                <option value="Jumat">Jumat</option>
+                                <option value="Sabtu">Sabtu</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="waktu">Waktu:</label>
+                            <input type="time" id="waktu" name="waktu">
+                        </div>
+                        <button type="submit">Submit</button>
+                    </form>
+                </li>
+            </ul>
+        </main>
     </section>
-    <!-- CONTENT -->
 
-    
 
-    <script src="script.js"></script>
+</body>
+</li>
+
+</ul>
+
+
+</section>
+<!-- CONTENT -->
+
+
+
+<script src="script.js"></script>
 </body>
 
 </html>

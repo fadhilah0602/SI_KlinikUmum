@@ -78,10 +78,10 @@
                     <span class="text">User</span>
                 </a>
             </li>
-          
+
         </ul>
         <ul class="side-menu">
-          
+
             <li>
                 <a href="/home" class="logout">
                     <i class='bx bxs-log-out-circle'></i>
@@ -144,12 +144,11 @@
                                     <td>{{ $no++ }}</td>
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $user->email }}</td>
-                                    
                                     <td>{{ $user->role }}</td>
                                     <td class="action-buttons">
-                                 
 
-                                 
+
+
                                     <a href="{!! route('edituser.edit', $user->id) !!}" type="button">Edit</a>
 
 

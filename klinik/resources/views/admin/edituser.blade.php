@@ -119,12 +119,17 @@
                                 <label for="password">Password:</label>
                                 <input type="password" id="password" name="password" value="{!! $user->password !!}">
                             </div>
-                        
+
                             <div class="form-group">
                                 <label for="role">Role:</label>
-                                <input type="text" id="role" name="role" value="{!! $user->role !!}">
+                                <select id="role" name="role">
+                                     <option value="">===Pilih===</option>
+                                     <option value="Pasien" {!! $user->role == 'Pasien' ? 'selected' : '' !!}>Pasien</option>
+                                     <option value="Dokter" {!! $user->role == 'Dokter' ? 'selected' : '' !!}>Dokter</option>
+                                     <option value="Admin" {!! $user->role == 'Admin' ? 'selected' : '' !!}>Admin</option>
+                                </select>
                             </div>
-                            
+
                             <button onclick="return confirm('Yakin update ?')" type="submit"
                                 class="btn btn-danger btn-sm ml-2"><i class="fas fa-trash fa-fw"></i>
                                 Submit</button>

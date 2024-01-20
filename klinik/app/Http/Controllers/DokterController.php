@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Dokter;
 use App\Models\Pasien;
+use App\Models\SuratKeterangan;
 use App\Models\User;
 
 class DokterController extends Controller

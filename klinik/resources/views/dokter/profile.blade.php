@@ -35,13 +35,19 @@
                     <span class="text">Profile</span>
                 </a>
             </li>
-            <li>
+            {{-- <li>
                 <a href="/dokumen">
                     <i class='bx bxs-group user-icon'></i>
                     <span class="text">Dokumen</span>
                 </a>
+            </li> --}}
+            <li>
+                <a href="/suratketerangan">
+                    <i class='bx bxs-group user-icon'></i>
+                    <span class="text">Surat Keterangan</span>
+                </a>
             </li>
-           
+
         </ul>
         <ul class="side-menu">
             <li>
@@ -58,34 +64,26 @@
 
     <!-- CONTENT -->
     <section id="content">
-        <!-- NAVBAR -->
-
-        <!-- NAVBAR -->
-
-        <!-- MAIN -->
         <main>
-            <ul class="box-info">
-                <li>
-                    <i class='bx bx-face'></i>
-                    <span class="text">
-                        <h3>Hi, Dokter Zul!</h3>
-                        <p>Dokter Klinik</p>
-                    </span>
-                </li>
-
-            </ul>
-            
-            {{-- <button class="Button">Ubah Password</button> --}}
-            
-        </main>
-        <main>
-            <button class="bx bx-button2">Ubah Password</button>
-        </main>
-        <!-- MAIN -->
+            @auth
+                @if (Auth::user()->role == 'Dokter')
+                    <ul class="box-info">
+                        <li>
+                            <i class='bx bx-face'></i>
+                            <span class="text">
+                                <h3 class="profile-username text-center">Hi, {{ Auth::user()->name }}</h3>
+                                <p>{{ Auth::user()->role }}</p>
+                            </span>
+                        </li>
+                    </ul>
+                    <button style="margin-top: 10px" class="bx bx-button2">Ubah Password</button>
+            </main>
+            @endif
+        @endauth
     </section>
     <!-- CONTENT -->
 
-    
+
 
     <script src="script.js"></script>
 </body>

@@ -8,7 +8,7 @@
     <!-- Boxicons -->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <!-- My CSS -->
-    <link rel="stylesheet" href="css/homeadmin.css">
+    <link rel="stylesheet" href="{!! asset('css/homeadmin.css') !!}">
 
     <i class='bx bxs-clinic'></i>
     <title>SIK Dr.Zul</title>
@@ -116,39 +116,36 @@
                             <p class="page-title">NOMOR ANTREAN</p>
                         </div>
                         <div class="content">
-                            {{-- @foreach ($jadwalpemeriksaan as $item) --}}
-                                <table>
-                                    <tr>
-                                        <div class="label1">001</div>
-                                        <input type="text" id="pasien_id" name="pasien_id">
-                                            {{-- value="{!! $item->pasien_id !!}"> --}}
-                                    </tr>
-                                    <tr>
-                                        <div class="label2">Atas Nama : </div>
-                                        <input type="text" id="name" name="name">
-                                            {{-- value="{!! $item->name !!}"> --}}
-                                    </tr>
-                                    <tr>
-                                        <div class="label3">Dokter</div>
-                                        <div class="label-name">dr. Zulkarnain Nasution</div>
-                                    </tr>
-                                    <div class="wrapper">
-                                        <div class="label4">Poli Tujuan</div>
-                                        <div class="label5">No Rekam Media</div>
-                                    </div>
-                                    <div class="wrapper-2">
-                                        <div class="label-poli">Poli Umum 2</div>
-                                        <div class="label-media">K-0001</div>
-                                    </div>
-                                    <div class="wrapper">
-                                        <div class="label6">Waktu Daftar</div>
-                                        <div class="label7">Waktu Panggil</div>
-                                    </div>
-                                    <div class="wrapper-2">
-                                        <div class="label-daftar">001</div>
-                                        <div class="label-panggil">002</div>
-                                    </div>
-                                </table>
+                            <table>
+                                <tr>
+                                    <div class="label1">{!! $jadwalpemeriksaan->pasien_id !!}</div>
+                                    {{-- <input type="text" id="pasien_id" name="pasien_id"
+                                        value="{!! $jadwalpemeriksaan->pasien_id !!}"> --}}
+                                </tr>
+                                <tr>
+                                    <div class="label2">Atas Nama : {!! $jadwalpemeriksaan->pasien->name !!} </div>
+                                </tr>
+                                <tr>
+                                    <div class="label3">Dokter</div>
+                                    <div class="label-name">{!! $jadwalpemeriksaan->dokter->name !!}</div>
+                                </tr>
+                                <div class="wrapper">
+                                    <div class="label4">Poli Tujuan</div>
+                                    <div class="label5">No Rekam Media</div>
+                                </div>
+                                <div class="wrapper-2">
+                                    <div class="label-poli">Poli Umum 2</div>
+                                    <div class="label-media">K-0001</div>
+                                </div>
+                                <div class="wrapper">
+                                    <div class="label6">Waktu Daftar</div>
+                                    <div class="label7">Waktu Panggil</div>
+                                </div>
+                                <div class="wrapper-2">
+                                    <div class="label-daftar">001</div>
+                                    <div class="label-panggil">002</div>
+                                </div>
+                            </table>
                             {{-- @endforeach --}}
                         </div>
                     </div>
@@ -180,7 +177,7 @@
     <!-- CONTENT -->
 
 
-    <script src="script.js"></script>
+    <script src="{!! asset('js/script.js') !!}"></script>
 </body>
 
 </html>

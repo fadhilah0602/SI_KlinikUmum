@@ -16,8 +16,8 @@
 <body>
 
 
-  <!-- SIDEBAR -->
-  <section id="sidebar">
+    <!-- SIDEBAR -->
+    <section id="sidebar">
         <a href="#" class="brand">
             <i class='bx bxs-clinic'></i>
             <span class="text">SIK Dr.Zul</span>
@@ -41,7 +41,7 @@
                     <span class="text">Hasil Pemeriksaan</span>
                 </a>
             </li>
-           
+
         </ul>
         <ul class="side-menu">
             <li>
@@ -58,34 +58,26 @@
 
     <!-- CONTENT -->
     <section id="content">
-        <!-- NAVBAR -->
-
-        <!-- NAVBAR -->
-
-        <!-- MAIN -->
         <main>
-            <ul class="box-info">
-                <li>
-                    <i class='bx bx-face'></i>
-                    <span class="text">
-                        <h3>Hi, Pasien!</h3>
-                        <p>Pasien Klinik</p>
-                    </span>
-                </li>
-
-            </ul>
-            
-            {{-- <button class="Button">Ubah Password</button> --}}
-            
-        </main>
-        <main>
-            <button class="bx bx-button2">Ubah Password</button>
-        </main>
-        <!-- MAIN -->
+            @auth
+                @if (Auth::user()->role == 'Pasien')
+                    <ul class="box-info">
+                        <li>
+                            <i class='bx bx-face'></i>
+                            <span class="text">
+                                <h3 class="profile-username text-center">Hi, {{ Auth::user()->name }}</h3>
+                                <p>{{ Auth::user()->role }}</p>
+                            </span>
+                        </li>
+                    </ul>
+                    <button style="margin-top: 10px" class="bx bx-button2">Ubah Password</button>
+            </main>
+            @endif
+        @endauth
     </section>
     <!-- CONTENT -->
 
-    
+
 
     <script src="script.js"></script>
 </body>

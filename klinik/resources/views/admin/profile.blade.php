@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,7 +29,7 @@
                     <span class="text">Home</span>
                 </a>
             </li>
-            <li  class="active">
+            <li class="active">
                 <a href="/adminprofile">
                     <i class='bx bxs-user-circle'></i>
                     <span class="text">Profile</span>
@@ -50,39 +49,39 @@
             </li>
             <li>
                 <a href="/poli">
-                <i class='bx bxs-layout'></i>
+                    <i class='bx bxs-layout'></i>
                     <span class="text">Poli</span>
                 </a>
             </li>
 
             <li>
                 <a href="/jadwaldokter">
-                <i class='bx bx-edit'></i>
+                    <i class='bx bx-edit'></i>
                     <span class="text">Jadwal Dokter</span>
                 </a>
             </li>
             <li>
                 <a href="/jadwalpemeriksaan">
-                <i class='bx bx-edit'></i>
+                    <i class='bx bx-edit'></i>
                     <span class="text">Jadwal Pemeriksaan</span>
                 </a>
             </li>
             <li>
                 <a href="/hasilpemeriksaan">
-                <i class='bx bx-edit'></i>
+                    <i class='bx bx-edit'></i>
                     <span class="text">Hasil Pemeriksaan</span>
                 </a>
             </li>
             <li>
                 <a href="/user">
-                <i class='bx bxs-user-detail'></i>
+                    <i class='bx bxs-user-detail'></i>
                     <span class="text">User</span>
                 </a>
-           
+
             </li>
         </ul>
         <ul class="side-menu">
-          
+
             <li>
                 <a href="/home" class="logout">
                     <i class='bx bxs-log-out-circle'></i>
@@ -91,28 +90,24 @@
             </li>
         </ul>
     </section>
-    
+
     <section id="content">
-    
         <main>
-            <ul class="box-info">
-                <li>
-                    <i class='bx bx-face'></i>
-                    <span class="text">
-                        <h3>Hi, Admin</h3>
-                        <p>Admin Klinik</p>
-                    </span>
-                </li>
-
-            </ul>
-
-            {{-- <button class="Button">Ubah Password</button> --}}
-
-        </main>
-        <main>
-            <button class="bx bx-button2">Ubah Password</button>
-        </main>
-       
+            @auth
+                @if (Auth::user()->role == 'Admin')
+                    <ul class="box-info">
+                        <li>
+                            <i class='bx bx-face'></i>
+                            <span class="text">
+                                <h3 class="profile-username text-center">Hi, {{ Auth::user()->name }}</h3>
+                                <p>{{ Auth::user()->role }}</p>
+                            </span>
+                        </li>
+                    </ul>
+                    <button style="margin-top: 10px" class="bx bx-button2">Ubah Password</button>
+            </main>
+            @endif
+        @endauth
     </section>
     <script src="script.js"></script>
 </body>

@@ -10,6 +10,7 @@
     <!-- My CSS -->
     <link rel="stylesheet" href="css/style.css">
 
+    <i class='bx bxs-clinic'></i>
     <title>SIK Dr.Zul</title>
 </head>
 
@@ -24,65 +25,34 @@
         </a>
         <ul class="side-menu top">
             <li>
-                <a href="/adminhome">
+                <a href="/dokterhome">
                     <i class='bx bxs-dashboard'></i>
                     <span class="text">Home</span>
                 </a>
             </li>
             <li>
-                <a href="/adminprofile">
+                <a href="/dokterprofile">
                     <i class='bx bxs-user-circle'></i>
                     <span class="text">Profile</span>
                 </a>
             </li>
-            <li>
-                <a href="/adminpasien">
+            {{-- <li>
+                <a href="/dokumen">
                     <i class='bx bxs-group user-icon'></i>
-                    <span class="text">Pasien</span>
+                    <span class="text">Dokumen</span>
                 </a>
-            </li>
-            <li>
-                <a href="/admindokter">
-                    <i class='bx bxs-user-plus'></i>
-                    <span class="text">Dokter</span>
-                </a>
-            </li>
-
-            <li  class="active">
-                <a href="/poli">
-                <i class='bx bxs-layout'></i>
-                    <span class="text">Poli</span>
+            </li> --}}
+            <li class="active">
+                <a href="/suratketerangan">
+                    <i class='bx bxs-group user-icon'></i>
+                    <span class="text">Surat Keterangan</span>
                 </a>
             </li>
 
-            <li>
-                <a href="/jadwaldokter">
-                <i class='bx bx-edit'></i>
-                    <span class="text">Jadwal Dokter</span>
-                </a>
-            </li>
-            <li>
-                <a href="/jadwalpemeriksaan">
-                <i class='bx bx-edit'></i>
-                    <span class="text">Jadwal Pemeriksaan</span>
-                </a>
-            </li>
-            <li>
-                <a href="/hasilpemeriksaan">
-                <i class='bx bx-edit'></i>
-                    <span class="text">Hasil Pemeriksaan</span>
-                </a>
-            </li>
-            <li>
-                <a href="/user">
-                <i class='bx bxs-user-detail'></i>
-                    <span class="text">User</span>
-                </a>
-
-            </li>
         </ul>
         <ul class="side-menu">
-
+            <li>
+            </li>
             <li>
                 <a href="/home" class="logout">
                     <i class='bx bxs-log-out-circle'></i>
@@ -91,6 +61,11 @@
             </li>
         </ul>
     </section>
+    <!-- SIDEBAR -->
+
+
+
+    <!-- CONTENT -->
     <section id="content">
         <!-- NAVBAR -->
 
@@ -98,16 +73,23 @@
 
         <!-- MAIN -->
         <main>
+
+
             <div class="table-data">
                 <div class="order">
                     <div class="head">
-                        <h3>Poli Klinik</h3>
-                        <button type="button" onclick="goToNextPage()">Tambah Poli</button>
+                        <h3>Keterangan</h3>
+                        <form>
+                            {{-- <input type="search" id="searchBox" name="search" placeholder="Search...">
+                            {{-- <input type="submit" value="Search"> --}}
+                            {{-- <button class="Button">Tambah Surat</button> --}}
+                        </form>
+                        <button type="button" onclick="goToNextPage()">Tambah Surat</button>
 
                         <script>
                             function goToNextPage() {
                                 // Gantilah URL atau path sesuai kebutuhan
-                                window.location.href = "createpoli";
+                                window.location.href = "createsurat";
                             }
                         </script>
                     </div>
@@ -116,37 +98,44 @@
                             <tr>
                                 <th>No</th>
                                 <th>Nama Dokter</th>
-                                <th>Nama Ruangan</th>
-                                <th>Jenis Ruangan</th>
+                                <th>Nama Pasien</th>
+                                <th>Nama Klinik</th>
+                                <th>Keterangan</th>
+                                <th>Waktu Awal</th>
+                                <th>Waktu Akhir</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
-                         <tbody>
+                        <tbody>
                             @php
                                 $no = 1;
                             @endphp
 
-                            @foreach ($ruangs as $ruang)
+                            @foreach ($dokumen as $dk)
+                                <tr>
+                                    <td>{{ $no++ }}</td>
+                                    <td>{{ $dk->dokter->name }}</td>
+                                    <td>{{ $dk->pasien->name }}</td>
+                                    <td>{{ $dk->nama_klinik }}</td>
+                                    <td>{{ $dk->keterangan }}</td>
+                                    <td>{{ $dk->waktu1 }}</td>
+                                    <td>{{ $dk->waktu2 }}</td>
+                                    <td class="action-buttons">
 
-                            <tr>
-                                <td>{{ $no++ }}</td>
-                                <td>{{ $ruang->dokter->name }}</td>
-                                <td>{{ $ruang->nama_ruangan }}</td>
-                                <td>{{ $ruang->jenis_ruangan }}</td>
-                                <td class="action-buttons">
-                                <form method="post"
-                                            action="{{ route('deleteruang.destroy', $ruang->ruang_id) }}">
+                                        <a href="{!! route('dokter.dokumen', $dk->surat_keterangan_id) !!}" type="button">Print</a>
+
+                                        {{-- <form method="post" action="{{ route('deletedokter.destroy', $dokter->dokter_id) }}">
                                             @csrf
                                             @method('delete')
                                             <button onclick="return confirm('Yakin hapus ?')" type="submit"
                                                 class="btn btn-danger btn-sm ml-2"><i class="fas fa-trash fa-fw"></i>
                                                 Delete</button>
-                                        </form>
+                                        </form> --}}
+
+                                        <!-- <button type="button" onclick="if(confirmDelete()) document.forms[0].submit();">Delete</button> -->
                                     </td>
-                            </tr>
+                                </tr>
                             @endforeach
-
-
                         </tbody>
                     </table>
                 </div>

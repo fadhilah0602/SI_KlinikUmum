@@ -9,7 +9,11 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\SignUpController;
 use App\Http\Controllers\RuangController;
 use App\Http\Controllers\JadwaldokterController;
+use App\Http\Controllers\JadwalpemeriksaanController;
+use App\Http\Controllers\SuratKeteranganController;
 use App\Models\Dokter;
+use App\Models\JadwalPemeriksaan;
+use App\Models\SuratKeterangan;
 
 /*
 |--------------------------------------------------------------------------
@@ -77,9 +81,10 @@ Route::get('/jadwaldokter', [JadwaldokterController::class, 'home']);
 Route::get('/add-jadwaldokter', [JadwaldokterController::class, 'create']);
 Route::post('/add-jadwaldokter', [JadwaldokterController::class, 'store']);
 
-Route::get('/adminhome', function () {
-    return view('/admin/home');
-});
+Route::get('/jadwalpemeriksaan', [JadwalpemeriksaanController::class, 'home']);
+Route::get('detailjadwalpemeriksaan/{jadwal_pemeriksaan_id}', [JadwalpemeriksaanController::class, 'detail'])->name('detailjadwalpemeriksaan.detail');
+
+Route::get('/adminhome', [AdminController::class, 'home']);
 
 Route::get('/adminprofile', function () {
     return view('/admin/profile');
@@ -88,52 +93,21 @@ Route::get('/adminprofile', function () {
 Route::get('/admin', function () {
     return view('/admin/profile');
 });
-// Route::get('/adminpasien', function () {
-//     return view('admin/pasien');
-// });
 
-// Route::get('/admindokter', function () {
-//     return view('/admin/dokter');
-// });
-
-// Route::get('/createdokter', function () {
-//     return view('/admin/createdokter');
-// });
-// Route::get('/createpasien', [PasienController::class, 'create']);
 Route::get('/createdokter', [DokterController::class, 'create']);
 Route::get('/createuser', [UserController::class, 'create']);
 Route::get('/createpoli', [RuangController::class, 'create']);
-// Route::get('/createpasien', function () {
-//     return view('/admin/createpasien');
-// });
 
-// Route::get('/editpasien', function () {
-//     return view('/admin/editpasien');
-// });
-
-// Route::get('/editdokter', function () {
-//     return view('/admin/editdokter');
-// });
-
-// Route::get('/poli', function () {
-//     return view('/admin/poli');
-// });
 
 Route::get('/jadwaldokter', function () {
     return view('/admin/jadwaldokter');
-});
-
-Route::get('/jadwalpemeriksaan', function () {
-    return view('/admin/jadwalpemeriksaan');
 });
 
 Route::get('/hasilpemeriksaan', function () {
     return view('/admin/hasilpemeriksaan');
 });
 
-// Route::get('/user', function () {
-//     return view('/admin/user');
-// });
+
 
 // ====================================================
 // route dokter
@@ -147,12 +121,15 @@ Route::get('/dokterprofile', function () {
     return view('/dokter/profile');
 });
 
-Route::get('/dokumen', function () {
-    return view('/dokter/dokumen');
-});
+// Route::get('/dokumen', function () {
+//     return view('/dokter/dokumen');
+// });
 
-
-
+Route::get('/suratketerangan', [SuratKeteranganController::class, 'home']);
+Route::get('/createsurat', [SuratKeteranganController::class, 'create'])->name('dokter.createsurat');
+Route::post('/createsurat', [SuratKeteranganController::class, 'store'])->name('dokter.suratketerangan');
+Route::get('/dokumen/{surat_keterangan_id}', [SuratKeteranganController::class, 'dokumen'])->name('dokter.dokumen');
+// Route::post('/dokumen', [SuratKeteranganController::class, 'store']);
 
 // ====================================================
 // route pasien

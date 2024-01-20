@@ -15,11 +15,19 @@ class Admin extends Model
     protected $fillable = [
         'user_id',
         'name'
-        
+
     ];
 
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+    public function dokter()
+    {
+        return $this->belongsTo(Dokter::class, 'dokter_id');
+    }
+    public function pasien()
+    {
+        return $this->belongsTo(Pasien::class, 'pasien_id');
     }
 }

@@ -10,15 +10,23 @@ class SuratKeterangan extends Model
     use HasFactory;
     protected $table = 'surat_keterangans';
 
-    protected $primarykey = 'surat_keterangan_id';
+    protected $primaryKey = 'surat_keterangan_id';
 
     protected $fillable = [
         'dokter_id',
         'pasien_id',
         'nama_klinik',
         'keterangan',
-        'hari',
-        'waktu',
-        
+        'waktu1',
+        'waktu2',
+
     ];
+    public function dokter()
+    {
+        return $this->belongsTo(Dokter::class, 'dokter_id');
+    }
+    public function pasien()
+    {
+        return $this->belongsTo(Pasien::class, 'pasien_id');
+    }
 }

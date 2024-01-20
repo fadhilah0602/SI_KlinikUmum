@@ -10,17 +10,17 @@ class Ruang extends Model
     use HasFactory;
     protected $table = 'ruangs';
 
-    protected $primarykey = 'ruang_id';
+    protected $primaryKey = 'ruang_id';
 
     protected $fillable = [
         'dokter_id',
         'nama_ruangan',
         'jenis_ruangan',
-        
+
     ];
 
     public function dokter()
     {
-        return $this->belongsTo(Dokter::class);
+        return $this->belongsTo(Dokter::class, 'dokter_id');
     }
 }

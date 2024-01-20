@@ -36,13 +36,19 @@
                     <span class="text">Profile</span>
                 </a>
             </li>
-            <li>
+            {{-- <li>
                 <a href="/dokumen">
                     <i class='bx bxs-group user-icon'></i>
                     <span class="text">Dokumen</span>
                 </a>
+            </li> --}}
+            <li>
+                <a href="/suratketerangan">
+                    <i class='bx bxs-group user-icon'></i>
+                    <span class="text">Surat Keterangan</span>
+                </a>
             </li>
-           
+
         </ul>
         <ul class="side-menu">
             <li>
@@ -67,8 +73,8 @@
 
         <!-- MAIN -->
         <main>
-           
-       
+
+
             <div class="table-data">
                 <div class="order">
                     <div class="head">
@@ -79,7 +85,7 @@
                             <input type="submit" value="Search">
                           </form>
                         <!-- <button class="bx bx-button">Tambah Data</button> -->
-                        
+
                         {{-- <i class='bx bx-search'></i>
                         <i class='bx bx-filter'></i> --}}
                     </div>
@@ -103,7 +109,7 @@
                                 <td>
                                     <select class="custom-select">
                                         <option value="process">Selesai</option>
-                                        <option value="pending">Dalam Antrian</option>                         
+                                        <option value="pending">Dalam Antrian</option>
                                       </select>
                                     </td>
                                     <!-- <td>Lihat Data</td> -->
@@ -111,8 +117,8 @@
                                     <button class="bx bx-button2">Lihat Data</button></td>
                                     <!-- <button type="button" class="btn btn-primary">Primary</button> -->
                             </tr>
-                            
-                           
+
+
                         </tbody>
                     </table>
                 </div>

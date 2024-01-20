@@ -8,9 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class JadwalPemeriksaan extends Model
 {
     use HasFactory;
+
     protected $table = 'jadwal_pemeriksaans';
 
-    protected $primarykey = 'jadwal_pemeriksaan_id';
+    protected $primaryKey = 'jadwal_pemeriksaan_id';
 
     protected $fillable = [
         'dokter_id',
@@ -18,6 +19,14 @@ class JadwalPemeriksaan extends Model
         'hari',
         'waktu',
         'status',
-        
+
     ];
+    public function dokter()
+    {
+        return $this->belongsTo(Dokter::class, 'dokter_id');
+    }
+    public function pasien()
+    {
+        return $this->belongsTo(Pasien::class, 'pasien_id');
+    }
 }

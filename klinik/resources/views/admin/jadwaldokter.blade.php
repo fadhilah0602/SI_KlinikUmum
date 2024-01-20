@@ -47,6 +47,7 @@
                     <span class="text">Dokter</span>
                 </a>
             </li>
+
             <li>
                 <a href="/poli">
                 <i class='bx bxs-layout'></i>
@@ -54,7 +55,7 @@
                 </a>
             </li>
 
-            <li class="active">
+            <li  class="active">
                 <a href="/jadwaldokter">
                 <i class='bx bx-edit'></i>
                     <span class="text">Jadwal Dokter</span>
@@ -77,11 +78,11 @@
                 <i class='bx bxs-user-detail'></i>
                     <span class="text">User</span>
                 </a>
-            
+
             </li>
         </ul>
         <ul class="side-menu">
-          
+
             <li>
                 <a href="/home" class="logout">
                     <i class='bx bxs-log-out-circle'></i>
@@ -101,73 +102,51 @@
                 <div class="order">
                     <div class="head">
                         <h3>Jadwal Dokter</h3>
-                        {{-- <button class="Button">Jadwal Dokter</button> --}}
-                        <!-- <form>
-                            <input type="search" id="searchBox" name="search" placeholder="Search...">
-                            <input type="submit" value="Search">
-                        </form> -->
-                        <!-- <button class="bx bx-button">
-                            <a href="" class="btn btn-sm btn-primary" style="float: right">
-                                Tambah Data
-                            </a> -->
                         <button type="button" onclick="goToNextPage()">Tambah Jadwal Dokter</button>
 
                         <script>
                             function goToNextPage() {
                                 // Gantilah URL atau path sesuai kebutuhan
-                                window.location.href = "add-jadwaldokter";
+                                window.location.href = "createjadwaldokter";
                             }
                         </script>
-                        <!-- </button> -->
-
-                        {{-- <i class='bx bx-search'></i>
-                        <i class='bx bx-filter'></i> --}}
                     </div>
                     <table>
                         <thead>
                             <tr>
                                 <th>No</th>
                                 <th>Nama Dokter</th>
-                                <th>Hari</th>
-                                <th>Waktu</th>
+                                <th>Nama Ruangan</th>
+                                <th>Jenis Ruangan</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
-                        <tbody>
+                         <tbody>
                             @php
                                 $no = 1;
                             @endphp
 
-                           
-                                <tr>
-                                    
-                                    
-                                    <td class="action-buttons">
-                                        <button type="button" onclick="goToPageEdit()">Edit</button>
+                            @foreach ($jadwaldokters as $jadwaldokter)
 
-                                        <script>
-                                            function goToPageEdit() {
-                                                // Gantilah URL atau path sesuai kebutuhan
-                                                window.location.href = "editjadwaldokter";
-                                            }
-                                        </script>
-
-                                        <button onclick="deleteUser()">
-                                            <i class="fas fa-trash-alt"></i> Hapus
-                                        </button>
-                                        {{-- <script>
-                                            // Fungsi untuk menghapus elemen
-                                            function deleteUser() {
-                                                var element = document.getElementById("elementToBeDeleted");
-                                                if (element) {
-                                                    element.parentNode.removeChild(element);
-                                                } else {
-                                                    console.error("Element not found.");
-                                                }
-                                            }
-                                        </script> --}}
+                            <tr>
+                                <td>{{ $no++ }}</td>
+                                <td>{{ $jadwaldokter->dokter->name }}</td>
+                                <td>{{ $jadwaldokter->hari }}</td>
+                                <td>{{ $jadwaldokter->waktu }}</td>
+                                <td class="action-buttons">
+                                <form method="post"
+                                            action="{{ route('deletejadwaldokter.destroy', $jadwaldokter->jadwal_dokter_id) }}">
+                                            @csrf
+                                            @method('delete')
+                                            <button onclick="return confirm('Yakin hapus ?')" type="submit"
+                                                class="btn btn-danger btn-sm ml-2"><i class="fas fa-trash fa-fw"></i>
+                                                Delete</button>
+                                        </form>
                                     </td>
-                                </tr>
-                          
+                            </tr>
+                            @endforeach
+
+
                         </tbody>
                     </table>
                 </div>

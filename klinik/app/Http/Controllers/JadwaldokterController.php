@@ -11,6 +11,7 @@ class JadwaldokterController extends Controller
     public function home()
     {  
         $jadwaldokters = JadwalDokter::all();
+        $dokter = Dokter::all();
         return view('admin.jadwaldokter', compact('jadwaldokters'));
     }
 
@@ -33,6 +34,6 @@ class JadwaldokterController extends Controller
             'waktu' => $request->waktu   
         ]);
 
-        return redirect('/jadwaldokter')->with('success', 'Poli created successfully.');
+        return redirect('/jadwaldokter')->with('success', 'Jadwal dokter created successfully.');
     }
 }

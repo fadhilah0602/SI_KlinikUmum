@@ -47,14 +47,14 @@
                     <span class="text">Dokter</span>
                 </a>
             </li>
-            <li class="active">
+            <li>
                 <a href="/poli">
                 <i class='bx bxs-layout'></i>
                     <span class="text">Poli</span>
                 </a>
             </li>
 
-            <li>
+            <li class="active">
                 <a href="/jadwaldokter">
                 <i class='bx bx-edit'></i>
                     <span class="text">Jadwal Dokter</span>
@@ -102,7 +102,7 @@
                     <form method="POST" action="{{ url('add-jadwaldokter') }}">
                         @csrf
                         <div class="header">
-                            <h4> Tambah Data Ruangan</h4>
+                            <h4> Tambah Jadwal Dokter</h4>
                         </div>
                         <div class="form-group">
                             {{-- <label for="name">Nama Dokter :</label>
@@ -120,18 +120,13 @@
                             <input type="text" id="hari" name="hari">
                         </div>
                         <div class="form-group">
-                            <label for="waktu">Waktu :</label>
+                            <label for="waktu">Waktu:</label>
                             <input type="date" id="waktu" name="waktu">
                         </div>
 
                         <button type="submit">Submit</button>
 
-                        {{-- <script>
-                                function goToNextPage() {
-                                    // Gantilah URL atau path sesuai kebutuhan
-                                    window.location.href = "adminpasien";
-                                }
-                            </script> --}}
+                       
                     </form>
                 </li>
             </ul>

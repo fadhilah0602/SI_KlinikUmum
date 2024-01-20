@@ -80,6 +80,8 @@ Route::delete('delete-poli/{ruang_id}', [RuangController::class, 'destroy'])->na
 Route::get('/jadwaldokter', [JadwaldokterController::class, 'home']);
 Route::get('/add-jadwaldokter', [JadwaldokterController::class, 'create']);
 Route::post('/add-jadwaldokter', [JadwaldokterController::class, 'store']);
+Route::delete('delete-jadwaldokter/{jadwal_dokter_id}', [JadwaldokterController::class, 'destroy'])->name('deletejadwaldokter.destroy');
+
 
 Route::get('/jadwalpemeriksaan', [JadwalpemeriksaanController::class, 'home']);
 Route::get('detailjadwalpemeriksaan/{jadwal_pemeriksaan_id}', [JadwalpemeriksaanController::class, 'detail'])->name('detailjadwalpemeriksaan.detail');
@@ -97,7 +99,7 @@ Route::get('/admin', function () {
 Route::get('/createdokter', [DokterController::class, 'create']);
 Route::get('/createuser', [UserController::class, 'create']);
 Route::get('/createpoli', [RuangController::class, 'create']);
-
+Route::get('/createjadwaldokter', [JadwaldokterController::class, 'create']);
 
 Route::get('/jadwaldokter', function () {
     return view('/admin/jadwaldokter');

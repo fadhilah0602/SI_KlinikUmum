@@ -36,6 +36,8 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('home');
 });
+Route::get('/add-home', [MessageController::class, 'create']);
+
 Route::get('/login', function () {
     return view('login');
 });

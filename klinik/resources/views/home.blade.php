@@ -27,7 +27,8 @@
                 </ul>
                 <i class="fas fa-bars" onclick="openmenu()"></i>
             </nav>
-            <!-- <img src="Images/bg.png" alt="" position="right"> -->
+           
+            <div class="row">
             <div class="header-text">
                 <h2>Best Medical Clinik</h2>
                 <h1>For  <span> Your </span><br> <span> Healthcare</span></h1>
@@ -41,7 +42,10 @@
                             </script>
                  </div>
                  <!-- <button type="submit" class="btn btn2">Submit</button> -->
-
+               
+                <div class="about-col-2">
+                    <img src="Images/klinik.jpg" alt="">
+                </div>
         
         </div>
      
@@ -58,12 +62,18 @@
                     <img src="Images/usera.png" alt="">
                 </div>
                 <div class="about-col-2">
-                    <h1 class="sub-title"> About Clinic </h1>
+                    <h1 class="sub-title"> Tentang Kami </h1>
                     <p>
-                        Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.
-                        Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.
-                        Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.
-                        Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.
+                    Klinik kami memiliki misi 
+                    untuk membantu masyarakat Indonesia 
+                    mendapat akses ke layanan kesehatan 
+                    terbaik sesuai kebutuhan.
+                    Untuk Anda dan keluarga, 
+                    Klinik ini hadir menyediakan 
+                    berbagai layanan kesehatan berkualitas 
+                    dan terstandarisasi mulai dari layanan 
+                    umum, tumbuh kembang anak, hingga layanan untuk lansia.
+                    Pendaftaran mudah dan rekam medis terintegrasi
                         
                     </p>
                     <div class="tab-titles">
@@ -105,23 +115,20 @@
                 <div>
                     <i class="fas fa-code"></i>
                     <h2>Pemeriksaan Kesehatan</h2>
-                    <p>Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.
-                        Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.</p>
-                        <a href="#">learn more</a>
+                    <p>Layanan kesehatan berkualitas sesuai kebutuhan</p>
+                        <!-- <a href="#">learn more</a> -->
                 </div>
                 <div>
                     <i class="fas fa-crop-alt"></i>
                     <h2>Check Kesehatan Lansia</h2>
-                    <p>Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.
-                        Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.</p>
-                        <a href="#">learn more</a>
+                    <p>Layanan kesehatan berkualitas sesuai kebutuhan</p>
+                        <!-- <a href="#">learn more</a> -->
                 </div>
                 <div>
                     <i class="fab fa-app-store"></i>
                     <h2>Check Kesehatan Ibu dan Anak</h2>
-                    <p>Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.
-                        Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.</p>
-                        <a href="#">learn more</a>
+                    <p>Layanan kesehatan berkualitas sesuai kebutuhan.</p>
+                        <!-- <a href="#">learn more</a> -->
                 </div>
 
             </div>
@@ -138,28 +145,34 @@
                 <div class="work">
                     <img src="Images/work-a.png">
                     <div class="layer">
-                        <h3>Menjaga Kesehatan Ibu dan Anak</h3>
-                        <p>Sangat penting menjaga kesehatan ibu dan anak.
-                            Menjaga pola makan anak agar tumbuh kembang dengan baik </p>
-                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                        <h3>Daftar Penyakit yang Dapat Sembuh dengan Fisioterapi</h3>
+                        <p>Fisioterapi adalah rehabilitasi fisik untuk berbagai 
+                            penyakit yang dilakukan oleh terapis tersertifikasi. 
+                            Tujuan dilakukannya perawatan ini adalah untuk meningkatkan 
+                            mobilitas pasien, memperbaiki gangguan, fungsi dan kualitas 
+                            hidup seseorang menjadi lebih baik saat mengalami cedera atau cacat. </p>
+                        <a href="https://klinikpintar.id/blog-pasien/daftar-penyakit-yang-sembuh-dengan-fisioterapi"><i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
                 <div class="work">
                     <img src="Images/work-b.png">
                     <div class="layer">
-                        <h3>Mencegah Stunting Pada Anak</h3>
-                        <p>Dengan memberikan asupan nutrisi yang cukup 
-                            merupakan salah satu cara mencegah stunting pada anak </p>
-                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                        <h3>Cara Atasi Si Kecil yang Takut Pergi ke Dokter Gigi</h3>
+                        <p>Sejak kecil anak memang disarankan diperkenalkan pada kesehatan gigi. 
+                            Para ahli merekomendasikan anak untuk konsultasi ke dokter gigi 
+                            minimal saat usianya mencapai usia 12 bulan.</p>
+                        <a href="https://klinikpintar.id/blog-pasien/cara-atasi-si-kecil-yang-takut-pergi-ke-dokter-gigi"><i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
                 <div class="work">
                     <img src="Images/work-c.png">
                     <div class="layer">
-                        <h3>Hindari Junk Food Pada Anak</h3>
-                        <p>Memberi makanan instan terlalu sering pada anak
-                            dapat mengganggu pertumbuhan anak terganggu </p>
-                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                        <h3>Kenali Ciri-Ciri Alergi Makanan pada Anak</h3>
+                        <p>Alergi bisa mengenai siapa saja termasuk anak-anak 
+                            dari tingkat bayi hingga remaja. Dalam penanganannya 
+                            dibutuhkan konsultasi dengan dokter anak untuk mencegah 
+                            alergi lebih parah dan mempercepat penyembuhan. </p>
+                        <a href="https://klinikpintar.id/blog-pasien/kenali-ciri-ciri-alergi-makanan-pada-anak"><i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
             </div>
@@ -184,12 +197,16 @@
                     
                 </div>
                 <div class="contact-right">
-                    <form>
-                        <input type="text" name="Name" placeholder="Your Name" required>
-                        <input type="email" name="email" placeholder="Your Email" required>
-                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <form method="post" action="{{ url('add-home') }}">
+             
+                        @csrf
+                        <input type="text" name="name" placeholder="Your Name" required id="name">
+                        <input type="email" name="email" placeholder="Your Email" required id="email">
+                        <textarea name="message" rows="6" placeholder="Your Message" id="message"></textarea>
                         <button type="submit" class="btn btn2">Submit</button>
                     </form>
+
+                    
                 </div>
             </div>
         </div>

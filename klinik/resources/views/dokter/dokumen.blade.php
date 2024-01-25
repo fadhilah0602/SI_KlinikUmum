@@ -84,17 +84,18 @@
                 <body>
 
                     <!-- Your existing HTML content -->
-
+                    <img src="Images/surat.png" alt="">
                     <div class="header">
-                        <h2>DINAS KESEHATAN KABUPATEN LUBUK BEGALUNG</h2>
-                        <h3>Alamat</h3>
+                    
+                        <!-- <h2>DINAS KESEHATAN KABUPATEN LUBUK BEGALUNG</h2> -->
+                        <!-- <h3>Alamat</h3> -->
                         <div class="header">
                             <h3>SURAT KESEHATAN SAKIT</h3>
                             <p>Nomor : /SIK/ /2023</p>
                         </div>
                         <div class="body">
                             <p>Yang bertanda tangan dibawah ini, Dokter/Paramedis Klinik Praktek Umum Dr Zul
-                                kecamatan lubeg, menerangkan dengan sesungguhnya bahwa:</p>
+                                Kecamatan Panyabungan, menerangkan dengan sesungguhnya bahwa:</p>
                         </div>
 
                         <div class="content">

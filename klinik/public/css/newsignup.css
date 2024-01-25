@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:  sans-serif;
+    box-sizing: border-box;
+  }
+  html{
+    scroll-behavior: smooth;
+  }
+  body{
+    background: #fff;
+    color: #fff;
+  }
+  #header{
+    
+    background-image: url(Images/bg.png);
+    background-size: cover;
+    background-position: center;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+  }
+  
+  
+  .login-form {
+    position: absolute;
+    top: 42%;
+    left: 68%;
+    transform: translate(-50%, -50%);
+    color: #23538F;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+   
+  }
+  
+  label {
+    display: block;
+    font-weight: regular;
+    margin-top: 20px;
+  
+  }
+  input[type="text"],
+  input[type="date"],
+  input[type="password"],
+  textarea {
+      width: 100%;
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      margin-top: 20px; /* Jarak dari atas */
+       
+  }
+  
+  button {
+    padding: 10px 30px;
+    background-color: #23538F;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px; /* Jarak dari atas */
+    font-size: 20px;
+        
+  }
+  h2{
+    color: #23538F;
+    font-size: 30px;
+  }
+  
+  .text{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+  }
+  
+  button:hover {
+    background-color: #3C91E6;
+  }

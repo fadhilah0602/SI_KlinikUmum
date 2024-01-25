@@ -35,7 +35,7 @@ class SuratKeteranganController extends Controller
             'nama_klinik' => $request->nama_klinik,
             'keterangan' => $request->keterangan,
             'waktu1' => $request->waktu1,
-            'waktu2' => $request->waktu2
+            'waktu2' => $request->waktu2,
         ]);
 
         return redirect('/suratketerangan')->with('success', 'Surat Keterangan created successfully.');

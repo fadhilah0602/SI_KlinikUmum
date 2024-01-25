@@ -50,39 +50,38 @@
 
             <li>
                 <a href="/poli">
-                <i class='bx bxs-layout'></i>
+                    <i class='bx bxs-layout'></i>
                     <span class="text">Poli</span>
                 </a>
             </li>
 
-            <li  class="active">
+            <li class="active">
                 <a href="/jadwaldokter">
-                <i class='bx bx-edit'></i>
+                    <i class='bx bx-edit'></i>
                     <span class="text">Jadwal Dokter</span>
                 </a>
             </li>
             <li>
                 <a href="/jadwalpemeriksaan">
-                <i class='bx bx-edit'></i>
+                    <i class='bx bx-edit'></i>
                     <span class="text">Jadwal Pemeriksaan</span>
                 </a>
             </li>
             <li>
                 <a href="/hasilpemeriksaan">
-                <i class='bx bx-edit'></i>
+                    <i class='bx bx-edit'></i>
                     <span class="text">Hasil Pemeriksaan</span>
                 </a>
             </li>
             <li>
                 <a href="/user">
-                <i class='bx bxs-user-detail'></i>
+                    <i class='bx bxs-user-detail'></i>
                     <span class="text">User</span>
                 </a>
 
             </li>
         </ul>
         <ul class="side-menu">
-
             <li>
                 <a href="/home" class="logout">
                     <i class='bx bxs-log-out-circle'></i>
@@ -116,25 +115,24 @@
                             <tr>
                                 <th>No</th>
                                 <th>Nama Dokter</th>
-                                <th>Nama Ruangan</th>
-                                <th>Jenis Ruangan</th>
+                                <th>Hari</th>
+                                <th>Waktu</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
-                         <tbody>
+                        <tbody>
                             @php
                                 $no = 1;
                             @endphp
 
                             @foreach ($jadwaldokters as $jadwaldokter)
-
-                            <tr>
-                                <td>{{ $no++ }}</td>
-                                <td>{{ $jadwaldokter->dokter->name }}</td>
-                                <td>{{ $jadwaldokter->hari }}</td>
-                                <td>{{ $jadwaldokter->waktu }}</td>
-                                <td class="action-buttons">
-                                <form method="post"
+                                <tr>
+                                    <td>{{ $no++ }}</td>
+                                    <td>{{ $jadwaldokter->dokter->name }}</td>
+                                    <td>{{ $jadwaldokter->hari }}</td>
+                                    <td>{{ $jadwaldokter->waktu }}</td>
+                                    <td class="action-buttons">
+                                        <form method="post"
                                             action="{{ route('deletejadwaldokter.destroy', $jadwaldokter->jadwal_dokter_id) }}">
                                             @csrf
                                             @method('delete')
@@ -143,10 +141,8 @@
                                                 Delete</button>
                                         </form>
                                     </td>
-                            </tr>
+                                </tr>
                             @endforeach
-
-
                         </tbody>
                     </table>
                 </div>

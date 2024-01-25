@@ -11,6 +11,7 @@ use App\Http\Controllers\RuangController;
 use App\Http\Controllers\JadwaldokterController;
 use App\Http\Controllers\JadwalpemeriksaanController;
 use App\Http\Controllers\SuratKeteranganController;
+use App\Http\Controllers\MessageController;
 use App\Models\Dokter;
 use App\Models\JadwalPemeriksaan;
 use App\Models\SuratKeterangan;
@@ -52,7 +53,7 @@ Route::get('/signup', function () {
 
 
 Route::get('/adminpasien', [PasienController::class, 'home']);
-Route::get('/add-pasien', [PasienController::class, 'create']);
+Route::get('/createpasien', [PasienController::class, 'create']);
 Route::post('/add-pasien', [PasienController::class, 'store']);
 Route::get('editpasien/{pasien_id}', [PasienController::class, 'edit'])->name('editpasien.edit');
 Route::put('update-pasien/{pasien_id}', [PasienController::class, 'update'])->name('updatepasien.update');
@@ -80,8 +81,8 @@ Route::post('/add-poli', [RuangController::class, 'store']);
 Route::delete('delete-poli/{ruang_id}', [RuangController::class, 'destroy'])->name('deleteruang.destroy');
 
 Route::get('/jadwaldokter', [JadwaldokterController::class, 'home']);
-Route::get('/add-jadwaldokter', [JadwaldokterController::class, 'create']);
-Route::post('/add-jadwaldokter', [JadwaldokterController::class, 'store']);
+Route::get('/createjadwaldokter', [JadwaldokterController::class, 'create']);
+Route::post('/createjadwaldokter', [JadwaldokterController::class, 'store']);
 Route::delete('delete-jadwaldokter/{jadwal_dokter_id}', [JadwaldokterController::class, 'destroy'])->name('deletejadwaldokter.destroy');
 
 
@@ -101,11 +102,7 @@ Route::get('/admin', function () {
 Route::get('/createdokter', [DokterController::class, 'create']);
 Route::get('/createuser', [UserController::class, 'create']);
 Route::get('/createpoli', [RuangController::class, 'create']);
-Route::get('/createjadwaldokter', [JadwaldokterController::class, 'create']);
 
-Route::get('/jadwaldokter', function () {
-    return view('/admin/jadwaldokter');
-});
 
 Route::get('/hasilpemeriksaan', function () {
     return view('/admin/hasilpemeriksaan');

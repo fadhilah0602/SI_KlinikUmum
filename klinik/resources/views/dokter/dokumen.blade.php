@@ -79,20 +79,68 @@
                             margin-top: 20px;
                         }
                     </style>
-                </head>
+                    </head>
 
-                <body>
+                    <body>
 
+<<<<<<< Updated upstream
                     <!-- Your existing HTML content -->
                     <img src="Images/surat.png" alt="">
                     <div class="header">
                     
                         <!-- <h2>DINAS KESEHATAN KABUPATEN LUBUK BEGALUNG</h2> -->
                         <!-- <h3>Alamat</h3> -->
+=======
+                        <!-- Your existing HTML content -->
+
+>>>>>>> Stashed changes
                         <div class="header">
-                            <h3>SURAT KESEHATAN SAKIT</h3>
-                            <p>Nomor : /SIK/ /2023</p>
+                            <img src="{{ asset('assets/public/img/header.jpg') }}" style="width:1440px, height:144px">
+                            {{-- <h2>DINAS KESEHATAN KABUPATEN LUBUK BEGALUNG</h2>
+                        <h3>Alamat</h3> --}}
+                            <div class="header">
+                                <h3>SURAT KESEHATAN SAKIT</h3>
+                                <p>Nomor : /SIK/ /2023</p>
+                            </div>
+                            <div class="body">
+                                <p>Yang bertanda tangan dibawah ini, Dokter/Paramedis Klinik Praktek Umum Dr Zul
+                                    kecamatan lubeg, menerangkan dengan sesungguhnya bahwa:</p>
+                            </div>
+
+                            <div class="content">
+                                <p>
+                                    <strong>Nama Pasien:</strong> {{ $dokumen->pasien->name }}
+                                </p>
+                                <p>
+                                    <strong>Jenis Kelamin:</strong> {{ $dokumen->pasien->gender }}
+                                </p>
+                                <p>
+                                    <strong>Alamat:</strong> {{ $dokumen->pasien->alamat }}
+                                </p>
+                                <p>
+                                    <strong>Keterangan:</strong> {{ $dokumen->keterangan }}
+                                </p>
+                            </div>
+                            <div class="body">
+                                <p>Berdasarkan hasil pemeriksaan kami hari ini tanggal
+                                    <strong>{{ $dokumen->created_at }}</strong>, yang bersangkutan diatas benar dalam
+                                    keadaan
+                                    {{ $dokumen->keterangan }}. Surat ini berlaku dari tanggal
+                                    <strong>{{ $dokumen->waktu1 }}</strong> sampai
+                                    <strong>{{ $dokumen->waktu2 }}</strong>
+                                </p>
+                                <p>Demikian surat keterangan {{ $dokumen->keterangan }} ini kami berikan untuk
+                                    digunakan seperlunya.</p>
+                            </div>
+                            <div class="footer">
+                                <p></p>
+                                <p></p>
+                                <p>
+                                    {{ $dokumen->dokter->name }}
+                                </p>
+                            </div>
                         </div>
+<<<<<<< Updated upstream
                         <div class="body">
                             <p>Yang bertanda tangan dibawah ini, Dokter/Paramedis Klinik Praktek Umum Dr Zul
                                 Kecamatan Panyabungan, menerangkan dengan sesungguhnya bahwa:</p>
@@ -130,6 +178,10 @@
                     </div>
                     <!-- Add your JavaScript or script links here -->
                 </body>
+=======
+                        <!-- Add your JavaScript or script links here -->
+                    </body>
+>>>>>>> Stashed changes
 
 
                     </html>

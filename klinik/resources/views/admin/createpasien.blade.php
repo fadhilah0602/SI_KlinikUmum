@@ -53,22 +53,18 @@
                     <span class="text">Poli</span>
                 </a>
             </li>
-
             <li>
                 <a href="/jadwaldokter">
                     <i class='bx bx-edit'></i>
                     <span class="text">Jadwal Dokter</span>
                 </a>
             </li>
-
             <li>
                 <a href="/jadwalpemeriksaan">
                 <i class='bx bx-edit'></i>
                     <span class="text">Jadwal Pemeriksaan</span>
                 </a>
             </li>
-
-
             <li>
                 <a href="/hasilpemeriksaan">
                 <i class='bx bx-edit'></i>
@@ -81,12 +77,8 @@
                     <span class="text">User</span>
                 </a>
             </li>
-            <li>
-            </li>
         </ul>
         <ul class="side-menu">
-            <li>
-            </li>
             <li>
                 <a href="/home" class="logout">
                     <i class='bx bxs-log-out-circle'></i>
@@ -100,7 +92,7 @@
         <main>
             <ul class="box-info">
                 <li>
-                    <form method="POST" action="{{ url('add-pasien') }}">
+                    <form method="POST" action="{{ url('createpasien') }}">
                         @csrf
                         <div class="header">
                             <h4> Tambah Data Pasien</h4>

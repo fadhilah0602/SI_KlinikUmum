@@ -49,42 +49,36 @@
             </li>
             <li>
                 <a href="/poli">
-                <i class='bx bxs-layout'></i>
+                    <i class='bx bxs-layout'></i>
                     <span class="text">Poli</span>
                 </a>
             </li>
-
             <li>
                 <a href="/jadwaldokter">
-                <i class='bx bx-edit'></i>
+                    <i class='bx bx-edit'></i>
                     <span class="text">Jadwal Dokter</span>
                 </a>
             </li>
             <li>
                 <a href="/jadwalpemeriksaan">
-                <i class='bx bx-edit'></i>
+                    <i class='bx bx-edit'></i>
                     <span class="text">Jadwal Pemeriksaan</span>
                 </a>
             </li>
-
             <li>
                 <a href="/hasilpemeriksaan">
-                <i class='bx bx-edit'></i>
+                    <i class='bx bx-edit'></i>
                     <span class="text">Hasil Pemeriksaan</span>
                 </a>
             </li>
             <li>
                 <a href="/user">
-                <i class='bx bxs-user-detail'></i>
+                    <i class='bx bxs-user-detail'></i>
                     <span class="text">User</span>
                 </a>
             </li>
-            <li>
-            </li>
         </ul>
         <ul class="side-menu">
-            <li>
-            </li>
             <li>
                 <a href="/home" class="logout">
                     <i class='bx bxs-log-out-circle'></i>
@@ -127,7 +121,7 @@
                             <label for="gender">Jenis Kelamin:</label>
                             <select id="gender" name="gender">
                                 <option value="">===Pilih===</option>
-                                <option values="Laki-Laki" >Laki-Laki</option>
+                                <option values="Laki-Laki">Laki-Laki</option>
                                 <option values="Perempuan">Perempuan</option>
                             </select>
                         </div>
@@ -144,17 +138,9 @@
                             <input type="text" id="spesialis" name="spesialis">
                         </div>
                         <button type="submit">Submit</button>
-
-                        {{-- <script>
-                                function goToNextPage() {
-                                    // Gantilah URL atau path sesuai kebutuhan
-                                    window.location.href = "admindokter";
-                                }
-                            </script> --}}
                     </form>
                 </li>
             </ul>
-
     </section>
 
 

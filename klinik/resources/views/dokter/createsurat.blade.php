@@ -88,17 +88,17 @@
                                 @endforeach
                             </select>
                         </div>
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label for="nama_klinik">Nama Klinik:</label>
                             <input type="text" id="nama_klinik" name="nama_klinik">
-                        </div>
+                        </div> --}}
                         <div class="form-group">
                             <label for="keterangan">Keterangan :</label>
                             <input type="text" id="keterangan" name="keterangan">
                         </div>
                         <div class="form-group">
-                            <label for="waktu1">Waktu Awal:</label>
-                            <input type="date" id="waktu1" name="waktu1">
+                            <label for="waktu">Waktu Awal:</label>
+                            <input type="date" id="waktu" name="waktu">
                         </div>
                         <div class="form-group">
                             <label for="waktu2">Waktu Akhir:</label>

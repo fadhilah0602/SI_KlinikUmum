@@ -32,9 +32,9 @@ class SuratKeteranganController extends Controller
         $dokumen = SuratKeterangan::create([
             'dokter_id' => $request->dokter_id,
             'pasien_id' => $request->pasien_id,
-            'nama_klinik' => $request->nama_klinik,
+            // 'nama_klinik' => $request->nama_klinik,
             'keterangan' => $request->keterangan,
-            'waktu1' => $request->waktu1,
+            'waktu' => $request->waktu,
             'waktu2' => $request->waktu2,
         ]);
 

@@ -197,7 +197,7 @@
                     
                 </div>
                 <div class="contact-right">
-                    <form method="post" action="{{ url('add-home') }}">
+                    <form method="POST" action="{{ url('add-home') }}">
              
                         @csrf
                         <input type="text" name="name" placeholder="Your Name" required id="name">

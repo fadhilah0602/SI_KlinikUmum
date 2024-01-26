@@ -15,6 +15,7 @@ use App\Http\Controllers\MessageController;
 use App\Models\Dokter;
 use App\Models\JadwalPemeriksaan;
 use App\Models\SuratKeterangan;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,7 +38,9 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('home');
 });
-Route::get('/add-home', [MessageController::class, 'create']);
+
+Route::get('/contact', [ContactController::class, 'home']);
+Route::post('/add-home', [ContactController::class, 'store']);
 
 Route::get('/login', function () {
     return view('login');

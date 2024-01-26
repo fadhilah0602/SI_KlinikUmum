@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('surat_keterangans', function (Blueprint $table) {
-            $table->renameColumn('waktu', 'waktu1');
+            $table->dropColumn('waktu');
         });
     }
 
@@ -21,8 +21,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('surat_keterangans', function (Blueprint $table) {
-            $table->renameColumn('waktu1', 'waktu');
-        });
+        //
     }
 };

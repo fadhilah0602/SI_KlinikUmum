@@ -99,7 +99,6 @@
                                 <th>No</th>
                                 <th>Nama Dokter</th>
                                 <th>Nama Pasien</th>
-                                <th>Nama Klinik</th>
                                 <th>Keterangan</th>
                                 <th>Waktu Awal</th>
                                 <th>Waktu Akhir</th>
@@ -116,9 +115,9 @@
                                     <td>{{ $no++ }}</td>
                                     <td>{{ $dk->dokter->name }}</td>
                                     <td>{{ $dk->pasien->name }}</td>
-                                    <td>{{ $dk->nama_klinik }}</td>
+                                    {{-- <td>{{ $dk->nama_klinik }}</td> --}}
                                     <td>{{ $dk->keterangan }}</td>
-                                    <td>{{ $dk->waktu1 }}</td>
+                                    <td>{{ $dk->waktu }}</td>
                                     <td>{{ $dk->waktu2 }}</td>
                                     <td class="action-buttons">
 

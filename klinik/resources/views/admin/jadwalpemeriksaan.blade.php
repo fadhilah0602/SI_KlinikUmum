@@ -127,8 +127,7 @@
                                     <td>{{ $jp->waktu }}</td>
                                     <td>{{ $jp->status }}</td>
                                     <td class="action-buttons">
-                                        <a href="{!! route('detailjadwalpemeriksaan.detail', $jp->jadwal_pemeriksaan_id) !!}" type="button">Detail</a>
-                                        {{-- <a href="{!! route('editpasien.edit', $pasien->pasien_id) !!}" type="button">Edit</a> --}}
+                                        <a href="{!! route('editjadwalpemeriksaan.edit', $jp->jadwal_pemeriksaan_id) !!}" type="button" class="edit-button" role="button">Edit</a>
                                     </td>
                                 </tr>
                             @endforeach

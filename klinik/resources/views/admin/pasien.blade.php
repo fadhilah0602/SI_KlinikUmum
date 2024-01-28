@@ -78,10 +78,10 @@
                     <span class="text">User</span>
                 </a>
             </li>
-            
+
         </ul>
         <ul class="side-menu">
-         
+
             <li>
                 <a href="/home" class="logout">
                     <i class='bx bxs-log-out-circle'></i>
@@ -156,7 +156,7 @@
                                         <form method="post"
                                             action="{{ route('deletepasien.destroy', $pasien->pasien_id) }}">
                                             </td>
-                                            <td class="action-buttons">   
+                                            <td class="action-buttons">
                                             @csrf
                                             @method('delete')
                                             <button onclick="return confirm('Yakin hapus ?')" type="submit"

@@ -88,10 +88,6 @@
                                 @endforeach
                             </select>
                         </div>
-                        {{-- <div class="form-group">
-                            <label for="nama_klinik">Nama Klinik:</label>
-                            <input type="text" id="nama_klinik" name="nama_klinik">
-                        </div> --}}
                         <div class="form-group">
                             <label for="keterangan">Keterangan :</label>
                             <input type="text" id="keterangan" name="keterangan">

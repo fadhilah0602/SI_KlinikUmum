@@ -53,7 +53,6 @@
                     <span class="text">Poli</span>
                 </a>
             </li>
-
             <li>
                 <a href="/jadwaldokter">
                     <i class='bx bx-edit'></i>
@@ -72,19 +71,14 @@
                     <span class="text">Hasil Pemeriksaan</span>
                 </a>
             </li>
-
             <li  class="active">
                 <a href="/user">
                     <i class='bx bxs-user-detail'></i>
                     <span class="text">User</span>
                 </a>
             </li>
-            <li>
-            </li>
         </ul>
         <ul class="side-menu">
-            <li>
-            </li>
             <li>
                 <a href="/home" class="logout">
                     <i class='bx bxs-log-out-circle'></i>

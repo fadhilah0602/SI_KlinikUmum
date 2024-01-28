@@ -100,80 +100,45 @@
 
         <!-- MAIN -->
         <main>
-            <ul class="box-info">
+            <header>
+                <ul class="box-info">
+                    <li>
+                        <span class="text">
+                            <h3>Welcome, Admin!</h3>
+                        </span>
+                    </li>
+                </ul>
+            </header>
+            <ul class="box-inforow">
                 <li>
-                    <i class='bx bx-face'></i>
-                    <span class="text">
-                        <h3>Hi, Admin 1</h3>
-                        <p>Admin 1 Klinik Dr.Zul</p>
-                    </span>
+                    <div class="box-info1">
+                            <h3>{{$totalpasien}}</h3>
+                            <p>Pasien</p>
+                        <a href="/adminpasien">More info</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="box-info2">
+                            <h3>{{$totaldokter}}</h3>
+                            <p>Dokter</p>
+                        <a href="/admindokter">More info</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="box-info3">
+                            <h3>{{$totalpoli}}</h3>
+                            <p>Poli</p>
+                        <a href="/poli">More info</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="box-info4">
+                            <h3>{{$totalantrean}}</h3>
+                            <p>Antrean</p>
+                        <a href="/jadwalpemeriksaan">More info</a>
+                    </div>
                 </li>
             </ul>
-            <div class="table-data">
-                <div class="table-data">
-                    <div class="container">
-                        <div class="header">
-                            <p class="page-title">NOMOR ANTREAN</p>
-                        </div>
-                        <div class="content">
-                            {{-- @foreach ($jadwalpemeriksaan as $item) --}}
-                                <table>
-                                    <tr>
-                                        <div class="label1">001</div>
-                                        <input type="text" id="pasien_id" name="pasien_id">
-                                            {{-- value="{!! $item->pasien_id !!}"> --}}
-                                    </tr>
-                                    <tr>
-                                        <div class="label2">Atas Nama : </div>
-                                        <input type="text" id="name" name="name">
-                                            {{-- value="{!! $item->name !!}"> --}}
-                                    </tr>
-                                    <tr>
-                                        <div class="label3">Dokter</div>
-                                        <div class="label-name">dr. Zulkarnain Nasution</div>
-                                    </tr>
-                                    <div class="wrapper">
-                                        <div class="label4">Poli Tujuan</div>
-                                        <div class="label5">No Rekam Media</div>
-                                    </div>
-                                    <div class="wrapper-2">
-                                        <div class="label-poli">Poli Umum 2</div>
-                                        <div class="label-media">K-0001</div>
-                                    </div>
-                                    <div class="wrapper">
-                                        <div class="label6">Waktu Daftar</div>
-                                        <div class="label7">Waktu Panggil</div>
-                                    </div>
-                                    <div class="wrapper-2">
-                                        <div class="label-daftar">001</div>
-                                        <div class="label-panggil">002</div>
-                                    </div>
-                                </table>
-                            {{-- @endforeach --}}
-                        </div>
-                    </div>
-                    <table>
-                        <div>
-                            <div class="wrapper-3">
-                                <div class="label8">Poli</div>
-                                <div class="label9">Dokter</div>
-                            </div>
-                            <div class="wrapper-4">
-                                <div class="label-poli1">Umum</div>
-                                <div class="label-dokter">dr.Zainal</div>
-                            </div>
-                            <div class="wrapper-3">
-                                <div class="label10">Waktu</div>
-                                <div class="label11">Antrean</div>
-                            </div>
-                            <div class="wrapper-4">
-                                <div class="label-waktu">16.00 - 22.00</div>
-                                <div class="label-antrean">3/4 antrean</div>
-                            </div>
-                        </div>
-                    </table>
-                </div>
-            </div>
         </main>
         <!-- MAIN -->
     </section>

@@ -8,8 +8,9 @@
     <!-- Boxicons -->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <!-- My CSS -->
-    <link rel="stylesheet" href="{!! asset('css/style.css') !!}">
+    <link rel="stylesheet" href="{!! asset('css/homeadmin.css') !!}">
 
+    <i class='bx bxs-clinic'></i>
     <title>SIK Dr.Zul</title>
 </head>
 
@@ -23,7 +24,7 @@
             <span class="text">SIK Dr.Zul</span>
         </a>
         <ul class="side-menu top">
-            <li>
+            <li class="active">
                 <a href="/adminhome">
                     <i class='bx bxs-dashboard'></i>
                     <span class="text">Home</span>
@@ -35,7 +36,7 @@
                     <span class="text">Profile</span>
                 </a>
             </li>
-            <li class="active">
+            <li>
                 <a href="/adminpasien">
                     <i class='bx bxs-group user-icon'></i>
                     <span class="text">Pasien</span>
@@ -53,23 +54,21 @@
                     <span class="text">Poli</span>
                 </a>
             </li>
-
             <li>
                 <a href="/jadwaldokter">
                     <i class='bx bx-edit'></i>
                     <span class="text">Jadwal Dokter</span>
                 </a>
             </li>
-
             <li>
                 <a href="/jadwalpemeriksaan">
-                <i class='bx bx-edit'></i>
+                    <i class='bx bx-edit'></i>
                     <span class="text">Jadwal Pemeriksaan</span>
                 </a>
             </li>
             <li>
                 <a href="/hasilpemeriksaan">
-                <i class='bx bx-edit'></i>
+                    <i class='bx bx-edit'></i>
                     <span class="text">Hasil Pemeriksaan</span>
                 </a>
             </li>
@@ -89,48 +88,66 @@
             </li>
         </ul>
     </section>
+    <!-- SIDEBAR -->
 
+
+
+    <!-- CONTENT -->
     <section id="content">
+        <!-- NAVBAR -->
+
+        <!-- NAVBAR -->
+
+        <!-- MAIN -->
         <main>
             <ul class="box-info">
                 <li>
                     <span class="text">
                         <div class="header">
-                            <h4> Edit Pasien</h4>
+                            <h4> Edit Jadwal Pemeriksaan</h4>
                         </div>
-                        <form method="post" action="{{ route('updatepasien.update', $pasien->pasien_id) }}">
+                        <form method="post"
+                            action="{{ route('updatejadwalpemeriksaan.update', $jadwalpemeriksaan->jadwal_pemeriksaan_id) }}">
                             @csrf
                             @method('PUT')
-                            {{-- <input type="hidden" name="pasien_id" value="{!! $pasien->pasien_id !!}"> --}}
                             <div class="form-group">
-                                <label for="name">Nama:</label>
-                                <input type="text" id="name" name="name" value="{!! $pasien->name !!}">
+                                <label for="dokter_id">Nama Dokter:</label>
+                                <input type="text" id="dokter_id" name="dokter_id" value="{!! $jadwalpemeriksaan->dokter->name !!}">
+                                {{-- <select name="dokter_id" id="dokter_id" class="custom-select">
+                                    <option value="">---Pilih Dokter---</option>
+                                    @foreach ($dokter as $dk)
+                                        <option value="{{ $dk->dokter_id }}">{{ $dk->name }}</option>
+                                    @endforeach
+                                </select> --}}
                             </div>
                             <div class="form-group">
-                                <label for="tempat_lahir">Tempat Lahir:</label>
-                                <input type="text" id="tempat_lahir" name="tempat_lahir"
-                                    value="{!! $pasien->tempat_lahir !!}">
+                                <label for="email">Nama Pasien:</label>
+                                <input type="text" id="pasien_id" name="pasien_id" value="{!! $jadwalpemeriksaan->pasien->name !!}">
                             </div>
                             <div class="form-group">
-                                <label for="tgl_lahir">Tanggal Lahir:</label>
-                                <input type="date" id="tgl_lahir" name="tgl_lahir" value="{!! $pasien->tgl_lahir !!}">
-                            </div>
-                            <div class="form-group">
-                                <label for="gender">Jenis Kelamin:</label>
-                                {{-- <input type="text" id="gender" name="gender" value="{!! $pasien->gender !!}"> --}}
-                                <select id="gender" name="gender">
+                                <label for="hari">Hari:</label>
+                                <select id="hari" name="hari" value="{!! $jadwalpemeriksaan->hari !!}">
                                     <option value="">===Pilih===</option>
-                                    <option value="Laki-laki" {!! $pasien->gender == 'Laki-laki' ? 'selected' : '' !!}>Laki-laki</option>
-                                    <option value="Perempuan" {!! $pasien->gender == 'Perempuan' ? 'selected' : '' !!}>Perempuan</option>
+                                    <option value="Senin">Senin</option>
+                                    <option value="Selasa">Selasa</option>
+                                    <option value="Rabu">Rabu</option>
+                                    <option value="Kamis">Kamis</option>
+                                    <option value="Jumat">Jumat</option>
+                                    <option value="Sabtu">Sabtu</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="alamat">Alamat:</label>
-                                <input type="text" id="alamat" name="alamat" value="{!! $pasien->alamat !!}">
+                                <label for="waktu">Waktu:</label>
+                                <input type="date" id="waktu" name="waktu" value="{!! $jadwalpemeriksaan->waktu !!}">
                             </div>
                             <div class="form-group">
-                                <label for="no_telp">No Hp:</label>
-                                <input type="text" id="no_telp" name="no_telp" value="{!! $pasien->no_telp !!}">
+                                <label for="status">Status:</label>
+                                <select id="status" name="status">
+                                    <option value="">===Pilih===</option>
+                                    <option value="Pending" {!! $jadwalpemeriksaan->status == 'Pending' ? 'selected' : '' !!}>Pending</option>
+                                    <option value="Approved" {!! $jadwalpemeriksaan->status == 'Approved' ? 'selected' : '' !!}>Approved</option>
+                                    <option value="Approved" {!! $jadwalpemeriksaan->status == 'Rejected' ? 'selected' : '' !!}>Rejected</option>
+                                </select>
                             </div>
                             <button onclick="return confirm('Yakin update ?')" type="submit"
                                 class="btn btn-danger btn-sm ml-2"><i class="fas fa-trash fa-fw"></i>
@@ -139,13 +156,14 @@
                         </div>
                 </li>
             </ul>
-</body>
-</li>
-</ul>
+            <!-- MAIN -->
+
 </section>
 <!-- CONTENT -->
 
+
 <script src="{!! asset('js/script.js') !!}"></script>
 </body>
+
 
 </html>

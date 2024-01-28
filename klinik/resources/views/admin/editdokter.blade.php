@@ -79,12 +79,8 @@
                     <span class="text">User</span>
                 </a>
             </li>
-            <li>
-            </li>
         </ul>
         <ul class="side-menu">
-            <li>
-            </li>
             <li>
                 <a href="/home" class="logout">
                     <i class='bx bxs-log-out-circle'></i>

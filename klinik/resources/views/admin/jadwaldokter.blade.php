@@ -137,8 +137,7 @@
                                             @csrf
                                             @method('delete')
                                             <button onclick="return confirm('Yakin hapus ?')" type="submit"
-                                                class="btn btn-danger btn-sm ml-2"><i class="fas fa-trash fa-fw"></i>
-                                                Delete</button>
+                                                class="delete-button">Delete</button>
                                         </form>
                                     </td>
                                 </tr>

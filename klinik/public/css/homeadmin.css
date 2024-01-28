@@ -405,8 +405,36 @@ body {
 	color: var(--dark);
 }
 
-
-
+#content main .box-inforow {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	grid-gap: 24px;
+	margin-top: 36px;
+}
+#content main .box-info1 {
+	padding: 24px;
+	background: #92C7CF;
+	border-radius: 20px;
+	grid-gap: 24px;
+}
+#content main .box-info2 {
+	padding: 24px;
+	background: #FBF9F1;
+	border-radius: 20px;
+	grid-gap: 24px;
+}
+#content main .box-info3 {
+	padding: 24px;
+	background: #AAD7D9;
+	border-radius: 20px;
+	grid-gap: 24px;
+}
+#content main .box-info4 {
+	padding: 24px;
+	background: #E5E1DA;
+	border-radius: 20px;
+	grid-gap: 24px;
+}
 
 
 #content main .table-data {

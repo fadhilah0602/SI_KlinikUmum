@@ -49,32 +49,32 @@
             </li>
             <li>
                 <a href="/poli">
-                <i class='bx bxs-layout'></i>
+                    <i class='bx bxs-layout'></i>
                     <span class="text">Poli</span>
                 </a>
             </li>
 
             <li>
                 <a href="/jadwaldokter">
-                <i class='bx bx-edit'></i>
+                    <i class='bx bx-edit'></i>
                     <span class="text">Jadwal Dokter</span>
                 </a>
             </li>
             <li>
                 <a href="/jadwalpemeriksaan">
-                <i class='bx bx-edit'></i>
+                    <i class='bx bx-edit'></i>
                     <span class="text">Jadwal Pemeriksaan</span>
                 </a>
             </li>
             <li>
                 <a href="/hasilpemeriksaan">
-                <i class='bx bx-edit'></i>
+                    <i class='bx bx-edit'></i>
                     <span class="text">Hasil Pemeriksaan</span>
                 </a>
             </li>
             <li class="active">
                 <a href="/user">
-                <i class='bx bxs-user-detail'></i>
+                    <i class='bx bxs-user-detail'></i>
                     <span class="text">User</span>
                 </a>
             </li>
@@ -129,7 +129,6 @@
                                 <th>No</th>
                                 <th>Nama</th>
                                 <th>Email</th>
-                                <!-- <th>Password</th> -->
                                 <th>Role</th>
                                 <th>Aksi</th>
                             </tr>
@@ -146,19 +145,15 @@
                                     <td>{{ $user->email }}</td>
                                     <td>{{ $user->role }}</td>
                                     <td class="action-buttons">
-
-
-
-                                    <a href="{!! route('edituser.edit', $user->id) !!}" type="button">Edit</a>
-
-
-                                        <form method="post"
-                                            action="{{ route('deleteuser.destroy', $user->id) }}">
-                                            @csrf
-                                            @method('delete')
-                                            <button onclick="return confirm('Yakin hapus ?')" type="submit"
-                                                class="btn btn-danger btn-sm ml-2"><i class="fas fa-trash fa-fw"></i>
-                                                Delete</button>
+                                        <a href="{!! route('edituser.edit', $user->id) !!}" type="button" class="edit-button"
+                                            role="button">Edit</a>
+                                        <form method="post" action="{{ route('deleteuser.destroy', $user->id) }}">
+                                    </td>
+                                    <td class="action-buttons">
+                                        @csrf
+                                        @method('delete')
+                                        <button onclick="return confirm('Yakin hapus ?')" type="submit"
+                                            class="delete-button">Delete</button>
                                         </form>
                                     </td>
                                 </tr>

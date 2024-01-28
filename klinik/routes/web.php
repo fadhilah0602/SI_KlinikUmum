@@ -90,9 +90,11 @@ Route::delete('delete-jadwaldokter/{jadwal_dokter_id}', [JadwaldokterController:
 
 
 Route::get('/jadwalpemeriksaan', [JadwalpemeriksaanController::class, 'home']);
-Route::get('detailjadwalpemeriksaan/{jadwal_pemeriksaan_id}', [JadwalpemeriksaanController::class, 'detail'])->name('detailjadwalpemeriksaan.detail');
+Route::get('editjadwalpemeriksaan/{jadwal_pemeriksaan_id}', [JadwalpemeriksaanController::class, 'edit'])->name('editjadwalpemeriksaan.edit');
+Route::put('update-jadwalpemeriksaan/{id}', [JadwalPemeriksaanController::class, 'update'])->name('updatejadwalpemeriksaan.update');
 
 Route::get('/adminhome', [AdminController::class, 'home']);
+Route::get('/adminhome', [AdminController::class, 'render']);
 
 Route::get('/adminprofile', function () {
     return view('/admin/profile');

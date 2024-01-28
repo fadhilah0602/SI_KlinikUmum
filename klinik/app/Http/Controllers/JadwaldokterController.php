@@ -9,7 +9,7 @@ use App\Models\Dokter;
 class JadwaldokterController extends Controller
 {
     public function home()
-    {  
+    {
         $jadwaldokters = JadwalDokter::all();
         $dokter = Dokter::all();
         return view('admin.jadwaldokter', compact('jadwaldokters'));
@@ -31,9 +31,16 @@ class JadwaldokterController extends Controller
         $jadwaldokters = JadwalDokter::create([
             'dokter_id' => $request->input('dokter_id'),
             'hari' => $request->hari,
-            'waktu' => $request->waktu   
+            'waktu' => $request->waktu
         ]);
 
         return redirect('/jadwaldokter')->with('success', 'Jadwal dokter created successfully.');
+    }
+
+    public function destroy($jadwal_dokter_id)
+    {
+        $jadwaldokters = JadwalDokter::where('jadwal_dokter_id', $jadwal_dokter_id)->first();
+        $jadwaldokters->delete();
+        return redirect('/jadwaldokter')->with('success', 'Jadwal dokter deleted successfully.');
     }
 }

@@ -151,23 +151,16 @@
                                     <td>{{ $pasien->alamat }}</td>
                                     <td>{{ $pasien->no_telp }}</td>
                                     <td class="action-buttons">
-                                        {{-- <button type="button" onclick="goToPageEdit()">Edit</button>
-
-                                        <script>
-                                            function goToPageEdit() {
-                                                // Gantilah URL atau path sesuai kebutuhan
-                                                window.location.href = "editpasien/" + {{ $pasien->pasien_id }};
-                                            }
-                                        </script> --}}
-                                        <a href="{!! route('editpasien.edit', $pasien->pasien_id) !!}" type="button">Edit</a>
+                                    <a href="{!! route('editpasien.edit', $pasien->pasien_id) !!}" type="button"class="edit-button" role="button">Edit</a>
 
                                         <form method="post"
                                             action="{{ route('deletepasien.destroy', $pasien->pasien_id) }}">
+                                            </td>
+                                            <td class="action-buttons">   
                                             @csrf
                                             @method('delete')
                                             <button onclick="return confirm('Yakin hapus ?')" type="submit"
-                                                class="btn btn-danger btn-sm ml-2"><i class="fas fa-trash fa-fw"></i>
-                                                Delete</button>
+                                                class="delete-button">   Delete</button>
                                         </form>
                                     </td>
                                 </tr>

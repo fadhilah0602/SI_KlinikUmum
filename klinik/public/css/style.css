@@ -574,22 +574,22 @@ body {
     height: 100px;
   }
 
-  /* OPTION  */
+  /* OPTION 
   .custom-select {
 	width: 120px;
 	padding: 8px;
 	font-size: 14px;
 	border-radius: 10px;
 	/* border: 1px solid #ccc; */
-	background-color: #fff;
+	/* background-color: #fff; */
 	/* Other styling properties */
-  }
+  /* } */
   
   /* Styling for the options */
-  .custom-select option {
+  /* .custom-select option {
 	background-color: #fff;
 	color: #000;
-  }
+  } */ 
 
 
 /* SEARCHING */
@@ -698,12 +698,32 @@ label {
 
 input[type="text"],
 input[type="date"],
+input[type="time"],
 textarea {
     width: 100%;
     padding: 8px;
     border-radius: 5px;
     border: 1px solid #ccc;
     box-sizing: border-box;
+	text-align: center;
+}
+
+select{
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+	text-align: center;
+}
+
+.custom-select{
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+	text-align: center;
 }
 
 button {
@@ -728,3 +748,65 @@ button:hover {
 	margin-bottom: 20px;
 }
 
+.button-group {
+	display: flex;
+  }
+/* Gaya untuk tombol edit */
+.edit-button {
+	display: inline-block;
+  padding: 5px 15px; /* Sesuaikan dengan ukuran padding yang diinginkan */
+  font-size: 12px; /* Sesuaikan dengan ukuran font yang diinginkan */
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: #fff;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  width: 60px; /* Sesuaikan dengan ukuran yang diinginkan */
+  height: 30px; /* Sesuaikan dengan ukuran yang diinginkan */
+  
+  }
+  
+  .edit-button:hover {
+	background-color: #45a049;
+	color: #fff;
+  }
+/* Gaya untuk tombol delete */
+.delete-button {
+	display: inline-block;
+  padding: 5px 15px; /* Sesuaikan dengan ukuran padding yang diinginkan */
+  font-size: 12px; /* Sesuaikan dengan ukuran font yang diinginkan */
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: #fd0404;
+  color: #fff;
+  border: 1px solid #fd0404;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  width: 60px; /* Sesuaikan dengan ukuran yang diinginkan */
+  height: 30px; /* Sesuaikan dengan ukuran yang diinginkan */
+
+  }
+  
+  .delete-button:hover {
+	background-color: #a81100;
+	color: #fff;
+  }
+
+  /* padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer; */
+  /* background-color: #3498db;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	border-radius: 4px; */

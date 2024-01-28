@@ -156,15 +156,16 @@
                                     <td>{{ $dokter->spesialis }}</td>
                                     <td class="action-buttons">
                                      
-                                        <a href="{!! route('editdokter.edit', $dokter->dokter_id) !!}" type="button">Edit</a>
+                                        <a href="{!! route('editdokter.edit', $dokter->dokter_id) !!}" type="button"class="edit-button" role="button">Edit</a>
 
                                         <form method="post"
                                             action="{{ route('deletedokter.destroy', $dokter->dokter_id) }}">
+                                            <td class="action-buttons">
+                                            
                                             @csrf
                                             @method('delete')
                                             <button onclick="return confirm('Yakin hapus ?')" type="submit"
-                                                class="btn btn-danger btn-sm ml-2"><i class="fas fa-trash fa-fw"></i>
-                                                Delete</button>
+                                            class="delete-button"> Delete</button>
                                         </form>
 
                                         <!-- <button type="button" onclick="if(confirmDelete()) document.forms[0].submit();">Delete</button> -->

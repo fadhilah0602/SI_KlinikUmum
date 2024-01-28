@@ -152,7 +152,8 @@ Route::get('/pasienriwayat', function () {
 });
 
 //login multi user
-Route::get('/', [LoginController::class, 'index']);
+
+Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'login']);
 
 //sign up

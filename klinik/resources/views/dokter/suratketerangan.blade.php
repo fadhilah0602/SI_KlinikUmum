@@ -117,7 +117,7 @@
                                     <td>{{ $dk->pasien->name }}</td>
                                     {{-- <td>{{ $dk->nama_klinik }}</td> --}}
                                     <td>{{ $dk->keterangan }}</td>
-                                    <td>{{ $dk->waktu }}</td>
+                                    <td>{{ $dk->waktu1 }}</td>
                                     <td>{{ $dk->waktu2 }}</td>
                                     <td class="action-buttons">
 

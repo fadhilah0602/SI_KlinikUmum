@@ -8,7 +8,7 @@
     <!-- Boxicons -->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <!-- My CSS -->
-    <link rel="stylesheet" href="{!! asset('css/homeadmin.css') !!}">
+    <link rel="stylesheet" href="{!! asset('css/style.css') !!}">
 
     <i class='bx bxs-clinic'></i>
     <title>SIK Dr.Zul</title>
@@ -24,7 +24,7 @@
             <span class="text">SIK Dr.Zul</span>
         </a>
         <ul class="side-menu top">
-            <li class="active">
+            <li>
                 <a href="/adminhome">
                     <i class='bx bxs-dashboard'></i>
                     <span class="text">Home</span>
@@ -55,7 +55,7 @@
                     <span class="text">Jadwal Dokter</span>
                 </a>
             </li>
-            <li>
+            <li class="active">
                 <a href="/jadwalpemeriksaan">
                     <i class='bx bx-edit'></i>
                     <span class="text">Jadwal Pemeriksaan</span>
@@ -101,8 +101,8 @@
                         <div class="header">
                             <h4> Edit Jadwal Pemeriksaan</h4>
                         </div>
-                        <form method="post"
-                            action="{{ route('updatejadwalpemeriksaan.update', $jadwalpemeriksaan->jadwal_pemeriksaan_id) }}">
+                        <form
+                            method="post"action="{{ route('updatejadwalpemeriksaan.update', $jadwalpemeriksaan->jadwal_pemeriksaan_id) }}">
                             @csrf
                             @method('PUT')
                             <div class="form-group">
@@ -123,12 +123,12 @@
                                 <label for="hari">Hari:</label>
                                 <select id="hari" name="hari" value="{!! $jadwalpemeriksaan->hari !!}">
                                     <option value="">===Pilih===</option>
-                                    <option value="Senin">Senin</option>
-                                    <option value="Selasa">Selasa</option>
-                                    <option value="Rabu">Rabu</option>
-                                    <option value="Kamis">Kamis</option>
-                                    <option value="Jumat">Jumat</option>
-                                    <option value="Sabtu">Sabtu</option>
+                                    <option value="Senin" {!! $jadwalpemeriksaan->hari == 'Senin' ? 'selected' : '' !!}>Senin</option>
+                                    <option value="Selasa" {!! $jadwalpemeriksaan->hari == 'Selasa' ? 'selected' : '' !!}>Selasa</option>
+                                    <option value="Rabu" {!! $jadwalpemeriksaan->hari == 'Rabu' ? 'selected' : '' !!}>Rabu</option>
+                                    <option value="Kamis" {!! $jadwalpemeriksaan->hari == 'Kamis' ? 'selected' : '' !!}>Kamis</option>
+                                    <option value="Jumat" {!! $jadwalpemeriksaan->hari == 'Jumat' ? 'selected' : '' !!}>Jumat</option>
+                                    <option value="Sabtu" {!! $jadwalpemeriksaan->hari == 'Sabtu' ? 'selected' : '' !!}>Sabtu</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -152,7 +152,9 @@
                 </li>
             </ul>
             <!-- MAIN -->
-
+</body>
+</li>
+</ul>
 </section>
 <!-- CONTENT -->
 

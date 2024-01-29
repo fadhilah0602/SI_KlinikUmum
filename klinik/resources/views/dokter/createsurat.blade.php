@@ -93,8 +93,8 @@
                             <input type="text" id="keterangan" name="keterangan">
                         </div>
                         <div class="form-group">
-                            <label for="waktu">Waktu Awal:</label>
-                            <input type="date" id="waktu" name="waktu">
+                            <label for="waktu1">Waktu Awal:</label>
+                            <input type="date" id="waktu1" name="waktu1">
                         </div>
                         <div class="form-group">
                             <label for="waktu2">Waktu Akhir:</label>

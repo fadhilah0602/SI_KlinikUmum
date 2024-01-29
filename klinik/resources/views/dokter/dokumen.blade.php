@@ -25,36 +25,6 @@
                 <div class="order">
                     <!DOCTYPE html>
                     <html>
-
-                    {{-- <head>
-                        <title>Contoh Surat</title>
-                        <style>
-                            /* Gaya untuk surat */
-                            .body {
-                                font-family: Arial, sans-serif;
-                                margin: 50px;
-                                text-align: left;
-
-                            }
-
-                            .header {
-                                text-align: center;
-                                margin-bottom: 20px;
-                            }
-
-                            .content {
-                                margin-bottom: 20px;
-                                text-align: center;
-
-                            }
-
-                            .footer {
-                                text-align: right;
-                                font-style: italic;
-                            }
-                        </style>
-                    </head> --}}
-
                     <style>
                         body {
                             font-family: Arial, sans-serif;
@@ -64,6 +34,7 @@
 
                         .header {
                             text-align: center;
+                            width: auto;
                             margin-bottom: 20px;
                         }
 
@@ -83,28 +54,18 @@
 
                     <body>
 
-<<<<<<< Updated upstream
-                    <!-- Your existing HTML content -->
-                    <img src="Images/surat.png" alt="">
-                    <div class="header">
-                    
-                        <!-- <h2>DINAS KESEHATAN KABUPATEN LUBUK BEGALUNG</h2> -->
-                        <!-- <h3>Alamat</h3> -->
-=======
                         <!-- Your existing HTML content -->
-
->>>>>>> Stashed changes
                         <div class="header">
-                            <img src="{{ asset('assets/public/img/header.jpg') }}" style="width:1440px, height:144px">
-                            {{-- <h2>DINAS KESEHATAN KABUPATEN LUBUK BEGALUNG</h2>
-                        <h3>Alamat</h3> --}}
+                            <div class="header1">
+                                <img src="{{ asset('Images/kop.png') }}">
+                            </div>
                             <div class="header">
-                                <h3>SURAT KESEHATAN SAKIT</h3>
+                                <h3>SURAT KETERANGAN</h3>
                                 <p>Nomor : /SIK/ /2023</p>
                             </div>
                             <div class="body">
                                 <p>Yang bertanda tangan dibawah ini, Dokter/Paramedis Klinik Praktek Umum Dr Zul
-                                    kecamatan lubeg, menerangkan dengan sesungguhnya bahwa:</p>
+                                    Kecamatan Panyabungan, menerangkan dengan sesungguhnya bahwa:</p>
                             </div>
 
                             <div class="content">
@@ -123,76 +84,41 @@
                             </div>
                             <div class="body">
                                 <p>Berdasarkan hasil pemeriksaan kami hari ini tanggal
-                                    <strong>{{ $dokumen->created_at }}</strong>, yang bersangkutan diatas benar dalam
-                                    keadaan
-                                    {{ $dokumen->keterangan }}. Surat ini berlaku dari tanggal
-                                    <strong>{{ $dokumen->waktu1 }}</strong> sampai
+                                    <strong>{{ $dokumen->created_at }}</strong>,
+                                </p>
+                                <p>Yang bersangkutan diatas benar dalam keadaan
+                                    <strong>{{ $dokumen->keterangan }}</strong>.
+                                </p>
+                                <p>Surat ini berlaku dari tanggal <strong>{{ $dokumen->waktu1 }}</strong> sampai
                                     <strong>{{ $dokumen->waktu2 }}</strong>
                                 </p>
-                                <p>Demikian surat keterangan {{ $dokumen->keterangan }} ini kami berikan untuk
-                                    digunakan seperlunya.</p>
+                                <p>Demikian surat keterangan {{ $dokumen->keterangan }} ini kami berikan untuk digunakan
+                                    seperlunya.</p>
                             </div>
                             <div class="footer">
-                                <p></p>
-                                <p></p>
+                                <p>Dokter Klinik Dr.Zul</p>
+                                <li>
+                                </li>
                                 <p>
-                                    {{ $dokumen->dokter->name }}
+                                    (<strong>{{ $dokumen->dokter->name }}</strong>)
                                 </p>
                             </div>
                         </div>
-<<<<<<< Updated upstream
-                        <div class="body">
-                            <p>Yang bertanda tangan dibawah ini, Dokter/Paramedis Klinik Praktek Umum Dr Zul
-                                Kecamatan Panyabungan, menerangkan dengan sesungguhnya bahwa:</p>
-                        </div>
-
-                        <div class="content">
-                            <p>
-                                <strong>Nama Pasien:</strong> {{ $dokumen->pasien->name }}
-                            </p>
-                            <p>
-                                <strong>Jenis Kelamin:</strong> {{ $dokumen->pasien->gender }}
-                            </p>
-                            <p>
-                                <strong>Alamat:</strong> {{ $dokumen->pasien->alamat }}
-                            </p>
-                            <p>
-                                <strong>Keterangan:</strong> {{ $dokumen->keterangan }}
-                            </p>
-                        </div>
-                        <div class="body">
-                            <p>Berdasarkan hasil pemeriksaan kami hari ini tanggal
-                                <strong>{{ $dokumen->created_at }}</strong>, yang bersangkutan diatas benar dalam keadaan
-                                {{ $dokumen->keterangan }}. Surat ini berlaku dari tanggal
-                                <strong>{{ $dokumen->waktu1 }}</strong> sampai <strong>{{ $dokumen->waktu2 }}</strong></p>
-                            <p>Demikian surat keterangan {{ $dokumen->keterangan }} ini kami berikan untuk
-                                digunakan seperlunya.</p>
-                        </div>
-                        <div class="footer">
-                            <p></p>
-                            <p></p>
-                            <p>
-                                {{ $dokumen->dokter->name }}
-                            </p>
-                        </div>
-                    </div>
-                    <!-- Add your JavaScript or script links here -->
-                </body>
-=======
                         <!-- Add your JavaScript or script links here -->
                     </body>
->>>>>>> Stashed changes
+                    <!-- Add your JavaScript or script links here -->
+</body>
 
 
-                    </html>
-                </div>
-        </main>
-        <!-- MAIN -->
-    </section>
-    <!-- CONTENT -->
+</html>
+</div>
+</main>
+<!-- MAIN -->
+</section>
+<!-- CONTENT -->
 
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 
 </html>

@@ -34,7 +34,7 @@ class SuratKeteranganController extends Controller
             'pasien_id' => $request->pasien_id,
             // 'nama_klinik' => $request->nama_klinik,
             'keterangan' => $request->keterangan,
-            'waktu' => $request->waktu,
+            'waktu1' => $request->waktu1,
             'waktu2' => $request->waktu2,
         ]);
 

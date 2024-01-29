@@ -29,12 +29,7 @@
                     <span class="text">Home</span>
                 </a>
             </li>
-            <li>
-                <a href="/adminprofile">
-                    <i class='bx bxs-user-circle'></i>
-                    <span class="text">Profile</span>
-                </a>
-            </li>
+            
             <li class="active">
                 <a href="/adminpasien">
                     <i class='bx bxs-group user-icon'></i>

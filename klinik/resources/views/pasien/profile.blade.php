@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Informasi Klinik</title>
+    <link rel="stylesheet" href="css/profile.css">
+    
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&display=swap"> -->
 
-    <!-- Boxicons -->
-    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-    <!-- My CSS -->
-    <link rel="stylesheet" href="css/style.css">
-
-    <title>SIK Dr.Zul</title>
+    <script src="https://kit.fontawesome.com/93ce107040.js" crossorigin="anonymous"></script>
 </head>
-
-<body>
 
 
     <!-- SIDEBAR -->
@@ -56,30 +52,56 @@
     </section>
     <!-- SIDEBAR -->
 
-    <!-- CONTENT -->
-    <section id="content">
+<body>
+    
+<section id="content">
         <main>
             @auth
                 @if (Auth::user()->role == 'Pasien')
                     <ul class="box-info">
                         <li>
-                            <i class='bx bx-face'></i>
+                            
                             <span class="text">
                                 <h3 class="profile-username text-center">Hi, {{ Auth::user()->name }}</h3>
                                 <p>{{ Auth::user()->role }}</p>
                             </span>
                         </li>
                     </ul>
-                    <button style="margin-top: 10px" class="bx bx-button2">Ubah Password</button>
-            </main>
-            @endif
-        @endauth
-    </section>
-    <!-- CONTENT -->
 
+           <div class="row">     
+                <div class="about-col-1">
+                    <img src="Images/profil.jpg" alt="">
+                </div>
+                <div class="about-col-2">
+                    <ul class="box-info">
+                    <li>                 
+                    <form>
+                            @csrf
+                            @method('PUT')
+                        <div class="form-group">
+                            <label for="name">Nama:</label>
+                            <input type="text" id="name" name="name" >
+                        </div>
 
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email">
+                        </div>
 
-    <script src="script.js"></script>
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" name="password" >
+                        </div>
+                        <button type="submit">Update Profile</button>
+                    </form>
+                </li>
+            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    @endif
+    @endauth
+        <script src="{!! asset('js/script.js') !!}"></script>
 </body>
-
 </html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistem Informasi Klinik</title>
-    <link rel="stylesheet" href="css/newsignup.css">
+    <link rel="stylesheet" href="css/profile.css">
     
     <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&display=swap"> -->
 
@@ -12,40 +12,96 @@
 </head>
 
 
+    <!-- SIDEBAR -->
+    <section id="sidebar">
+        <a href="#" class="brand">
+            <i class='bx bxs-clinic'></i>
+            <span class="text">SIK Dr.Zul</span>
+        </a>
+        <ul class="side-menu top">
+            <li>
+                <a href="/pasienhome">
+                    <i class='bx bxs-dashboard'></i>
+                    <span class="text">Home</span>
+                </a>
+            </li>
+            <li class="active">
+                <a href="/pasienprofile">
+                    <i class='bx bxs-user-circle'></i>
+                    <span class="text">Profile</span>
+                </a>
+            </li>
+            <li>
+                <a href="/pasienriwayat">
+                    <i class='bx bxs-file file-icon'></i>
+                    <span class="text">Hasil Pemeriksaan</span>
+                </a>
+            </li>
+
+        </ul>
+        <ul class="side-menu">
+            <li>
+            </li>
+            <li>
+                <a href="/home" class="logout">
+                    <i class='bx bxs-log-out-circle'></i>
+                    <span class="text">Logout</span>
+                </a>
+            </li>
+        </ul>
+    </section>
+    <!-- SIDEBAR -->
+
 <body>
-    <div id="header">
-        <img src="Images/img6.png">
-       
-         <div class="login-form">
-         <h2>Create an account</h2>
-        
-            <form method="POST" action="{{ url('signup') }}">
-            @csrf
-            <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
+    
+<section id="content">
+        <main>
+            @auth
+                @if (Auth::user()->role == 'Pasien')
+                    <ul class="box-info">
+                        <li>
+                            <i class='bx bx-face'></i>
+                            <span class="text">
+                                <h3 class="profile-username text-center">Hi, {{ Auth::user()->name }}</h3>
+                                <p>{{ Auth::user()->role }}</p>
+                            </span>
+                        </li>
+                    </ul>
 
-            <div class="form-group">
-                <label for="username">Email:</label>
-                <input type="text" id="email" name="email" required>
-            </div>
+           <div class="row">     
+                <div class="about-col-1">
+                    <img src="Images/usera.png" alt="">
+                </div>
+                <div class="about-col-2">
+                    <ul class="box-info">
+                    <li>                 
+                    <form>
+                            @csrf
+                            @method('PUT')
+                        <div class="form-group">
+                            <label for="name">Nama:</label>
+                            <input type="text" id="name" name="name" >
+                        </div>
 
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-            </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email">
+                        </div>
 
-            <div class="form-group">
-                <button type="submit">Sign Up</button>
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" name="password" >
+                        </div>
+                        <button type="submit">Update Profile</button>
+                    </form>
+                </li>
+            </ul>
+                </div>
             </div>
-            
-            <div class="text">
-            <h>Sudah Memiliki Akun? <a href="/login" class="signup">Login</a></h>
-            </div>
-        </form>
+        </div>
     </div>
-    <!----------about----------->
-  
+    @endif
+    @endauth
+        <script src="{!! asset('js/script.js') !!}"></script>
 </body>
 </html>

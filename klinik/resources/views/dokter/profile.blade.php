@@ -8,7 +8,7 @@
     <!-- Boxicons -->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <!-- My CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/profile.css">
 
     <title>SIK Dr.Zul</title>
 </head>
@@ -62,30 +62,57 @@
     </section>
     <!-- SIDEBAR -->
 
-    <!-- CONTENT -->
+ 
+<body>
+    
     <section id="content">
-        <main>
-            @auth
-                @if (Auth::user()->role == 'Dokter')
-                    <ul class="box-info">
-                        <li>
-                            <i class='bx bx-face'></i>
-                            <span class="text">
-                                <h3 class="profile-username text-center">Hi, {{ Auth::user()->name }}</h3>
-                                <p>{{ Auth::user()->role }}</p>
-                            </span>
-                        </li>
-                    </ul>
-                    <button style="margin-top: 10px" class="bx bx-button2">Ubah Password</button>
-            </main>
-            @endif
+            <main>
+                @auth
+                    @if (Auth::user()->role == 'Dokter')
+                        <ul class="box-info">
+                            <li>
+                                
+                                <span class="text">
+                                    <h3 class="profile-username text-center">Hi, {{ Auth::user()->name }}</h3>
+                                    <p>{{ Auth::user()->role }}</p>
+                                </span>
+                            </li>
+                        </ul>
+    
+               <div class="row">     
+                    <div class="about-col-1">
+                        <img src="Images/profil.jpg" alt="">
+                    </div>
+                    <div class="about-col-2">
+                        <ul class="box-info">
+                        <li>                 
+                        <form>
+                                @csrf
+                                @method('PUT')
+                            <div class="form-group">
+                                <label for="name">Nama:</label>
+                                <input type="text" id="name" name="name" >
+                            </div>
+    
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email">
+                            </div>
+    
+                            <div class="form-group">
+                                <label for="password">Password:</label>
+                                <input type="password" id="password" name="password" >
+                            </div>
+                            <button type="submit">Update Profile</button>
+                        </form>
+                    </li>
+                </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endif
         @endauth
-    </section>
-    <!-- CONTENT -->
-
-
-
-    <script src="script.js"></script>
-</body>
-
-</html>
+            <script src="{!! asset('js/script.js') !!}"></script>
+    </body>
+    </html>

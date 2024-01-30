@@ -10,6 +10,7 @@
     <!-- My CSS -->
     <link rel="stylesheet" href="css/style.css">
 
+    <i class='bx bxs-clinic'></i>
     <title>SIK Dr.Zul</title>
 </head>
 
@@ -35,19 +36,14 @@
                     <span class="text">Profile</span>
                 </a>
             </li>
-            <li>
+            
+            <li class="active">
                 <a href="/dokterpemeriksaan">
                     <i class='bx bx-edit'></i>
                     <span class="text">Hasil Pemeriksaan</span>
                 </a>
             </li>
-            {{-- <li>
-                <a href="/dokumen">
-                    <i class='bx bxs-group user-icon'></i>
-                    <span class="text">Dokumen</span>
-                </a>
-            </li> --}}
-            <li class="active">
+            <li>
                 <a href="/suratketerangan">
                     <i class='bx bxs-file file-icon'></i>
                     <span class="text">Surat Keterangan</span>
@@ -71,51 +67,46 @@
         <main>
             <ul class="box-info">
                 <li>
-                    <form method="POST" action="{{ url('createsurat') }}">
-                        @csrf
+                    <span class="text">
                         <div class="header">
-                            <h4> Tambah Data Pasien</h4>
+                            <h4> Edit Hasil Pemeriksaan</h4>
                         </div>
-                        <div class="form-group">
-                            <label for="name">Nama Dokter:</label>
-                            <select name="dokter_id" id="dokter_id" class="custom-select">
-                                <option value="">---Pilih Dokter---</option>
-                                @foreach ($dokter as $dok)
-                                    <option value="{{ $dok->dokter_id }}">{{ $dok->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Nama Pasien:</label>
-                            <select name="pasien_id" id="pasien_id" class="custom-select">
-                                <option value="">---Pilih Pasien---</option>
-                                @foreach ($pasien as $dok)
-                                    <option value="{{ $dok->pasien_id }}">{{ $dok->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="keterangan">Keterangan :</label>
-                            <input type="text" id="keterangan" name="keterangan">
-                        </div>
-                        <div class="form-group">
-                            <label for="waktu1">Waktu Awal:</label>
-                            <input type="date" id="waktu1" name="waktu1">
-                        </div>
-                        <div class="form-group">
-                            <label for="waktu2">Waktu Akhir:</label>
-                            <input type="date" id="waktu2" name="waktu2">
-                        </div>
+                        <form method="post" action="{{ route('updatehasilpemeriksaan.update', $hasilpemeriksaan->hasilpemeriksaan_id) }}">
+                            @csrf
+                            @method('PUT')
 
-                        <button type="submit">Submit</button>
-                    </form>
+                         <div class="form-group">
+                            <label for="name">Nama Dokter:</label>
+                            <input type="text" id="name" name="name" value="{!! $dokter->name !!}">
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Nama Pasien:</label>
+                            <input type="text" id="name" name="name" value="{!! $pasien->name !!}">
+                        </div>
+                        <div class="form-group">
+                            <label for="jenis_pemeriksaan">Jenis Pemeriksaan:</label>
+                            <input type="text" id="jenis_pemeriksaan" name="jenis_pemeriksaan" value="{!! $hasilpemeriksaan->jenis_pemeriksaan !!}">
+                        </div>
+                        <div class="form-group">
+                            <label for="diagnosa">Diagnosa:</label>
+                            <input type="text" id="diagnosa" name="diagnosa" value="{!! $hasilpemeriksaan->diagnosa !!}">
+                        </div>
+                        <div class="form-group">
+                            <label for="obat">Obat:</label>
+                            <input type="text" id="obat" name="obat" value="{!! $hasilpemeriksaan->obat !!}">
+                        </div>
+                           
+                            <button onclick="return confirm('Yakin update ?')" type="submit"
+                                class="btn btn-danger btn-sm ml-2"><i class="fas fa-trash fa-fw"></i>
+                                Submit</button>
+                        </form>
+                        </div>
                 </li>
             </ul>
 
-    </section>
+</section>
 
 
-    <script src="script.js"></script>
+
+<script src="script.js"></script>
 </body>
-
-</html>

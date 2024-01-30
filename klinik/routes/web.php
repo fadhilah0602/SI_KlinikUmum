@@ -127,6 +127,12 @@ Route::get('/dokterprofile', function () {
     return view('/dokter/profile');
 });
 
+
+Route::get('/dokterpemeriksaan', function () {
+    return view('/dokter/dokterpemeriksaan');
+});
+
+
 // Route::get('/dokumen', function () {
 //     return view('/dokter/dokumen');
 // });
@@ -136,6 +142,10 @@ Route::get('/createsurat', [SuratKeteranganController::class, 'create'])->name('
 Route::post('/createsurat', [SuratKeteranganController::class, 'store'])->name('dokter.suratketerangan');
 Route::get('/dokumen/{surat_keterangan_id}', [SuratKeteranganController::class, 'dokumen'])->name('dokter.dokumen');
 // Route::post('/dokumen', [SuratKeteranganController::class, 'store']);
+
+
+
+
 
 // ====================================================
 // route pasien

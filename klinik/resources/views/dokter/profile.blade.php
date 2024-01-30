@@ -35,15 +35,16 @@
                     <span class="text">Profile</span>
                 </a>
             </li>
-            {{-- <li>
-                <a href="/dokumen">
-                    <i class='bx bxs-group user-icon'></i>
-                    <span class="text">Dokumen</span>
+            <li>
+                <a href="/dokterpemeriksaan">
+                    <i class='bx bx-edit'></i>
+                    <span class="text">Hasil Pemeriksaan</span>
                 </a>
-            </li> --}}
+            </li>
+           
             <li>
                 <a href="/suratketerangan">
-                    <i class='bx bxs-group user-icon'></i>
+                    <i class='bx bxs-file file-icon'></i>
                     <span class="text">Surat Keterangan</span>
                 </a>
             </li>

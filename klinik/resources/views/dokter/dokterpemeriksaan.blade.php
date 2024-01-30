@@ -10,10 +10,14 @@
     <!-- My CSS -->
     <link rel="stylesheet" href="css/style.css">
 
+    <i class='bx bxs-clinic'></i>
     <title>SIK Dr.Zul</title>
 </head>
 
 <body>
+
+
+    <!-- SIDEBAR -->
     <section id="sidebar">
         <a href="#" class="brand">
             <i class='bx bxs-clinic'></i>
@@ -21,60 +25,35 @@
         </a>
         <ul class="side-menu top">
             <li>
-                <a href="/adminhome">
+                <a href="/dokterhome">
                     <i class='bx bxs-dashboard'></i>
                     <span class="text">Home</span>
                 </a>
             </li>
-           
             <li>
-                <a href="/adminpasien">
-                    <i class='bx bxs-group user-icon'></i>
-                    <span class="text">Pasien</span>
+                <a href="/dokterprofile">
+                    <i class='bx bxs-user-circle'></i>
+                    <span class="text">Profile</span>
                 </a>
             </li>
-            <li>
-                <a href="/admindokter">
-                    <i class='bx bxs-user-plus'></i>
-                    <span class="text">Dokter</span>
-                </a>
-            </li>
-            <li>
-                <a href="/poli">
-                <i class='bx bxs-layout'></i>
-                    <span class="text">Poli</span>
-                </a>
-            </li>
-
-            <li>
-                <a href="/jadwaldokter">
-                <i class='bx bx-edit'></i>
-                    <span class="text">Jadwal Dokter</span>
-                </a>
-            </li>
-            <li>
-                <a href="/jadwalpemeriksaan">
-                <i class='bx bx-edit'></i>
-                    <span class="text">Jadwal Pemeriksaan</span>
-                </a>
-            </li>
+            
             <li class="active">
-                <a href="/hasilpemeriksaan">
-                <i class='bx bx-edit'></i>
+                <a href="/dokterpemeriksaan">
+                    <i class='bx bx-edit'></i>
                     <span class="text">Hasil Pemeriksaan</span>
                 </a>
             </li>
             <li>
-                <a href="/user">
-                <i class='bx bxs-user-detail'></i>
-                    <span class="text">User</span>
+                <a href="/suratketerangan">
+                    <i class='bx bxs-file file-icon'></i>
+                    <span class="text">Surat Keterangan</span>
                 </a>
-            
             </li>
-        </ul>
 
+        </ul>
         <ul class="side-menu">
-          
+            <li>
+            </li>
             <li>
                 <a href="/home" class="logout">
                     <i class='bx bxs-log-out-circle'></i>
@@ -83,38 +62,25 @@
             </li>
         </ul>
     </section>
+    <!-- SIDEBAR -->
     <section id="content">
-        <!-- NAVBAR -->
-
-        <!-- NAVBAR -->
-
-        <!-- MAIN -->
-        <main>
+    <main>
             <div class="table-data">
                 <div class="order">
                     <div class="head">
                         <h3>Hasil Pemeriksaan</h3>
-                        
-                        <!-- <form>
-                            <input type="search" id="searchBox" name="search" placeholder="Search...">
-                            <input type="submit" value="Search">
-                        </form> -->
-                        <!-- <button class="bx bx-button">
-                            <a href="" class="btn btn-sm btn-primary" style="float: right">
-                                Tambah Data
-                            </a> -->
-                        <!-- <button type="button" onclick="goToNextPage()">Tambah Jadwal Dokter</button>
+                        <button type="button" onclick="goToNextPage()">Tambah Hasil Pemeriksaan</button>
 
                         <script>
                             function goToNextPage() {
                                 // Gantilah URL atau path sesuai kebutuhan
-                                window.location.href = "createruang";
+                                window.location.href = "createhasilpemeriksaan";
                             }
-                        </script> -->
-                        <!-- </button> -->
+                        </script>
+                      
+                      
 
-                        {{-- <i class='bx bx-search'></i>
-                        <i class='bx bx-filter'></i> --}}
+                     
                     </div>
                     <table>
                         <thead>
@@ -125,13 +91,14 @@
                                 <th>Jenis Pemeriksaan</th>
                                 <th>Diagnosa</th>
                                 <th>Obat</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
                             @php
                                 $no = 1;
                             @endphp
-                            <!-- @foreach ($hasilpemeriksaans as $hp) -->
+                            <!-- <!-- @foreach ($hasilpemeriksaans as $hp) -->
                                 <!-- <tr>
                                     <td>{{ $no++ }}</td>
                                     <td>{{ $hp->dokter->name }}</td>
@@ -153,7 +120,7 @@
                                         </form>
                                     </td>
                                 </tr> -->
-                            <!-- @endforeach --> 
+                            <!-- @endforeach --> -->
                            
                                 <tr>
                                     
@@ -170,8 +137,12 @@
     </section>
     <!-- CONTENT -->
 
+    
+                </li>
+            </ul>
+
+    </section>
+
 
     <script src="script.js"></script>
 </body>
-
-</html>

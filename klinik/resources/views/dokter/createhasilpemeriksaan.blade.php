@@ -10,6 +10,7 @@
     <!-- My CSS -->
     <link rel="stylesheet" href="css/style.css">
 
+    <i class='bx bxs-clinic'></i>
     <title>SIK Dr.Zul</title>
 </head>
 
@@ -35,19 +36,14 @@
                     <span class="text">Profile</span>
                 </a>
             </li>
-            <li>
+            
+            <li class="active">
                 <a href="/dokterpemeriksaan">
                     <i class='bx bx-edit'></i>
                     <span class="text">Hasil Pemeriksaan</span>
                 </a>
             </li>
-            {{-- <li>
-                <a href="/dokumen">
-                    <i class='bx bxs-group user-icon'></i>
-                    <span class="text">Dokumen</span>
-                </a>
-            </li> --}}
-            <li class="active">
+            <li>
                 <a href="/suratketerangan">
                     <i class='bx bxs-file file-icon'></i>
                     <span class="text">Surat Keterangan</span>
@@ -66,56 +62,43 @@
             </li>
         </ul>
     </section>
-
+    <!-- SIDEBAR -->
     <section id="content">
         <main>
             <ul class="box-info">
                 <li>
-                    <form method="POST" action="{{ url('createsurat') }}">
+                    <form method="POST" action="{{ url('add-hasilpemeriksaan') }}">
                         @csrf
                         <div class="header">
-                            <h4> Tambah Data Pasien</h4>
+                            <h4> Tambah Hasil Pemeriksaan</h4>
                         </div>
                         <div class="form-group">
                             <label for="name">Nama Dokter:</label>
-                            <select name="dokter_id" id="dokter_id" class="custom-select">
-                                <option value="">---Pilih Dokter---</option>
-                                @foreach ($dokter as $dok)
-                                    <option value="{{ $dok->dokter_id }}">{{ $dok->name }}</option>
-                                @endforeach
-                            </select>
+                            <input type="text" id="name" name="name">
                         </div>
                         <div class="form-group">
-                            <label for="email">Nama Pasien:</label>
-                            <select name="pasien_id" id="pasien_id" class="custom-select">
-                                <option value="">---Pilih Pasien---</option>
-                                @foreach ($pasien as $dok)
-                                    <option value="{{ $dok->pasien_id }}">{{ $dok->name }}</option>
-                                @endforeach
-                            </select>
+                            <label for="name">Nama Pasien:</label>
+                            <input type="text" id="name" name="name">
                         </div>
                         <div class="form-group">
-                            <label for="keterangan">Keterangan :</label>
-                            <input type="text" id="keterangan" name="keterangan">
+                            <label for="jenis_pemeriksaan">Jenis Pemeriksaan:</label>
+                            <input type="text" id="jenis_pemeriksaan" name="jenis_pemeriksaan">
                         </div>
                         <div class="form-group">
-                            <label for="waktu1">Waktu Awal:</label>
-                            <input type="date" id="waktu1" name="waktu1">
+                            <label for="diagnosa">Diagnosa:</label>
+                            <input type="text" id="diagnosa" name="diagnosa">
                         </div>
                         <div class="form-group">
-                            <label for="waktu2">Waktu Akhir:</label>
-                            <input type="date" id="waktu2" name="waktu2">
+                            <label for="obat">Obat:</label>
+                            <input type="text" id="obat" name="obat">
                         </div>
-
+                        
                         <button type="submit">Submit</button>
                     </form>
                 </li>
             </ul>
-
     </section>
 
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
-
-</html>

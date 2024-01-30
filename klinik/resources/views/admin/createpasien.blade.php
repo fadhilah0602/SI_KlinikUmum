@@ -89,6 +89,7 @@
                 <li>
                     <form method="POST" action="{{ url('createpasien') }}">
                         @csrf
+                        @method('post')
                         <div class="header">
                             <h4> Tambah Data Pasien</h4>
                         </div>

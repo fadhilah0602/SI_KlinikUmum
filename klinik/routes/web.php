@@ -10,6 +10,7 @@ use App\Http\Controllers\Auth\SignUpController;
 use App\Http\Controllers\RuangController;
 use App\Http\Controllers\JadwaldokterController;
 use App\Http\Controllers\JadwalpemeriksaanController;
+use App\Http\Controllers\HasilpemeriksaanController;
 use App\Http\Controllers\SuratKeteranganController;
 use App\Http\Controllers\MessageController;
 use App\Models\Dokter;
@@ -57,7 +58,7 @@ Route::get('/signup', function () {
 
 Route::get('/adminpasien', [PasienController::class, 'home']);
 Route::get('/createpasien', [PasienController::class, 'create']);
-Route::post('/add-pasien', [PasienController::class, 'store']);
+Route::post('/createpasien', [PasienController::class, 'store']);
 Route::get('editpasien/{pasien_id}', [PasienController::class, 'edit'])->name('editpasien.edit');
 Route::put('update-pasien/{pasien_id}', [PasienController::class, 'update'])->name('updatepasien.update');
 Route::delete('delete-pasien/{pasien_id}', [PasienController::class, 'destroy'])->name('deletepasien.destroy');
@@ -92,6 +93,10 @@ Route::delete('delete-jadwaldokter/{jadwal_dokter_id}', [JadwaldokterController:
 Route::get('/jadwalpemeriksaan', [JadwalpemeriksaanController::class, 'home']);
 Route::get('editjadwalpemeriksaan/{jadwal_pemeriksaan_id}', [JadwalpemeriksaanController::class, 'edit'])->name('editjadwalpemeriksaan.edit');
 Route::put('update-jadwalpemeriksaan/{id}', [JadwalPemeriksaanController::class, 'update'])->name('updatejadwalpemeriksaan.update');
+
+Route::get('/dokterpemeriksaan', [HasilpemeriksaanController::class, 'home']);
+Route::get('/createhasilpemeriksaan', [HasilpemeriksaanController::class, 'create']);
+Route::post('/createhasilpemeriksaan', [HasilpemeriksaanController::class, 'store']);
 
 Route::get('/adminhome', [AdminController::class, 'home']);
 Route::get('/adminhome', [AdminController::class, 'render']);

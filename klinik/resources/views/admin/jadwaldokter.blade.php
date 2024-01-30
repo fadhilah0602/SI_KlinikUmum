@@ -127,6 +127,7 @@
                                     <td>{{ $jadwaldokter->hari }}</td>
                                     <td>{{ $jadwaldokter->waktu }}</td>
                                     <td class="action-buttons">
+
                                         <form method="post"
                                             action="{{ route('deletejadwaldokter.destroy', $jadwaldokter->jadwal_dokter_id) }}">
                                             @csrf

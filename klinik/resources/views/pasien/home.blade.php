@@ -74,10 +74,11 @@
                     {{-- @csrf --}}
                     <form>
                         <div class="form-group">
-                            <label for="dokter">Dokter:</label>
+                            {{-- <label for="name">Nama Dokter :</label>
+                            <input type="text" id="name" name="name"> --}}
+                            <label for="dokter_id">Pilih Dokter :</label>
                             <select name="dokter_id" id="dokter_id" class="custom-select">
                                 <option value="">---Pilih Dokter---</option>
-                                <option value="dr.zainal">dr.Zainal</option>
                                 {{-- @foreach ($dokters as $dokter)
                                     <option value="{{ $dokter->dokter_id }}">{{ $dokter->name }}</option>
                                 @endforeach --}}
@@ -97,7 +98,7 @@
                         </div>
                         <div class="form-group">
                             <label for="waktu">Waktu:</label>
-                            <input type="time" id="waktu" name="waktu">
+                            <input type="date" id="waktu" name="waktu">
                         </div>
                         <button type="submit">Submit</button>
                     </form>

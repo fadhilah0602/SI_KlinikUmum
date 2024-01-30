@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Dokter;
-use App\Models\JadwalPemeriksaan;
 use Illuminate\Http\Request;
+use App\Models\JadwalPemeriksaan;
+use App\Models\Dokter;
+use App\Models\Pasien;
 
 class JadwalpemeriksaanController extends Controller
 {

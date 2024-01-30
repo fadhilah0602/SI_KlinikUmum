@@ -67,19 +67,35 @@
         <main>
             <ul class="box-info">
                 <li>
-                    <form method="POST" action="{{ url('add-hasilpemeriksaan') }}">
+                    <form method="POST" action="{{ url('createhasilpemeriksaan') }}">
                         @csrf
+                        @method('post')
                         <div class="header">
                             <h4> Tambah Hasil Pemeriksaan</h4>
                         </div>
                         <div class="form-group">
-                            <label for="name">Nama Dokter:</label>
-                            <input type="text" id="name" name="name">
+                            {{-- <label for="name">Nama Dokter :</label>
+                            <input type="text" id="name" name="name"> --}}
+                            <label for="dokter_id">Pilih Dokter :</label>
+                            <select name="dokter_id" id="dokter_id" class="custom-select">
+                                <option value="">---Pilih Dokter---</option>
+                                @foreach ($dokters as $dokter)
+                                    <option value="{{ $dokter->dokter_id }}">{{ $dokter->name }}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="form-group">
-                            <label for="name">Nama Pasien:</label>
-                            <input type="text" id="name" name="name">
+                            {{-- <label for="name">Nama Pasien :</label>
+                            <input type="text" id="name" name="name"> --}}
+                            <label for="pasien_id">Pilih Pasien :</label>
+                            <select name="pasien_id" id="pasien_id" class="custom-select">
+                                <option value="">---Pilih Pasien---</option>
+                                @foreach ($pasiens as $pasien)
+                                    <option value="{{ $pasien->pasien_id }}">{{ $pasien->name }}</option>
+                                @endforeach
+                            </select>
                         </div>
+                    
                         <div class="form-group">
                             <label for="jenis_pemeriksaan">Jenis Pemeriksaan:</label>
                             <input type="text" id="jenis_pemeriksaan" name="jenis_pemeriksaan">

@@ -11,7 +11,6 @@ class JadwaldokterController extends Controller
     public function home()
     {
         $jadwaldokters = JadwalDokter::all();
-        $dokter = Dokter::all();
         return view('admin.jadwaldokter', compact('jadwaldokters'));
     }
 

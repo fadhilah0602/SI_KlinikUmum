@@ -95,26 +95,7 @@
                     <div class="head">
                         <h3>Hasil Pemeriksaan</h3>
                         
-                        <!-- <form>
-                            <input type="search" id="searchBox" name="search" placeholder="Search...">
-                            <input type="submit" value="Search">
-                        </form> -->
-                        <!-- <button class="bx bx-button">
-                            <a href="" class="btn btn-sm btn-primary" style="float: right">
-                                Tambah Data
-                            </a> -->
-                        <!-- <button type="button" onclick="goToNextPage()">Tambah Jadwal Dokter</button>
-
-                        <script>
-                            function goToNextPage() {
-                                // Gantilah URL atau path sesuai kebutuhan
-                                window.location.href = "createruang";
-                            }
-                        </script> -->
-                        <!-- </button> -->
-
-                        {{-- <i class='bx bx-search'></i>
-                        <i class='bx bx-filter'></i> --}}
+                     
                     </div>
                     <table>
                         <thead>
@@ -131,8 +112,8 @@
                             @php
                                 $no = 1;
                             @endphp
-                            <!-- @foreach ($hasilpemeriksaans as $hp) -->
-                                <!-- <tr>
+                            @foreach ($hasilpemeriksaans as $hp)
+                                <tr>
                                     <td>{{ $no++ }}</td>
                                     <td>{{ $hp->dokter->name }}</td>
                                     <td>{{ $hp->pasien->name }}</td>
@@ -152,8 +133,8 @@
                                                 class="delete-button">   Delete</button>
                                         </form>
                                     </td>
-                                </tr> -->
-                            <!-- @endforeach --> 
+                                </tr> 
+                            @endforeach 
                            
                                 <tr>
                                     

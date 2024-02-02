@@ -133,9 +133,9 @@ Route::get('/dokterprofile', function () {
 });
 
 
-Route::get('/dokterpemeriksaan', function () {
-    return view('/dokter/dokterpemeriksaan');
-});
+// Route::get('/dokterpemeriksaan', function () {
+//     return view('/dokter/dokterpemeriksaan');
+// });
 
 
 // Route::get('/dokumen', function () {

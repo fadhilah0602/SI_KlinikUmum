@@ -16,8 +16,8 @@
     <div id="header">
         <div class="container">
             <nav>
-                <img src="Images/home.png" class="logo">
-                <ul id="sidemenu">
+                <img src="Images/home2.png" class="logo">
+                    <ul id="sidemenu">
                     <li><a href="#header">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Service</a></li>
@@ -113,19 +113,19 @@
             <h1 class="sub-title">Our Services</h1>
             <div class="services-list">
                 <div>
-                    <i class="fas fa-code"></i>
+                    <i class="fa-solid fa-stethoscope"></i>
                     <h2>Pemeriksaan Kesehatan</h2>
                     <p>Layanan kesehatan berkualitas sesuai kebutuhan</p>
                         <!-- <a href="#">learn more</a> -->
                 </div>
                 <div>
-                    <i class="fas fa-crop-alt"></i>
+                    <i class="fa-solid fa-heart-pulse"></i>
                     <h2>Check Kesehatan Lansia</h2>
                     <p>Layanan kesehatan berkualitas sesuai kebutuhan</p>
                         <!-- <a href="#">learn more</a> -->
                 </div>
                 <div>
-                    <i class="fab fa-app-store"></i>
+                <i class="fa-solid fa-notes-medical"></i>
                     <h2>Check Kesehatan Ibu dan Anak</h2>
                     <p>Layanan kesehatan berkualitas sesuai kebutuhan.</p>
                         <!-- <a href="#">learn more</a> -->
@@ -155,7 +155,7 @@
                     </div>
                 </div>
                 <div class="work">
-                    <img src="Images/work-b.png">
+                    <img src="Images/work-2.jpg">
                     <div class="layer">
                         <h3>Cara Atasi Si Kecil yang Takut Pergi ke Dokter Gigi</h3>
                         <p>Sejak kecil anak memang disarankan diperkenalkan pada kesehatan gigi. 
@@ -165,7 +165,7 @@
                     </div>
                 </div>
                 <div class="work">
-                    <img src="Images/work-c.png">
+                    <img src="Images/work-3.jpg">
                     <div class="layer">
                         <h3>Kenali Ciri-Ciri Alergi Makanan pada Anak</h3>
                         <p>Alergi bisa mengenai siapa saja termasuk anak-anak 

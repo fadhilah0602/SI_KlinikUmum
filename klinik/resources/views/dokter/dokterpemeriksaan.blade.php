@@ -99,7 +99,7 @@
                                 $no = 1;
                             @endphp
                             
-                            {{-- @foreach ($hasilpemeriksaans as $hp)
+                           @foreach ($hasilpemeriksaans as $hp)
                                 <tr>
                                     <td>{{ $no++ }}</td>
                                     <td>{{ $hp->dokter->name }}</td>
@@ -117,7 +117,7 @@
                                         </form>
                                     </td>
                                 </tr>
-                            @endforeach --}}
+                            @endforeach 
                           
                         </tbody>
                     </table>

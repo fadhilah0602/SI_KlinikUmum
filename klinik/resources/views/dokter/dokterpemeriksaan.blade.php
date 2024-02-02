@@ -36,7 +36,7 @@
                     <span class="text">Profile</span>
                 </a>
             </li>
-            
+
             <li class="active">
                 <a href="/dokterpemeriksaan">
                     <i class='bx bx-edit'></i>
@@ -64,7 +64,7 @@
     </section>
     <!-- SIDEBAR -->
     <section id="content">
-    <main>
+        <main>
             <div class="table-data">
                 <div class="order">
                     <div class="head">
@@ -77,10 +77,6 @@
                                 window.location.href = "createhasilpemeriksaan";
                             }
                         </script>
-                      
-                      
-
-                     
                     </div>
                     <table>
                         <thead>
@@ -98,8 +94,8 @@
                             @php
                                 $no = 1;
                             @endphp
-                            
-                           @foreach ($hasilpemeriksaans as $hp)
+
+                            @foreach ($hasilpemeriksaans as $hp)
                                 <tr>
                                     <td>{{ $no++ }}</td>
                                     <td>{{ $hp->dokter->name }}</td>
@@ -107,18 +103,21 @@
                                     <td>{{ $hp->jenis_pemeriksaan }}</td>
                                     <td>{{ $hp->diagnosa }}</td>
                                     <td>{{ $hp->obat }}</td>
-                                    <td class="action-buttons">
-                                        <a href="{!! route('edithasilpemeriksaan.edit', $hp->hasilpemeriksaan_id) !!}" type="button"class="edit-button" role="button">Edit</a>
+                                    {{-- <td class="action-buttons">
+                                        <a href="{!! route('edithasilpemeriksaan.edit', $hp->hasilpemeriksaan_id) !!}" type="button"class="edit-button"
+                                            role="button">Edit</a>
 
-                                        <form method="post" action="{{ route('deletehasilpemeriksaan.destroy', $hp->hasilpemeriksaan_id) }}">
+                                        <form method="post"
+                                            action="{{ route('deletehasilpemeriksaan.destroy', $hp->hasilpemeriksaan_id) }}">
                                             @csrf
                                             @method('delete')
-                                            <button onclick="return confirm('Yakin hapus ?')" type="submit" class="delete-button">   Delete</button>
+                                            <button onclick="return confirm('Yakin hapus ?')" type="submit"
+                                                class="delete-button"> Delete</button>
                                         </form>
-                                    </td>
+                                    </td> --}}
                                 </tr>
-                            @endforeach 
-                          
+                            @endforeach
+
                         </tbody>
                     </table>
                 </div>
@@ -128,9 +127,9 @@
     </section>
     <!-- CONTENT -->
 
-    
-                </li>
-            </ul>
+
+    </li>
+    </ul>
 
     </section>
 

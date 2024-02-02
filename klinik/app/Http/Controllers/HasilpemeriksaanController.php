@@ -10,8 +10,8 @@ use App\Models\Pasien;
 class HasilpemeriksaanController extends Controller
 {
     public function home(){
-        $dokters = Dokter::all();
-        $pasiens = Pasien::all();
+        $dokter = Dokter::all();
+        $pasien = Pasien::all();
         $hasilpemeriksaans = HasilPemeriksaan::all();
         return view('dokter.dokterpemeriksaan', compact('hasilpemeriksaans'));
     }

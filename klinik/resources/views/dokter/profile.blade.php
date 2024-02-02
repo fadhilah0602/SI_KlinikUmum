@@ -41,7 +41,7 @@
                     <span class="text">Hasil Pemeriksaan</span>
                 </a>
             </li>
-           
+
             <li>
                 <a href="/suratketerangan">
                     <i class='bx bxs-file file-icon'></i>
@@ -63,56 +63,46 @@
     </section>
     <!-- SIDEBAR -->
 
- 
+
 <body>
-    
+
     <section id="content">
             <main>
                 @auth
-                    @if (Auth::user()->role == 'Dokter')
-                        <ul class="box-info">
-                            <li>
-                                
-                                <span class="text">
-                                    <h3 class="profile-username text-center">Hi, {{ Auth::user()->name }}</h3>
-                                    <p>{{ Auth::user()->role }}</p>
-                                </span>
-                            </li>
-                        </ul>
-    
-               <div class="row">     
-                    <div class="about-col-1">
-                        <img src="Images/profil.jpg" alt="">
-                    </div>
-                    <div class="about-col-2">
-                        <ul class="box-info">
-                        <li>                 
-                        <form>
+                @if (Auth::user()->role == 'Dokter')
+                <div class="about-col1">
+                    <ul class="box-info">
+                        <li>
+                            <span class="text">
+                                <h3 class="profile-username text-center">Hi, {{ Auth::user()->name }}</h3>
+                                <p>{{ Auth::user()->role }}</p>
+                            <img src="Images/profil.jpg" alt="" class="gambar">
+                        </span>
+                            <form>
                                 @csrf
                                 @method('PUT')
-                            <div class="form-group">
-                                <label for="name">Nama:</label>
-                                <input type="text" id="name" name="name" >
-                            </div>
-    
-                            <div class="form-group">
-                                <label for="email">Email:</label>
-                                <input type="email" id="email" name="email">
-                            </div>
-    
-                            <div class="form-group">
-                                <label for="password">Password:</label>
-                                <input type="password" id="password" name="password" >
-                            </div>
-                            <button type="submit">Update Profile</button>
-                        </form>
-                    </li>
-                </ul>
-                    </div>
+                                <div class="form-group">
+                                    <label for="name">Nama:</label>
+                                    <input type="text" id="name" name="name">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email">Email:</label>
+                                    <input type="email" id="email" name="email">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="password">Password:</label>
+                                    <input type="password" id="password" name="password">
+                                </div>
+                                <button onclick="return confirm('Yakin update ?')" type="submit"
+                                    class="btn btn-danger btn-sm ml-2"></i>
+                                    Update Profile</button>
+                            </form>
+                        </li>
+                    </ul>
                 </div>
-            </div>
-        </div>
-        @endif
+            @endif
         @endauth
             <script src="{!! asset('js/script.js') !!}"></script>
     </body>

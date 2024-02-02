@@ -42,7 +42,7 @@
                     <span class="text">Hasil Pemeriksaan</span>
                 </a>
             </li>
-            
+
             <li>
                 <a href="/suratketerangan">
                     <i class='bx bxs-file file-icon'></i>
@@ -81,10 +81,10 @@
                     <div class="head">
                         <h3>Pasien</h3>
                         {{-- <button class="Button">Tambah Data</button> --}}
-                        <form>
+                        {{-- <form>
                             <input type="search" id="searchBox" name="search" placeholder="Search...">
                             <input type="submit" value="Search">
-                          </form>
+                          </form> --}}
                         <!-- <button class="bx bx-button">Tambah Data</button> -->
 
                         {{-- <i class='bx bx-search'></i>
@@ -95,30 +95,22 @@
                             <tr>
                                 <th>No</th>
                                 <th>Nama Pasien</th>
+                                <th>Hari</th>
                                 <th>Tanggal</th>
-                                <th>Jam</th>
-                                <th>Proses</th>
-                                <th>Lihat Data</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Yuli</td>
-                                <td>01-01-2024</td>
-                                <td>08:00</td>
-                                <td>
-                                    <select class="custom-select">
-                                        <option value="process">Selesai</option>
-                                        <option value="pending">Dalam Antrian</option>
-                                      </select>
-                                    </td>
-                                    <!-- <td>Lihat Data</td> -->
-                                    <td>
-                                    <button class="bx bx-button2">Lihat Data</button></td>
-                                    <!-- <button type="button" class="btn btn-primary">Primary</button> -->
-                            </tr>
-
+                            @php
+                                $no = 1;
+                            @endphp
+                            @foreach ($jadwalpemeriksaan as $jp)
+                                <tr>
+                                    <td>{{ $no++ }}</td>
+                                    <td>{{ $jp->pasien->name }}</td>
+                                    <td>{{ $jp->hari }}</td>
+                                    <td>{{ $jp->waktu }}</td>
+                                </tr>
+                            @endforeach
 
                         </tbody>
                     </table>

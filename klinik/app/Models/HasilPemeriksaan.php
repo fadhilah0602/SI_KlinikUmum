@@ -18,6 +18,16 @@ class HasilPemeriksaan extends Model
         'jenis_pemeriksaan',
         'diagnosa',
         'obat',
-        
+
     ];
+    public function dokter()
+    {
+        return $this->belongsTo(Dokter::class, 'dokter_id');
+    }
+    public function pasien()
+    {
+        return $this->belongsTo(Pasien::class, 'pasien_id');
+    }
+
+
 }

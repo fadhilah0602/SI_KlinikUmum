@@ -43,7 +43,7 @@ body.dark {
 
 body {
 	background: var(--grey);
-	
+
     overflow-x: hidden; /* Menghilangkan scrollbar horizontal */
     overflow-y: hidden; /* Menghilangkan scrollbar vertikal */
 }
@@ -273,8 +273,8 @@ body {
 	align-items: center;
 }
 #content nav .profile img {
-	width: 36px;
-	height: 36px;
+	width: 20px;
+	height: 20px;
 	object-fit: cover;
 	border-radius: 50%;
 }
@@ -421,7 +421,7 @@ button:hover {
   /* ------------------------------------------
    */
 
-   
+
 
 nav{
     display: flex;
@@ -478,7 +478,7 @@ nav ul li a:hover::after{
     flex-wrap: wrap;
     position: relative;
     padding-top: 10px;
-    
+
 }
 .about-col-1{
     flex-basis: 35%;
@@ -487,15 +487,20 @@ nav ul li a:hover::after{
 
 }
 .about-col-1 img{
-    width: 100%;   
+    width: 100%;
     border-radius: 15px;
-    
+
 }
 .about-col-2{
     flex-basis: 60%;
     width: 300%;
 	height: 100%;
     align-items: center;
+
+}
+.gambar {
+    width: 65%;
+    border-radius: 15px;
 
 }
 
@@ -508,7 +513,7 @@ nav ul li a:hover::after{
 	grid-gap: 24px;
 	/* margin-top: 10px; */
     padding-bottom: 15px;
-    
+
 }
 #content main .box-info li {
 	padding: 24px;
@@ -517,7 +522,7 @@ nav ul li a:hover::after{
 	display: flex;
 	align-items: center;
 	grid-gap: 24px;
-    
+
 }
 #content main .box-info li .bx {
 	width: 80px;

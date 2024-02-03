@@ -70,8 +70,8 @@
             </ul>
             <ul class="box-info">
                 <li>
-                    {{-- <form method="POST" action="{{ url('add-poli') }}"> --}}
-                    {{-- @csrf --}}
+                    <form method="POST" action="{{ url('createjadwalpemeriksaan') }}"> 
+                    @csrf
                     <form>
                         <div class="form-group">
                             {{-- <label for="name">Nama Dokter :</label>

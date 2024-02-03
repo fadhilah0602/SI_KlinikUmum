@@ -37,4 +37,31 @@ class HasilpemeriksaanController extends Controller
         ]);
         return redirect('/dokterpemeriksaan')->with('success', 'Jadwal dokter created successfully.');
     }
+
+    public function edit($hasil_pemeriksaan_id)
+    {
+        $hasilpemeriksaan = HasilPemeriksaan::findOrFail($hasil_pemeriksaan_id);
+        $dokter = Dokter::all();
+        $pasien = Pasien::all();
+        return view('dokter.edithasilpemeriksaan', compact('hasilpemeriksaan'));
+    }
+
+    public function update(Request $request, $hasil_pemeriksaan_id)
+    {
+        $hasilpemeriksaan = HasilPemeriksaan::where('hasil_pemeriksaan_id', $hasil_pemeriksaan_id)->update([
+            'dokter_id' => $request->input('dokter_id'),
+            'pasien_id' => $request->input('pasien_id'),
+            'jenis_pemeriksaan' => $request->jenis_pemeriksaan,
+            'diagnosa' => $request->diagnosa,
+            'obat' => $request->obat
+        ]);
+        return redirect('/dokterpemeriksaan')->with('success', 'Hasil Pemeriksaan updated successfully.');
+    }
+
+    public function destroy($hasil_pemeriksaan_id)
+    {
+        $hasilpemeriksaan = HasilPemeriksaan::where('hasil_pemeriksaan_id', $hasil_pemeriksaan_id)->first();
+        $hasilpemeriksaan->delete();
+        return redirect('/dokterpemeriksaan')->with('success', 'Hasil pemeriksaan deleted successfully.');
+    }
 }

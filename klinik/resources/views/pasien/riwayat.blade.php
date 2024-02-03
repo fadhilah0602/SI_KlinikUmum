@@ -84,7 +84,7 @@
                                 @php
                                     $no = 1;
                                 @endphp
-                                @foreach ($hasilpemeriksaans as $hp)
+                                {{-- @foreach ($hasilpemeriksaans as $hp)
                                     <tr>
                                         <td>{{ $no++ }}</td>
                                         <td>{{ $hp->dokter->name }}</td>
@@ -92,7 +92,7 @@
                                         <td>{{ $hp->jenis_pemeriksaan }}</td>
                                         <td>{{ $hp->diagnosa }}</td>
                                         <td>{{ $hp->obat }}</td>
-                                        {{-- <td class="action-buttons">
+                                         <td class="action-buttons">
                                             <a href="{!! route('edithasilpemeriksaan.edit', $hp->hasilpemeriksaan_id) !!}" type="button"class="edit-button"
                                                 role="button">Edit</a>
 
@@ -105,9 +105,9 @@
                                             <button onclick="return confirm('Yakin hapus ?')" type="submit"
                                                 class="delete-button"> Delete</button>
                                             </form>
-                                        </td> --}}
+                                        </td> 
                                     </tr>
-                                @endforeach
+                                @endforeach --}}
 
                                 <tr>
 

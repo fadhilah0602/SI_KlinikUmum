@@ -112,7 +112,8 @@
                             @php
                                 $no = 1;
                             @endphp
-                            @foreach ($hasilpemeriksaans as $hp)
+
+                            {{-- @foreach ($hasilpemeriksaans as $hp)
                                 <tr>
                                     <td>{{ $no++ }}</td>
                                     <td>{{ $hp->dokter->name }}</td>
@@ -121,10 +122,10 @@
                                     <td>{{ $hp->diagnosa }}</td>
                                     <td>{{ $hp->obat }}</td>
                                     <td class="action-buttons">
-                                    <a href="{!! route('edithasilpemeriksaan.edit', $hp->hasilpemeriksaan_id) !!}" type="button"class="edit-button" role="button">Edit</a>
+                                    <a href="{!! route('edithasilpemeriksaan.edit', $hp->hasil_pemeriksaan_id) !!}" type="button"class="edit-button" role="button">Edit</a>
 
                                         <form method="post"
-                                            action="{{ route('deletehasilpemeriksaan.destroy', $hp->hasilpemeriksaan_id) }}">
+                                            action="{{ route('deletehasilpemeriksaan.destroy', $hp->hasil_pemeriksaan_id) }}">
                                             </td>
                                             <td class="action-buttons">
                                             @csrf
@@ -134,7 +135,7 @@
                                         </form>
                                     </td>
                                 </tr> 
-                            @endforeach 
+                            @endforeach --}}
                            
                                 <tr>
                                     

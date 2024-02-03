@@ -103,14 +103,7 @@
                             @php
                                 $no = 1;
                             @endphp
-                            @foreach ($jadwalpemeriksaan as $jp)
-                                <tr>
-                                    <td>{{ $no++ }}</td>
-                                    <td>{{ $jp->pasien->name }}</td>
-                                    <td>{{ $jp->hari }}</td>
-                                    <td>{{ $jp->waktu }}</td>
-                                </tr>
-                            @endforeach
+                            
 
                         </tbody>
                     </table>

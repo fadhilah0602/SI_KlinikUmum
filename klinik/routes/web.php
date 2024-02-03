@@ -91,12 +91,18 @@ Route::delete('delete-jadwaldokter/{jadwal_dokter_id}', [JadwaldokterController:
 
 
 Route::get('/jadwalpemeriksaan', [JadwalpemeriksaanController::class, 'home']);
+Route::get('/createjadwalpemeriksaan', [JadwalpemeriksaanController::class, 'create']);
+Route::post('/createjadwalpemeriksaan', [JadwalpemeriksaanController::class, 'store']);
 Route::get('editjadwalpemeriksaan/{jadwal_pemeriksaan_id}', [JadwalpemeriksaanController::class, 'edit'])->name('editjadwalpemeriksaan.edit');
-Route::put('update-jadwalpemeriksaan/{id}', [JadwalPemeriksaanController::class, 'update'])->name('updatejadwalpemeriksaan.update');
+Route::put('update-jadwalpemeriksaan/{jadwal_pemeriksaan_id}', [JadwalPemeriksaanController::class, 'update'])->name('updatejadwalpemeriksaan.update');
+Route::delete('delete-jadwalpemeriksaan/{jadwal_pemeriksaan_id}', [JadwalpemeriksaanController::class, 'destroy'])->name('deletejadwalpemeriksaan.destroy');
 
 Route::get('/dokterpemeriksaan', [HasilpemeriksaanController::class, 'home']);
 Route::get('/createhasilpemeriksaan', [HasilpemeriksaanController::class, 'create']);
 Route::post('/createhasilpemeriksaan', [HasilpemeriksaanController::class, 'store']);
+Route::get('edithasilpemeriksaan/{hasil_pemeriksaan_id}', [HasilpemeriksaanController::class, 'edit'])->name('edithasilpemeriksaan.edit');
+Route::put('update-hasilpemeriksaan/{hasil_pemeriksaan_id}', [HasilpemeriksaanController::class, 'update'])->name('updatehasilpemeriksaan.update');
+Route::delete('delete-hasilpemeriksaan/{hasil_pemeriksaan_id}', [HasilpemeriksaanController::class, 'destroy'])->name('deletehasilpemeriksaan.destroy');
 
 Route::get('/adminhome', [AdminController::class, 'home']);
 Route::get('/adminhome', [AdminController::class, 'render']);

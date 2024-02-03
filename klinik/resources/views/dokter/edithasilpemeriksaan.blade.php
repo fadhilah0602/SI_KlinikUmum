@@ -71,7 +71,7 @@
                         <div class="header">
                             <h4> Edit Hasil Pemeriksaan</h4>
                         </div>
-                        <form method="post" action="{{ route('updatehasilpemeriksaan.update', $hasilpemeriksaan->hasilpemeriksaan_id) }}">
+                        <form method="post" action="{{ route('updatehasilpemeriksaan.update', $hasilpemeriksaan->hasil_pemeriksaan_id) }}">
                             @csrf
                             @method('PUT')
 

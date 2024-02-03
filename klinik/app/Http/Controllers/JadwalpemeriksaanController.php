@@ -15,7 +15,27 @@ class JadwalpemeriksaanController extends Controller
     {
         $jadwalpemeriksaan = JadwalPemeriksaan::all();
         $dokter = Dokter::all();
+        $pasien = Pasien::all();
         return view('admin.jadwalpemeriksaan', compact('jadwalpemeriksaan'));
+    }
+
+    public function create(){
+        $dokters = Dokter::all();
+        $pasiens = Pasien::all();
+        return view('pasien.home', compact('dokters', 'pasiens'));
+    }
+
+    public function store(Request $request){
+        $request->validate([
+            'dokter_id' => 'required',
+        ]);
+
+        $jadwalpemeriksaans = JadwalPemeriksaan::create([
+            'dokter_id' => $request->input('dokter_id'),
+            'hari' => $request->hari,
+            'waktu' => $request->waktu
+        ]);
+        return redirect('admin.jadwalpemeriksaan')->with('success', 'Jadwal pemeriksaan created successfully.');
     }
 
     public function edit($jadwal_pemeriksaan_id)
@@ -35,5 +55,12 @@ class JadwalpemeriksaanController extends Controller
             'status' => $request->status
         ]);
         return redirect('/jadwalpemeriksaan')->with('success', 'Jadwal Pemeriksaan updated successfully.');
+    }
+
+    public function destroy($jadwal_pemeriksaan_id)
+    {
+        $jadwalpemeriksaan = JadwalPemeriksaan::where('jadwal_pemeriksaan_id', $jadwal_pemeriksaan_id)->first();
+        $jadwalemeriksaan->delete();
+        return redirect('/jadwalpemeriksaan')->with('success', 'Jadwal pemeriksaan deleted successfully.');
     }
 }

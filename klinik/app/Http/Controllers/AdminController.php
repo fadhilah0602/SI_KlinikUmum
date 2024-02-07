@@ -15,15 +15,11 @@ class AdminController extends Controller
 {
     public function home()
     {
-        $jadwalpemeriksaan = JadwalPemeriksaan::all();
-        return view('admin.home', compact('jadwalpemeriksaan'));
-    }
-    public function render()
-    {
         $totalpasien = Pasien::all()->count();
         $totaldokter = Dokter::all()->count();
         $totalpoli = Ruang::all()->count();
         $totalantrean = JadwalPemeriksaan::all()->count();
-        return view('admin.home', compact('totalpasien', 'totaldokter', 'totalpoli', 'totalantrean'));
+        $jadwalpemeriksaan = JadwalPemeriksaan::all();
+        return view('admin.home', compact('jadwalpemeriksaan', 'totalpasien', 'totaldokter', 'totalpoli', 'totalantrean'));
     }
 }

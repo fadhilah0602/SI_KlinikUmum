@@ -10,7 +10,7 @@ class HasilPemeriksaan extends Model
     use HasFactory;
     protected $table = 'hasil_pemeriksaans';
 
-    protected $primarykey = 'hasil_pemeriksaan_id';
+    protected $primaryKey = 'hasil_pemeriksaan_id';
 
     protected $fillable = [
         'dokter_id',

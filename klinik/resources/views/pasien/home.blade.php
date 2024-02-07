@@ -70,18 +70,15 @@
             </ul>
             <ul class="box-info">
                 <li>
-                    <form method="POST" action="{{ url('createjadwalpemeriksaan') }}"> 
+                    <form method="POST" action="{{ url('createjadwalpemeriksaan') }}">
                     @csrf
-                    <form>
                         <div class="form-group">
-                            {{-- <label for="name">Nama Dokter :</label>
-                            <input type="text" id="name" name="name"> --}}
                             <label for="dokter_id">Pilih Dokter :</label>
                             <select name="dokter_id" id="dokter_id" class="custom-select">
                                 <option value="">---Pilih Dokter---</option>
-                                {{-- @foreach ($dokters as $dokter)
+                                @foreach ($dokters as $dokter)
                                     <option value="{{ $dokter->dokter_id }}">{{ $dokter->name }}</option>
-                                @endforeach --}}
+                                @endforeach
                             </select>
                         </div>
                         <div class="form-group">

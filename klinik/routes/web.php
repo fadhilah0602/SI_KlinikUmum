@@ -97,7 +97,7 @@ Route::get('editjadwalpemeriksaan/{jadwal_pemeriksaan_id}', [JadwalpemeriksaanCo
 Route::put('update-jadwalpemeriksaan/{jadwal_pemeriksaan_id}', [JadwalPemeriksaanController::class, 'update'])->name('updatejadwalpemeriksaan.update');
 Route::delete('delete-jadwalpemeriksaan/{jadwal_pemeriksaan_id}', [JadwalpemeriksaanController::class, 'destroy'])->name('deletejadwalpemeriksaan.destroy');
 
-Route::get('/dokterpemeriksaan', [HasilpemeriksaanController::class, 'home']);
+Route::get('/hasilpemeriksaan', [HasilpemeriksaanController::class, 'homeadmin']);
 Route::get('/createhasilpemeriksaan', [HasilpemeriksaanController::class, 'create']);
 Route::post('/createhasilpemeriksaan', [HasilpemeriksaanController::class, 'store']);
 Route::get('edithasilpemeriksaan/{hasil_pemeriksaan_id}', [HasilpemeriksaanController::class, 'edit'])->name('edithasilpemeriksaan.edit');
@@ -105,7 +105,7 @@ Route::put('update-hasilpemeriksaan/{hasil_pemeriksaan_id}', [HasilpemeriksaanCo
 Route::delete('delete-hasilpemeriksaan/{hasil_pemeriksaan_id}', [HasilpemeriksaanController::class, 'destroy'])->name('deletehasilpemeriksaan.destroy');
 
 Route::get('/adminhome', [AdminController::class, 'home']);
-Route::get('/adminhome', [AdminController::class, 'render']);
+
 
 Route::get('/adminprofile', function () {
     return view('/admin/profile');
@@ -120,9 +120,6 @@ Route::get('/createuser', [UserController::class, 'create']);
 Route::get('/createpoli', [RuangController::class, 'create']);
 
 
-Route::get('/hasilpemeriksaan', function () {
-    return view('/admin/hasilpemeriksaan');
-});
 
 
 
@@ -130,13 +127,13 @@ Route::get('/hasilpemeriksaan', function () {
 // route dokter
 // ====================================================
 
-Route::get('/dokterhome', function () {
-    return view('/dokter/home');
-});
+Route::get('/dokterhome', [DokterController::class, 'home']);
 
 Route::get('/dokterprofile', function () {
     return view('/dokter/profile');
 });
+
+Route::get('/dokterpemeriksaan', [HasilpemeriksaanController::class, 'home']);
 
 
 // Route::get('/dokterpemeriksaan', function () {
@@ -162,17 +159,14 @@ Route::get('/dokumen/{surat_keterangan_id}', [SuratKeteranganController::class, 
 // route pasien
 // ====================================================
 
-Route::get('/pasienhome', function () {
-    return view('/pasien/home');
-});
+Route::get('/pasienhome', [JadwalpemeriksaanController::class, 'create']);
+Route::post('/createjadwalpemeriksaan', [JadwalpemeriksaanController::class, 'store']);
 
 Route::get('/pasienprofile', function () {
     return view('/pasien/profile');
 });
 
-Route::get('/pasienriwayat', function () {
-    return view('/pasien/riwayat');
-});
+Route::get('/pasienriwayat', [HasilpemeriksaanController::class, 'homepasien']);
 
 //login multi user
 

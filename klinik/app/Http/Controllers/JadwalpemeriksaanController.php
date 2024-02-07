@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\JadwalPemeriksaan;
 use App\Models\Dokter;
 use App\Models\Pasien;
+use Illuminate\Support\Facades\Auth;
 
 class JadwalpemeriksaanController extends Controller
 {
@@ -32,10 +33,11 @@ class JadwalpemeriksaanController extends Controller
 
         $jadwalpemeriksaans = JadwalPemeriksaan::create([
             'dokter_id' => $request->input('dokter_id'),
+            'pasien_id'=> Auth::user()->id->pasien()->pasien_id,
             'hari' => $request->hari,
             'waktu' => $request->waktu
         ]);
-        return redirect('admin.jadwalpemeriksaan')->with('success', 'Jadwal pemeriksaan created successfully.');
+        return redirect('pasien.home')->with('success', 'Jadwal pemeriksaan created successfully.');
     }
 
     public function edit($jadwal_pemeriksaan_id)
@@ -48,8 +50,6 @@ class JadwalpemeriksaanController extends Controller
     public function update(Request $request, $jadwal_pemeriksaan_id)
     {
         $jadwalpemeriksaan = JadwalPemeriksaan::where('jadwal_pemeriksaan_id', $jadwal_pemeriksaan_id)->update([
-            'dokter_id' => $request->input('dokter_id'),
-            'pasien_id' => $request->input('pasien_id'),
             'hari' => $request->hari,
             'waktu' => $request->waktu,
             'status' => $request->status
@@ -60,7 +60,7 @@ class JadwalpemeriksaanController extends Controller
     public function destroy($jadwal_pemeriksaan_id)
     {
         $jadwalpemeriksaan = JadwalPemeriksaan::where('jadwal_pemeriksaan_id', $jadwal_pemeriksaan_id)->first();
-        $jadwalemeriksaan->delete();
+        $jadwalpemeriksaan->delete();
         return redirect('/jadwalpemeriksaan')->with('success', 'Jadwal pemeriksaan deleted successfully.');
     }
 }

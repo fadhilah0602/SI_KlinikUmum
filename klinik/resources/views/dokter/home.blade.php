@@ -103,7 +103,28 @@
                             @php
                                 $no = 1;
                             @endphp
-                            
+                            {{-- @foreach ($jadwalpemeriksaan as $jp)
+                            <tr>
+                                <td>{{ $no++ }}</td>
+                                <td>{{ $jp->dokter->name }}</td>
+                                <td>{{ $jp->pasien->name }}</td>
+                                <td>{{ $jp->hari }}</td>
+                                <td>{{ $jp->waktu }}</td>
+                                <td>{{ $jp->status }}</td>
+                                <td class="action-buttons">
+                                    <a href="{!! route('editjadwalpemeriksaan.edit', $jp->jadwal_pemeriksaan_id) !!}" type="button" class="edit-button" role="button">Edit</a>
+                                </td>
+                                <td class="action-buttons">
+                                    <form method="post"
+                                        action="{{ route('deletejadwalpemeriksaan.destroy', $jp->jadwal_pemeriksaan_id) }}">
+                                        @csrf
+                                        @method('delete')
+                                        <button onclick="return confirm('Yakin hapus ?')" type="submit"
+                                            class="delete-button">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        @endforeach --}}
 
                         </tbody>
                     </table>

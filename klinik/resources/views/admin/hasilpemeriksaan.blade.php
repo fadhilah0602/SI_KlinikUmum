@@ -26,7 +26,7 @@
                     <span class="text">Home</span>
                 </a>
             </li>
-           
+
             <li>
                 <a href="/adminpasien">
                     <i class='bx bxs-group user-icon'></i>
@@ -69,12 +69,12 @@
                 <i class='bx bxs-user-detail'></i>
                     <span class="text">User</span>
                 </a>
-            
+
             </li>
         </ul>
 
         <ul class="side-menu">
-          
+
             <li>
                 <a href="/home" class="logout">
                     <i class='bx bxs-log-out-circle'></i>
@@ -94,8 +94,8 @@
                 <div class="order">
                     <div class="head">
                         <h3>Hasil Pemeriksaan</h3>
-                        
-                     
+
+
                     </div>
                     <table>
                         <thead>
@@ -113,7 +113,7 @@
                                 $no = 1;
                             @endphp
 
-                            {{-- @foreach ($hasilpemeriksaans as $hp)
+                            @foreach ($hasilpemeriksaans as $hp)
                                 <tr>
                                     <td>{{ $no++ }}</td>
                                     <td>{{ $hp->dokter->name }}</td>
@@ -121,7 +121,7 @@
                                     <td>{{ $hp->jenis_pemeriksaan }}</td>
                                     <td>{{ $hp->diagnosa }}</td>
                                     <td>{{ $hp->obat }}</td>
-                                    <td class="action-buttons">
+                                    {{-- <td class="action-buttons">
                                     <a href="{!! route('edithasilpemeriksaan.edit', $hp->hasil_pemeriksaan_id) !!}" type="button"class="edit-button" role="button">Edit</a>
 
                                         <form method="post"
@@ -133,16 +133,16 @@
                                             <button onclick="return confirm('Yakin hapus ?')" type="submit"
                                                 class="delete-button">   Delete</button>
                                         </form>
-                                    </td>
-                                </tr> 
-                            @endforeach --}}
-                           
-                                <tr>
-                                    
-                                    
-                                   
+                                    </td> --}}
                                 </tr>
-                          
+                            @endforeach
+
+                                <tr>
+
+
+
+                                </tr>
+
                         </tbody>
                     </table>
                 </div>

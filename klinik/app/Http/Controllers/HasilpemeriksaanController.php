@@ -10,10 +10,16 @@ use App\Models\Pasien;
 class HasilpemeriksaanController extends Controller
 {
     public function home(){
-        $dokter = Dokter::all();
-        $pasien = Pasien::all();
         $hasilpemeriksaans = HasilPemeriksaan::all();
         return view('dokter.dokterpemeriksaan', compact('hasilpemeriksaans'));
+    }
+    public function homepasien(){
+        $hasilpemeriksaans = HasilPemeriksaan::all();
+        return view('pasien.riwayat', compact('hasilpemeriksaans'));
+    }
+    public function homeadmin(){
+        $hasilpemeriksaans = HasilPemeriksaan::all();
+        return view('admin.hasilpemeriksaan', compact('hasilpemeriksaans'));
     }
 
     public function create(){
@@ -40,17 +46,15 @@ class HasilpemeriksaanController extends Controller
 
     public function edit($hasil_pemeriksaan_id)
     {
-        $hasilpemeriksaan = HasilPemeriksaan::findOrFail($hasil_pemeriksaan_id);
         $dokter = Dokter::all();
         $pasien = Pasien::all();
-        return view('dokter.edithasilpemeriksaan', compact('hasilpemeriksaan'));
+        $hasilpemeriksaan = HasilPemeriksaan::findOrFail($hasil_pemeriksaan_id);
+        return view('dokter.edithasilpemeriksaan', compact('hasilpemeriksaan','pasien','dokter'));
     }
 
     public function update(Request $request, $hasil_pemeriksaan_id)
     {
         $hasilpemeriksaan = HasilPemeriksaan::where('hasil_pemeriksaan_id', $hasil_pemeriksaan_id)->update([
-            'dokter_id' => $request->input('dokter_id'),
-            'pasien_id' => $request->input('pasien_id'),
             'jenis_pemeriksaan' => $request->jenis_pemeriksaan,
             'diagnosa' => $request->diagnosa,
             'obat' => $request->obat

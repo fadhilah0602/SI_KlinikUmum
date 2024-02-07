@@ -28,15 +28,14 @@ class LoginController extends Controller
 
             switch ($role) {
                 case 'Admin':
-                    // return redirect()->route('admin.home');
-                    return view('admin.home');
+                    return redirect('/adminhome');
                     break;
                 case 'Dokter':
-                    return view('dokter.home');
+                    return redirect('/dokterhome');
                     break;
                 // Tambahkan case untuk peran lainnya jika diperlukan
                 default:
-                    return view('pasien.home');
+                    return redirect('/pasienhome');
                     break;
             }
         }

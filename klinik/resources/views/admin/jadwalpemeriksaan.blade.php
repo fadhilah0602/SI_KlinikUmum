@@ -29,7 +29,7 @@
                     <span class="text">Home</span>
                 </a>
             </li>
-            
+
             <li>
                 <a href="/adminpasien">
                     <i class='bx bxs-group user-icon'></i>
@@ -114,7 +114,7 @@
                                 $no = 1;
                             @endphp
 
-                            {{-- @foreach ($jadwalpemeriksaan as $jp)
+                            @foreach ($jadwalpemeriksaan as $jp)
                                 <tr>
                                     <td>{{ $no++ }}</td>
                                     <td>{{ $jp->dokter->name }}</td>
@@ -127,7 +127,7 @@
                                     </td>
                                     <td class="action-buttons">
                                         <form method="post"
-                                            action="{{ route('deletejadwalpemeriksaan.destroy', $jadwalpemeriksaan->jadwal_pemeriksaan_id) }}">
+                                            action="{{ route('deletejadwalpemeriksaan.destroy', $jp->jadwal_pemeriksaan_id) }}">
                                             @csrf
                                             @method('delete')
                                             <button onclick="return confirm('Yakin hapus ?')" type="submit"
@@ -135,7 +135,7 @@
                                         </form>
                                     </td>
                                 </tr>
-                            @endforeach --}}
+                            @endforeach
 
                         </tbody>
                     </table>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Pasien;
 use Illuminate\Http\Request;
 use App\Models\User;
 
@@ -17,7 +18,7 @@ class SignUpController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => bcrypt($request->password),
-            
+
         ]);
         return view('signup');
 

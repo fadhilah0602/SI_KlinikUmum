@@ -106,7 +106,8 @@
                                     <td class="action-buttons">
                                         <a href="{!! route('edithasilpemeriksaan.edit', $hp->hasil_pemeriksaan_id) !!}" type="button"class="edit-button"
                                             role="button">Edit</a>
-
+                                    </td>
+                                    <td>
                                         <form method="post"
                                             action="{{ route('deletehasilpemeriksaan.destroy', $hp->hasil_pemeriksaan_id) }}">
                                             @csrf
@@ -114,7 +115,7 @@
                                             <button onclick="return confirm('Yakin hapus ?')" type="submit"
                                                 class="delete-button"> Delete</button>
                                         </form>
-                                    </td> 
+                                    </td>
                                 </tr>
                             @endforeach
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pasien;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
@@ -35,7 +36,7 @@ class UserController extends Controller
             'email_verified_at' => $request->email_veridied_at,
             'password' => bcrypt($request->password),
             'role' => $request->role
-            
+
         ]);
         return redirect('/user')->with('success', 'User created successfully.');
     }

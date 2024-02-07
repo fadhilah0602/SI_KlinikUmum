@@ -8,7 +8,7 @@
     <!-- Boxicons -->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <!-- My CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{!! asset('css/style.css') !!}">
 
     <i class='bx bxs-clinic'></i>
     <title>SIK Dr.Zul</title>
@@ -36,7 +36,7 @@
                     <span class="text">Profile</span>
                 </a>
             </li>
-            
+
             <li class="active">
                 <a href="/dokterpemeriksaan">
                     <i class='bx bx-edit'></i>
@@ -76,12 +76,12 @@
                             @method('PUT')
 
                          <div class="form-group">
-                            <label for="name">Nama Dokter:</label>
-                            <input type="text" id="name" name="name" value="{!! $dokter->name !!}">
+                            <label for="dokter_id">Nama Dokter:</label>
+                            <input type="text" id="dokter_id" name="dokter_id" value="{!! $hasilpemeriksaan->dokter->name !!}" disabled>
                         </div>
                         <div class="form-group">
-                            <label for="name">Nama Pasien:</label>
-                            <input type="text" id="name" name="name" value="{!! $pasien->name !!}">
+                            <label for="pasien_id">Nama Pasien:</label>
+                            <input type="text" id="pasien_id" name="pasien_id" value="{!! $hasilpemeriksaan->pasien->name !!}" disabled>
                         </div>
                         <div class="form-group">
                             <label for="jenis_pemeriksaan">Jenis Pemeriksaan:</label>
@@ -95,7 +95,7 @@
                             <label for="obat">Obat:</label>
                             <input type="text" id="obat" name="obat" value="{!! $hasilpemeriksaan->obat !!}">
                         </div>
-                           
+
                             <button onclick="return confirm('Yakin update ?')" type="submit"
                                 class="btn btn-danger btn-sm ml-2"><i class="fas fa-trash fa-fw"></i>
                                 Submit</button>
@@ -108,5 +108,5 @@
 
 
 
-<script src="script.js"></script>
+<script src="{!! asset('js/script.js') !!}"></script>
 </body>

@@ -27,6 +27,6 @@ class ContactController extends Controller
             'email' => $request->email,
             'message' => $request->message,
         ]);
-        return redirect('/contact')->with('success', 'Contact created successfully.');
+        return redirect('/')->with('success', 'Contact created successfully.');
     }
 }

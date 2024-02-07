@@ -31,7 +31,8 @@ class LoginController extends Controller
                     return redirect('/adminhome');
                     break;
                 case 'Dokter':
-                    return redirect('/dokterhome');
+                    return view('dokter.home');
+                    // return redirect('/dokterhome');
                     break;
                 // Tambahkan case untuk peran lainnya jika diperlukan
                 default:

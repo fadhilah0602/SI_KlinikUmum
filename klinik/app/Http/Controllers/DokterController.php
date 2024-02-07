@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Dokter;
+use App\Models\HasilPemeriksaan;
+use App\Models\JadwalPemeriksaan;
 use App\Models\Pasien;
 use App\Models\SuratKeterangan;
 use App\Models\User;
@@ -15,6 +17,12 @@ class DokterController extends Controller
     {
         $dokters = Dokter::all();
         return view('admin.dokter', compact('dokters'));
+    }
+
+    public function homedokter()
+    {
+        $jadwalpemeriksaan = JadwalPemeriksaan::all();
+        return view('dokter.home', compact('jadwalpemeriksaan'));
     }
 
     public function create()
@@ -88,4 +96,5 @@ class DokterController extends Controller
         $dokter->delete();
         return redirect('/admindokter')->with('success', 'Dokter deleted successfully.');
     }
+
 }

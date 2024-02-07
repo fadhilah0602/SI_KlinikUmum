@@ -78,22 +78,22 @@
                                 <p>{{ Auth::user()->role }}</p>
                             <img src="Images/profil.jpg" alt="" class="gambar">
                         </span>
-                            <form>
+                            <form m>
                                 @csrf
                                 @method('PUT')
                                 <div class="form-group">
                                     <label for="name">Nama:</label>
-                                    <input type="text" id="name" name="name">
+                                    <input type="text" id="name" name="name" value="{{ Auth::user()->name }}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="email">Email:</label>
-                                    <input type="email" id="email" name="email">
+                                    <input type="email" id="email" name="email" value="{{ Auth::user()->email }}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="password">Password:</label>
-                                    <input type="password" id="password" name="password">
+                                    <input type="password" id="password" name="password" value="{{ Auth::user()->password }}">
                                 </div>
                                 <button onclick="return confirm('Yakin update ?')" type="submit"
                                     class="btn btn-danger btn-sm ml-2"></i>

@@ -79,6 +79,12 @@
                 </a>
 
             </li>
+            <li>
+                <a href="/contact">
+                    <i class='bx bxs-user-detail'></i>
+                    <span class="text">Contact</span>
+                </a>
+            </li>
         </ul>
         <ul class="side-menu">
 

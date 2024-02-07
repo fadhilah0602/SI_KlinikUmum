@@ -65,7 +65,7 @@ class UserController extends Controller
             // 'user_id' =>  $user->id,
             'name' => $request->name,
             'email' => $request->email,
-            'password' => $request->password,
+            'password' => bcrypt($request->password),
             'role' => $request->role
         ]);
         return redirect('/user')->with('success', 'User updated successfully.');

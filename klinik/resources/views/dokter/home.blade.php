@@ -94,16 +94,18 @@
                         <thead>
                             <tr>
                                 <th>No</th>
+                                <th>Nama Dokter</th>
                                 <th>Nama Pasien</th>
                                 <th>Hari</th>
                                 <th>Tanggal</th>
+                                <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>
                             @php
                                 $no = 1;
                             @endphp
-                            {{-- @foreach ($jadwalpemeriksaan as $jp)
+                            @foreach ($jadwalpemeriksaan as $jp)
                             <tr>
                                 <td>{{ $no++ }}</td>
                                 <td>{{ $jp->dokter->name }}</td>
@@ -111,7 +113,7 @@
                                 <td>{{ $jp->hari }}</td>
                                 <td>{{ $jp->waktu }}</td>
                                 <td>{{ $jp->status }}</td>
-                                <td class="action-buttons">
+                                {{-- <td class="action-buttons">
                                     <a href="{!! route('editjadwalpemeriksaan.edit', $jp->jadwal_pemeriksaan_id) !!}" type="button" class="edit-button" role="button">Edit</a>
                                 </td>
                                 <td class="action-buttons">
@@ -122,9 +124,9 @@
                                         <button onclick="return confirm('Yakin hapus ?')" type="submit"
                                             class="delete-button">Delete</button>
                                     </form>
-                                </td>
+                                </td> --}}
                             </tr>
-                        @endforeach --}}
+                        @endforeach
 
                         </tbody>
                     </table>

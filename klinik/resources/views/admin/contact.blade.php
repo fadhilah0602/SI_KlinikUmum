@@ -30,12 +30,6 @@
                 </a>
             </li>
             <li>
-                <a href="/adminprofile">
-                    <i class='bx bxs-user-circle'></i>
-                    <span class="text">Profile</span>
-                </a>
-            </li>
-            <li>
                 <a href="/adminpasien">
                     <i class='bx bxs-group user-icon'></i>
                     <span class="text">Pasien</span>
@@ -72,7 +66,7 @@
                     <span class="text">Hasil Pemeriksaan</span>
                 </a>
             </li>
-            <li class="active">
+            <li >
                 <a href="/user">
                 <i class='bx bxs-user-detail'></i>
                     <span class="text">User</span>
@@ -125,9 +119,9 @@
                             @foreach ($contacts as $contact)
                                 <tr>
                                     <td>{{ $no++ }}</td>
-                                    <td>{{ $user->name }}</td>
-                                    <td>{{ $user->email }}</td>
-                                    <td>{{ $user->message }}</td>
+                                    <td>{{ $contact->name }}</td>
+                                    <td>{{ $contact->email }}</td>
+                                    <td>{{ $contact->message }}</td>
                                 </tr>
                             @endforeach
                         </tbody>

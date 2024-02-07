@@ -82,6 +82,15 @@
                             </select>
                         </div>
                         <div class="form-group">
+                            <label for="pasien_id">Pilih Paien :</label>
+                            <select name="pasien_id" id="pasien_id" class="custom-select">
+                                <option value="">---Pilih Pasien---</option>
+                                @foreach ($pasiens as $pasien)
+                                    <option value="{{ $pasien->pasien_id }}">{{ $pasien->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label for="hari">Hari:</label>
                             <select id="hari" name="hari">
                                 <option value="">===Pilih===</option>

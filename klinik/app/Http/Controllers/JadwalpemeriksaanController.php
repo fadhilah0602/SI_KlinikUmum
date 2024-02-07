@@ -33,11 +33,12 @@ class JadwalpemeriksaanController extends Controller
 
         $jadwalpemeriksaans = JadwalPemeriksaan::create([
             'dokter_id' => $request->input('dokter_id'),
-            'pasien_id'=> Auth::user()->id->pasien()->pasien_id,
+            // 'pasien_id'=> Auth::user()->$request->pasien()->pasien_id,
+            'pasien_id'=> $request->input('pasien_id'),
             'hari' => $request->hari,
             'waktu' => $request->waktu
         ]);
-        return redirect('pasien.home')->with('success', 'Jadwal pemeriksaan created successfully.');
+        return redirect('/pasienhome')->with('success', 'Jadwal pemeriksaan created successfully.');
     }
 
     public function edit($jadwal_pemeriksaan_id)
